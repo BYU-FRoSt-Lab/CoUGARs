@@ -9,4 +9,4 @@ sudo sh get-docker.sh
 
 # Add user permissions
 sudo usermod -aG docker frostlab
-sudo su - frostlab
+sudo su -s frostlab
