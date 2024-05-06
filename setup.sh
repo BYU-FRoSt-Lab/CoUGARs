@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ##########################################################
-# SETS UP DOCKER IMAGE REQS ON THE LOCAL MACHINE
+# SETS UP DOCKER IMAGE REQS ON A NEW RPI
 # - Run this script on a newly flashed Raspberry Pi 5.
 #   After running it, run "docker.sh" to load in and run
 #   the most current image
