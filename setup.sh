@@ -11,4 +11,7 @@ curl -fsSL https://get.docker.com -o get-docker.sh
 sudo sh get-docker.sh
 
 # Pull latest version of Docker repo
+sudo groupadd docker
+sudo usermod -aG docker frostlab
+su -s frostlab
 docker pull snelsondurrant/cougars:latest
