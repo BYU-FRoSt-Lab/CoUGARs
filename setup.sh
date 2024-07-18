@@ -17,3 +17,7 @@ sudo sh get-docker.sh
 # Add user permissions
 sudo usermod -aG docker frostlab
 sudo su - frostlab
+
+# Set up volumes
+mkdir ~/bag
+cp -r ~/CougarSetup/config ~/config
