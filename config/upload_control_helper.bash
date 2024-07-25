@@ -40,3 +40,7 @@ case $choice in
         echo "Invalid choice. Please run the script again and select 1, 2, or 3."
         ;;
 esac
+CONTROL_ID="15569680"
+
+cd ~/teensy_ws/control/.pio/build/teensy41
+tycmd upload --board $SENSOR_ID firmware.hex
