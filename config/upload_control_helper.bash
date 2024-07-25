@@ -24,12 +24,12 @@ case $choice in
         ;;
     2)
         # Option 2 (Local - demo_fins)
-        cd ~/CougarsSetup/config/firmware_options
+        cd ~/config/firmware_options
         tycmd upload --board $CONTROL_ID demo_fins.hex
         ;;
     3)
         # Option 3 (Local - control.hex)
-        cd ~/CougarsSetup/config/firmware_options
+        cd ~/config/firmware_options
         tycmd upload --board $CONTROL_ID control.hex
         ;;
     *)
