@@ -5,5 +5,34 @@
 
 CONTROL_ID="ADD HERE"
 
-cd ~/teensy_ws/control/.pio/build/teensy41
-tycmd upload --board $CONTROL_ID firmware.hex
+
+#!/bin/bash
+
+# Prompt the user for input
+echo "Select an option:"
+echo "1) Docker"
+echo "2) Local - demo_fins"
+echo "3) Local - control.hex"
+read -p "Enter your choice (1, 2, or 3): " choice
+
+# Handle the user's input
+case $choice in
+    1)
+        # Option 1 (Docker)
+        cd ~/teensy_ws/control/.pio/build/teensy41
+        tycmd upload --board $CONTROL_ID firmware.hex
+        ;;
+    2)
+        # Option 2 (Local - demo_fins)
+        cd ~/CougarsSetup/config/firmware_options
+        tycmd upload --board $CONTROL_ID demo_fins.hex
+        ;;
+    3)
+        # Option 3 (Local - control.hex)
+        cd ~/CougarsSetup/config/firmware_options
+        tycmd upload --board $CONTROL_ID control.hex
+        ;;
+    *)
+        echo "Invalid choice. Please run the script again and select 1, 2, or 3."
+        ;;
+esac
