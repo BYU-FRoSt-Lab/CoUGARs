@@ -3,8 +3,9 @@
 ##########################################################
 # PULLS AND RUNS THE NEWEST DOCKER IMAGE
 # - The "--rm" flag destroys the container on exit. Make
-#   sure to commit changes from another terminal while
-#   it's still running if you're working on image dev
+#   sure to commit changes from another terminal while 
+#   it's still running or remove the flag from this
+#   script if you're working on image dev
 ##########################################################
 
 docker pull snelsondurrant/cougars:latest
