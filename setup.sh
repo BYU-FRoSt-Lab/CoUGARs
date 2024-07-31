@@ -20,4 +20,4 @@ sudo su - frostlab
 
 # Set up volumes
 mkdir ~/bag
-cp -r ~/CougarSetup/config ~/config
+cp -r ~/CougarsSetup/config ~/config
