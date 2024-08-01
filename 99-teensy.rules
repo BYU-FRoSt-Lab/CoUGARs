@@ -1,0 +1,5 @@
+# Rule for the first Teensy Control board
+SUBSYSTEM=="tty", ATTRS{serial}=="15569400", SYMLINK+="frost/control"
+
+# Rule for the second Teensy Sensor board
+SUBSYSTEM=="tty", ATTRS{serial}=="SENSOR_TEENSY_SERIAL", SYMLINK+="frost/sensor"
