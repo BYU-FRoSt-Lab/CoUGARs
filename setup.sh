@@ -15,9 +15,6 @@ sudo sh get-docker.sh
 sudo usermod -aG docker frostlab
 sudo su - frostlab
 
-# Set up udev rules
-cd ~/config
-
 # Set up volumes
 mkdir ~/bag
 cp -r ~/CougarsSetup/config ~/config
