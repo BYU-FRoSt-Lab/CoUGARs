@@ -11,10 +11,6 @@
 curl -fsSL https://get.docker.com -o get-docker.sh
 sudo sh get-docker.sh
 
-# Add user permissions
-sudo usermod -aG docker frostlab
-sudo su - frostlab
-
 # Set up volumes
 mkdir ~/bag
 cp -r ~/CougarsSetup/config ~/config
@@ -24,3 +20,6 @@ cd ~/config
 bash set_rules.sh
 
 echo "ALERT: Make sure to set the vehicle-specific params in "set_config.sh," "control_id.sh," "sensors_id.sh," and "set_rules.sh" in "~/config" now"
+
+# Add user permissions
+sudo usermod -aG docker frostlab
