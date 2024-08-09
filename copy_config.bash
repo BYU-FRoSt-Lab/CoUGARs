@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Set up volumes
-cp -r ~/CougarsSetup/config ~/config
+cp -r ~/home/frostlab/CougarsSetup/config ~/home/frostlab/config
 
 # Set up udev rules
 cd ~/config
