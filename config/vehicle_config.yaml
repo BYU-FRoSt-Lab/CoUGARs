@@ -20,7 +20,7 @@
     request_response: False
 
 /fin_control:
-  ros_parameters:
+  ros__parameters:
     depth_kp: 0.0
     depth_ki: 0.0
     depth_kd: 0.0
