@@ -19,7 +19,8 @@ mkdir ~/bag
 cp -r ~/CougarsSetup/config ~/config
 
 # Set up udev rules
-cd ~/config
-bash set_rules.sh
+sudo cp /home/frostlab/config/00-teensy.rules /etc/udev/rules.d/00-teensy.rules
+sudo udevadm control --reload-rules
+sudo udevadm trigger
 
-echo "ALERT: Make sure to set the vehicle-specific params in "set_config.sh," "control_id.sh," "sensors_id.sh," and "set_rules.sh" in "~/config" now"
+echo "ALERT: Make sure to set the vehicle-specific params in "teensy_id.sh" and "vehicle_config.yaml" in "~/config" now"
