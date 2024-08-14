@@ -13,6 +13,7 @@ sudo sh get-docker.sh
 
 # Add user permissions
 sudo usermod -aG docker frostlab
+sudo usermod -aG dialout frostlab
 
 # Set up volumes
 mkdir ~/bag
