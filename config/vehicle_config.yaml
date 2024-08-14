@@ -8,14 +8,14 @@
 # Global parameters to be used in every ros node
 /**:
   ros__parameters:
-    vehicle_id: 1
-    water_salinity_ppt: 35 # 35 for salt water. 0 for fresh water
+    vehicle_id: 0
+    water_salinity_ppt: 0 # 35 for salt water. 0 for fresh water
 
 /modem_pinger:
   ros__parameters:
-    ping_delay_seconds: 10
-    number_of_vehicles: 3
-    vehicle_order: 1 # current vehicles place in the round robin order.
+    ping_delay_seconds: 0
+    number_of_vehicles: 0
+    vehicle_order: 0 # current vehicles place in the round robin order.
     target_id: 0 # 0 for all vehicles, 1-15 for specific beacon
     request_response: False
 
