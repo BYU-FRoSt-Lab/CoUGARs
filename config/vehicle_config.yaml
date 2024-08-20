@@ -9,18 +9,11 @@
 /**:
   ros__parameters:
     vehicle_id: 0
-    water_salinity_ppt: 0 # 35 for salt water. 0 for fresh water
-
-/modem_pinger:
-  ros__parameters:
-    ping_delay_seconds: 0
-    number_of_vehicles: 0
-    vehicle_order: 0 # current vehicles place in the round robin order.
-    target_id: 0 # 0 for all vehicles, 1-15 for specific beacon
-    request_response: False
+    water_salinity_ppt: 0.0 # 35.0 for salt water. 0.0 for fresh water
 
 /pid_control:
   ros__parameters:
+    pid_timer_period: 80 # in ms, 80 from experimentation with the depth sensor
     depth_kp: 0.0
     depth_ki: 0.0
     depth_kd: 0.0
@@ -40,3 +33,34 @@
     speed_max_output: 0
     speed_bias: 0
 
+/manual_control:
+  ros__parameters:
+    command_timer_period: 0.5 # in seconds
+    state_1_count: 0 # in intervals based on command_timer_period
+    state_1_depth: 0.0
+    state_1_heading: 0.0
+    state_1_speed: 0.0
+    state_2_count: 0 # in intervals based on command_timer_period
+    state_2_depth: 0.0
+    state_2_heading: 0.0
+    state_2_speed: 0.0
+    state_3_count: 0 # in intervals based on command_timer_period
+    state_3_depth: 0.0
+    state_3_heading: 0.0
+    state_3_speed: 0.0
+
+/depth_convertor:
+  ros__parameters:
+    fluid_pressure_atm: 87250.0 # 87250.0 from testing
+
+/battery_sub:
+  ros__parameters:
+    critical_voltage: 14.0 # shutdown voltage (fail safe)
+
+/modem_pinger:
+  ros__parameters:
+    ping_delay_seconds: 0
+    number_of_vehicles: 0
+    vehicle_order: 0 # current vehicles place in the round robin order.
+    target_id: 0 # 0 for all vehicles, 1-15 for specific beacon
+    request_response: False
