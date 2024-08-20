@@ -7,5 +7,7 @@
 ##########################################################
 
 docker pull snelsondurrant/cougars:latest
+
+cd ~/CougarsSetup
 docker compose up -d
-bash extra.sh
+docker exec -it cougars bash

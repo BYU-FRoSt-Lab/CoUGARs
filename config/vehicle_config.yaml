@@ -19,7 +19,7 @@
     target_id: 0 # 0 for all vehicles, 1-15 for specific beacon
     request_response: False
 
-/fin_control:
+/pid_control:
   ros__parameters:
     depth_kp: 0.0
     depth_ki: 0.0

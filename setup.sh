@@ -19,6 +19,9 @@ sudo usermod -aG dialout frostlab
 mkdir ~/bag
 cp -r ~/CougarsSetup/config ~/config
 
+# Copy scripts
+cp ~/CougarsSetup/docker.sh ~/docker.sh
+
 # Set up udev rules
 sudo cp /home/frostlab/config/00-teensy.rules /etc/udev/rules.d/00-teensy.rules
 sudo udevadm control --reload-rules
