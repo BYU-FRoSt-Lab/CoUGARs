@@ -15,16 +15,16 @@ sudo sh get-docker.sh
 sudo usermod -aG docker frostlab
 sudo usermod -aG dialout frostlab
 
+# Set up udev rules
+sudo cp /home/frostlab/CougarsSetup/00-teensy.rules /etc/udev/rules.d/00-teensy.rules
+sudo udevadm control --reload-rules
+sudo udevadm trigger
+
 # Set up volumes
 mkdir ~/bag
 cp -r ~/CougarsSetup/config ~/config
 
 # Copy scripts
 cp ~/CougarsSetup/docker.sh ~/docker.sh
-
-# Set up udev rules
-sudo cp /home/frostlab/config/00-teensy.rules /etc/udev/rules.d/00-teensy.rules
-sudo udevadm control --reload-rules
-sudo udevadm trigger
 
 echo "ALERT: Make sure to set the vehicle-specific params in "teensy_id.sh" and "vehicle_config.yaml" in "~/config" now"
