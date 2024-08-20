@@ -8,10 +8,10 @@
 #   add SENSORS_ID, etc.)
 ##########################################################
 
-# To find the CONTROL_ID, plug in the control Teensy and unplug the sensors Teensy
+# To find the CONTROL_ID, power on the control Teensy and power off the sensors Teensy
 # then run "tycmd list" and copy the listed numeric ID (ex. "15569680")
 CONTROL_ID="ADD HERE"
 
-# To find the SENSORS_ID, plug in the control Teensy and unplug the sensors Teensy
+# To find the SENSORS_ID, power on the control Teensy and power off the sensors Teensy
 # then run "tycmd list" and copy the listed numeric ID (ex. "15569680")
 SENSORS_ID="ADD HERE"
