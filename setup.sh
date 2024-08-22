@@ -19,6 +19,9 @@ sudo cp /home/frostlab/CougarsSetup/00-teensy.rules /etc/udev/rules.d/00-teensy.
 sudo udevadm control --reload-rules
 sudo udevadm trigger
 
+# Install other useful apps
+sudo apt install vim
+
 # Set up volumes
 mkdir ~/bag
 cp -r ~/CougarsSetup/config ~/config
