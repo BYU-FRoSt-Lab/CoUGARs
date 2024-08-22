@@ -49,6 +49,11 @@
     state_3_heading: 0.0
     state_3_speed: 0.0
 
+/seatrac_ahrs_convertor:
+  ros__parameters:
+    # https://www.ngdc.noaa.gov/geomag/calculators/magcalc.shtml?
+    magnetic_declination: 10.7 # 10.70° E for Utah Lake
+
 /depth_convertor:
   ros__parameters:
     fluid_pressure_atm: 87250.0 # 87250.0 from testing
