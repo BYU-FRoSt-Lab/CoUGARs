@@ -52,7 +52,7 @@
 /seatrac_ahrs_convertor:
   ros__parameters:
     # https://www.ngdc.noaa.gov/geomag/calculators/magcalc.shtml?
-    magnetic_declination: 10.7 # 10.70° E for Utah Lake
+    magnetic_declination: 10.7 # E is positive, W is negative, 10.70° E for Utah Lake
 
 /depth_convertor:
   ros__parameters:
