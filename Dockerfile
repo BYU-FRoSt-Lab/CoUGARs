@@ -21,10 +21,11 @@ WORKDIR /home/frostlab
 RUN echo "source /opt/ros/humble/setup.bash" >> ~/.bashrc
 
 # Install general dependencies
-RUN sudo apt install -y tytools vim libgps-dev libboost-all-dev
+RUN sudo apt install -y tytools vim libgps-dev libboost-all-dev python3-pip
+RUN pip install gpiod
 
 # Install PlatformIO
-RUN sudo apt install -y python3-venv python3-pip
+RUN sudo apt install -y python3-venv
 RUN curl -fsSL -o get-platformio.py https://raw.githubusercontent.com/platformio/platformio-core-installer/master/get-platformio.py
 RUN python3 get-platformio.py
 
