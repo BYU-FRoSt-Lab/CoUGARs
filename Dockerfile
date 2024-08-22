@@ -52,7 +52,6 @@ RUN sudo cp -r eigen-3.4.0/Eigen /usr/local/include
 
 # Build and install gtsam (from source)
 RUN git clone https://github.com/borglab/gtsam.git
-RUN pip install -r /home/frostlab/gtsam/python/requirements.txt
 RUN mkdir /home/frostlab/gtsam/build
 
 WORKDIR /home/frostlab/gtsam/build
