@@ -25,6 +25,10 @@ USER frostlab
 WORKDIR /home/frostlab
 
 # Build and install gtsam (from source)
+USER root
+RUN apt install -y libboost-all-dev
+USER frostlab
+
 RUN git clone -b 4.2 --depth 1 https://github.com/borglab/gtsam.git
 RUN mkdir /home/frostlab/gtsam/build
 
@@ -83,7 +87,7 @@ RUN export PATH=$PATH:/home/frostlab/moos-ivp/bin
 
 # Install general dependencies
 USER root
-RUN apt install -y vim psmisc nmcli systemd libgps-dev libboost-all-dev python3-libgpiod
+RUN apt install -y vim psmisc nmcli systemd libgps-dev python3-libgpiod
 USER frostlab
 
 # Update and upgrade
