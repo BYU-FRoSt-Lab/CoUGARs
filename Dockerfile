@@ -26,7 +26,7 @@ WORKDIR /home/frostlab
 
 # Build and install gtsam (from source)
 USER root
-RUN apt install -y libboost-all-dev
+RUN apt install -y libboost-all-dev python3-pip
 USER frostlab
 
 RUN git clone https://github.com/borglab/gtsam.git
