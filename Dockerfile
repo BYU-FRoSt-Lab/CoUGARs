@@ -35,6 +35,7 @@ USER frostlab
 
 RUN curl -fsSL -o get-platformio.py https://raw.githubusercontent.com/platformio/platformio-core-installer/master/get-platformio.py
 RUN python3 get-platformio.py
+RUN rm get-platformio.py
 
 # Set up PlatformIO shell commands
 RUN mkdir -p /usr/local/bin
