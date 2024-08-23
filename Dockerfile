@@ -77,6 +77,19 @@ RUN cmake .. -DGTSAM_BUILD_PYTHON=1 -DGTSAM_PYTHON_VERSION=3.10.12
 RUN make python-install CXXFLAGS='-w'
 WORKDIR /home/frostlab
 
+# Install the micro-ROS agent
+RUN source /opt/ros/humble/setup.bash
+RUN mkdir microros_ws
+
+WORKDIR /home/frostlab/microros_ws
+RUN git clone -b humble https://github.com/micro-ROS/micro_ros_setup.git src/micro_ros_setup
+RUN rosdep update
+RUN rosdep install --from-paths src --ignore-src -y
+RUN colcon build
+RUN source install/local_setup.bash
+RUN ros2 run micro_ros_setup build_agent.sh
+WORKDIR /home/frostlab
+
 # Update and upgrade
 USER root
 RUN apt update
