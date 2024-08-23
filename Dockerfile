@@ -21,22 +21,34 @@ WORKDIR /home/frostlab
 RUN echo "source /opt/ros/humble/setup.bash" >> ~/.bashrc
 
 # Install general dependencies
-RUN sudo apt install -y tytools vim libgps-dev libboost-all-dev python3-pip
+USER root
+RUN apt install -y tytools vim libgps-dev libboost-all-dev python3-pip
+USER frostlab
+
 RUN pip install gpiod
 
 # Install PlatformIO
-RUN sudo apt install -y python3-venv
+USER root
+RUN apt install -y python3-venv
+USER frostlab
+
 RUN curl -fsSL -o get-platformio.py https://raw.githubusercontent.com/platformio/platformio-core-installer/master/get-platformio.py
 RUN python3 get-platformio.py
 
 # Set up PlatformIO shell commands
 RUN mkdir -p /usr/local/bin
-RUN sudo ln -s ~/.platformio/penv/bin/platformio /usr/local/bin/platformio
-RUN sudo ln -s ~/.platformio/penv/bin/pio /usr/local/bin/pio
-RUN sudo ln -s ~/.platformio/penv/bin/piodebuggdb /usr/local/bin/piodebuggdb
+
+USER root
+RUN ln -s /home/frostlab/.platformio/penv/bin/platformio /usr/local/bin/platformio
+RUN ln -s /home/frostlab/.platformio/penv/bin/pio /usr/local/bin/pio
+RUN ln -s /home/frostlab/.platformio/penv/bin/piodebuggdb /usr/local/bin/piodebuggdb
+USER frostlab
 
 # Install MOOS-IvP
-RUN sudo apt install -y cmake xterm subversion libfltk1.3-dev libtiff5-dev
+USER root
+RUN apt install -y cmake xterm subversion libfltk1.3-dev libtiff5-dev
+USER frostlab
+
 RUN svn co https://oceanai.mit.edu/svn/moos-ivp-aro/trunk moos-ivp
 
 WORKDIR /home/frostlab/moos-ivp
@@ -49,7 +61,10 @@ RUN export PATH=$PATH:/home/frostlab/moos-ivp/bin
 # Install Eigen
 RUN wget -O Eigen.zip https://gitlab.com/libeigen/eigen/-/archive/3.4.0/eigen-3.4.0.zip
 RUN unzip Eigen.zip
-RUN sudo cp -r eigen-3.4.0/Eigen /usr/local/include
+
+USER root
+RUN cp -r eigen-3.4.0/Eigen /usr/local/include
+USER frostlab
 
 # Build and install gtsam (from source)
 RUN git clone https://github.com/borglab/gtsam.git
