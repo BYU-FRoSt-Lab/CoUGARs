@@ -4,29 +4,33 @@ FROM ros:humble-ros-base
 RUN apt update
 RUN apt upgrade -y
 
-# Add tytools repository (as root)
+# Add tytools (as root)
 RUN mkdir -p -m0755 /etc/apt/keyrings
 RUN apt install -y curl wget unzip
 RUN curl https://download.koromix.dev/debian/koromix-archive-keyring.gpg -o /etc/apt/keyrings/koromix-archive-keyring.gpg
 RUN echo "deb [signed-by=/etc/apt/keyrings/koromix-archive-keyring.gpg] https://download.koromix.dev/debian stable main" > /etc/apt/sources.list.d/koromix.dev-stable.list
 RUN apt update
+RUN apt install -y tytools
 
 # Set up a new user
 RUN useradd -ms /bin/bash frostlab
 RUN usermod -aG sudo frostlab
+RUN usermod -aG dialout frostlab
+RUN groupadd gpio
+RUN chown :gpio /dev/gpiochip4
+RUN usermod -aG gpio frostlab
 RUN echo 'frostlab:frostlab' | chpasswd
 USER frostlab
 WORKDIR /home/frostlab
 
-# Set up ROS environment
-RUN echo "source /opt/ros/humble/setup.bash" >> ~/.bashrc
+# Build and install gtsam (from source)
+RUN git clone -b 4.2 --depth 1 https://github.com/borglab/gtsam.git
+RUN mkdir /home/frostlab/gtsam/build
 
-# Install general dependencies
-USER root
-RUN apt install -y tytools vim libgps-dev libboost-all-dev python3-pip
-USER frostlab
-
-RUN pip install gpiod
+WORKDIR /home/frostlab/gtsam/build
+RUN cmake .. -DGTSAM_BUILD_PYTHON=1 -DGTSAM_PYTHON_VERSION=3.10.12
+RUN make python-install CXXFLAGS='-w'
+WORKDIR /home/frostlab
 
 # Install PlatformIO
 USER root
@@ -46,6 +50,22 @@ RUN ln -s /home/frostlab/.platformio/penv/bin/pio /usr/local/bin/pio
 RUN ln -s /home/frostlab/.platformio/penv/bin/piodebuggdb /usr/local/bin/piodebuggdb
 USER frostlab
 
+# Set up the ROS environment
+RUN echo "source /opt/ros/humble/setup.bash" >> ~/.bashrc
+
+# Install the micro-ROS agent
+RUN source /opt/ros/humble/setup.bash
+RUN mkdir microros_ws
+
+WORKDIR /home/frostlab/microros_ws
+RUN git clone -b humble https://github.com/micro-ROS/micro_ros_setup.git src/micro_ros_setup
+RUN rosdep update
+RUN rosdep install --from-paths src --ignore-src -y
+RUN colcon build
+RUN source install/local_setup.bash
+RUN ros2 run micro_ros_setup build_agent.sh
+WORKDIR /home/frostlab
+
 # Install MOOS-IvP
 USER root
 RUN apt install -y cmake xterm subversion libfltk1.3-dev libtiff5-dev
@@ -60,35 +80,10 @@ WORKDIR /home/frostlab
 
 RUN export PATH=$PATH:/home/frostlab/moos-ivp/bin
 
-# Install Eigen
-RUN wget -O Eigen.zip https://gitlab.com/libeigen/eigen/-/archive/3.4.0/eigen-3.4.0.zip
-RUN unzip Eigen.zip
-
+# Install general dependencies
 USER root
-RUN cp -r eigen-3.4.0/Eigen /usr/local/include
+RUN apt install -y vim psmisc nmcli systemd libgps-dev libboost-all-dev python3-libgpiod
 USER frostlab
-
-# Build and install gtsam (from source)
-RUN git clone -b 4.2 --depth 1 https://github.com/borglab/gtsam.git
-RUN mkdir /home/frostlab/gtsam/build
-
-WORKDIR /home/frostlab/gtsam/build
-RUN cmake .. -DGTSAM_BUILD_PYTHON=1 -DGTSAM_PYTHON_VERSION=3.10.12
-RUN make python-install CXXFLAGS='-w'
-WORKDIR /home/frostlab
-
-# Install the micro-ROS agent
-RUN source /opt/ros/humble/setup.bash
-RUN mkdir microros_ws
-
-WORKDIR /home/frostlab/microros_ws
-RUN git clone -b humble https://github.com/micro-ROS/micro_ros_setup.git src/micro_ros_setup
-RUN rosdep update
-RUN rosdep install --from-paths src --ignore-src -y
-RUN colcon build
-RUN source install/local_setup.bash
-RUN ros2 run micro_ros_setup build_agent.sh
-WORKDIR /home/frostlab
 
 # Update and upgrade
 USER root
