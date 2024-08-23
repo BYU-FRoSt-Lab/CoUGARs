@@ -23,16 +23,16 @@ sudo udevadm trigger
 # Install other useful apps
 sudo apt install vim
 
+# Copy repos from GitHub
+cd ~
+git clone https://github.com/snelsondurrant/CougarsRPi.git
+git clone https://github.com/snelsondurrant/CougarsTeensy.git
+
 # Set up volumes
 mkdir ~/bag
 cp -r ~/CougarsSetup/config ~/config
 
 # Copy scripts
 cp ~/CougarsSetup/docker.sh ~/docker.sh
-
-# Copy repos from GitHub
-cd ~
-git clone https://github.com/snelsondurrant/CougarsRPi.git
-git clone https://github.com/snelsondurrant/CougarsTeensy.git
 
 echo "ALERT: Make sure to set the vehicle-specific params in "teensy_id.sh" and "vehicle_config.yaml" in "~/config" now"
