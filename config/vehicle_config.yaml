@@ -49,6 +49,12 @@
     state_3_heading: 0.0
     state_3_speed: 0.0
 
+/gps_odom:
+  ros__parameters:
+    origin.latitude: 40.2735 # 40.2735 for Utah Lake
+    origin.longitude: -111.7126 # -111.7126 for Utah Lake
+    origin.altitude: 0.0
+
 /seatrac_ahrs_convertor:
   ros__parameters:
     # https://www.ngdc.noaa.gov/geomag/calculators/magcalc.shtml?
