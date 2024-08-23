@@ -18,6 +18,7 @@ RUN usermod -aG sudo frostlab
 RUN usermod -aG dialout frostlab
 RUN groupadd custom
 RUN chown :custom /dev
+RUN usermod -aG custom root
 RUN usermod -aG custom frostlab
 RUN echo 'frostlab:frostlab' | chpasswd
 USER frostlab
