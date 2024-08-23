@@ -8,7 +8,7 @@ RUN apt upgrade -y
 RUN mkdir -p -m0755 /etc/apt/keyrings
 RUN apt install -y curl wget unzip
 RUN curl https://download.koromix.dev/debian/koromix-archive-keyring.gpg -o /etc/apt/keyrings/koromix-archive-keyring.gpg
-RUN echo "deb [signed-by=/etc/apt/keyrings/koromix-archive-keyring.gpg] https://download.koromix.dev/debian stable main" > sudo /etc/apt/sources.list.d/koromix.dev-stable.list
+RUN echo "deb [signed-by=/etc/apt/keyrings/koromix-archive-keyring.gpg] https://download.koromix.dev/debian stable main" > /etc/apt/sources.list.d/koromix.dev-stable.list
 RUN apt update
 
 # Set up a new user
