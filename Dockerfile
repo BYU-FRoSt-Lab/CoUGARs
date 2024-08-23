@@ -69,10 +69,16 @@ RUN cp -r eigen-3.4.0/Eigen /usr/local/include
 USER frostlab
 
 # Build and install gtsam (from source)
-RUN git clone https://github.com/borglab/gtsam.git
+RUN git clone -b 4.2 --depth 1 https://github.com/borglab/gtsam.git
 RUN mkdir /home/frostlab/gtsam/build
 
 WORKDIR /home/frostlab/gtsam/build
 RUN cmake .. -DGTSAM_BUILD_PYTHON=1 -DGTSAM_PYTHON_VERSION=3.10.12
-RUN make python-install
+RUN make python-install CXXFLAGS='-w'
 WORKDIR /home/frostlab
+
+# Update and upgrade
+USER root
+RUN apt update
+RUN apt upgrade -y
+USER frostlab
