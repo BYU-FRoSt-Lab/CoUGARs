@@ -16,9 +16,9 @@ RUN apt install -y tytools
 RUN useradd -ms /bin/bash frostlab
 RUN usermod -aG sudo frostlab
 RUN usermod -aG dialout frostlab
-RUN groupadd gpio
-RUN chown :gpio /dev/gpiochip4
-RUN usermod -aG gpio frostlab
+RUN groupadd custom
+RUN chown :custom /dev
+RUN usermod -aG custom frostlab
 RUN echo 'frostlab:frostlab' | chpasswd
 USER frostlab
 WORKDIR /home/frostlab
