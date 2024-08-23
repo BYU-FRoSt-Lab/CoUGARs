@@ -29,12 +29,12 @@ USER root
 RUN apt install -y libboost-all-dev
 USER frostlab
 
-RUN git clone -b 4.2 --depth 1 https://github.com/borglab/gtsam.git
+RUN git clone https://github.com/borglab/gtsam.git
 RUN mkdir /home/frostlab/gtsam/build
 
 WORKDIR /home/frostlab/gtsam/build
 RUN cmake .. -DGTSAM_BUILD_PYTHON=1 -DGTSAM_PYTHON_VERSION=3.10.12
-RUN make python-install CXXFLAGS='-w'
+RUN make python-install
 WORKDIR /home/frostlab
 
 # Install PlatformIO

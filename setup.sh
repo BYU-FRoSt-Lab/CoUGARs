@@ -20,9 +20,6 @@ sudo cp /home/frostlab/CougarsSetup/00-teensy.rules /etc/udev/rules.d/00-teensy.
 sudo udevadm control --reload-rules
 sudo udevadm trigger
 
-# Install other useful apps
-sudo apt install vim
-
 # Copy repos from GitHub
 cd ~
 git clone https://github.com/snelsondurrant/CougarsRPi.git
@@ -34,5 +31,8 @@ cp -r ~/CougarsSetup/config ~/config
 
 # Copy scripts
 cp ~/CougarsSetup/docker.sh ~/docker.sh
+
+# Install other useful apps
+sudo apt install -y vim
 
 echo "ALERT: Make sure to set the vehicle-specific params in "teensy_id.sh" and "vehicle_config.yaml" in "~/config" now"
