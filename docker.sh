@@ -9,6 +9,23 @@
 ##########################################################
 
 cd ~/CougarsSetup
-docker compose -f latest-docker-compose.yaml up -d --pull always
-# docker compose -f dev-docker-compose.yaml up -d --pull always
+case $1 in
+    dev)
+        echo ""
+        echo "ALERT: Loading the dev image (amd64)..."
+        echo ""
+
+        docker compose -f dev-docker-compose.yaml up -d --pull always
+
+        ;;
+    *)
+        echo ""
+        echo "ALERT: Loading the standard image (arm64)..."
+        echo "Load the dev image (amd64) by running 'docker.sh dev'"
+        echo ""
+
+        docker compose -f latest-docker-compose.yaml up -d --pull always
+        ;;
+esac
+
 docker exec -it cougars bash
