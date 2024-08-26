@@ -90,7 +90,7 @@ RUN export PATH=$PATH:/home/frostlab/moos-ivp/bin
 
 # Install general dependencies
 USER root
-RUN apt install -y vim psmisc nmcli systemd libgps-dev python3-libgpiod
+RUN apt install -y vim psmisc network-manager systemd libgps-dev python3-libgpiod
 USER frostlab
 
 # Update and upgrade
