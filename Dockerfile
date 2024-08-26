@@ -24,7 +24,7 @@ USER root
 RUN apt install -y libboost-all-dev python3-pip
 USER frostlab
 
-RUN git clone https://github.com/borglab/gtsam.git
+RUN git clone --depth 1 --branch 4.2 https://github.com/borglab/gtsam.git
 RUN mkdir /home/frostlab/gtsam/build
 
 WORKDIR /home/frostlab/gtsam/build
