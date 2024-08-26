@@ -21,7 +21,7 @@ case $1 in
         ;;
     *)
         echo ""
-        echo "ALERT: Loading the standard image (arm64)..."
+        echo "ALERT: Loading the latest vehicle image (arm64)..."
         echo "Load the dev image (amd64) by running 'bash docker.sh dev'"
         echo ""
 
