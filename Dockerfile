@@ -68,7 +68,8 @@ USER frostlab
 
 SHELL ["/bin/bash", "-c"] 
 RUN source /opt/ros/humble/setup.bash && colcon build
-RUN source /opt/ros/humble/setup.bash && source install/local_setup.bash && ros2 run micro_ros_setup build_agent.sh
+RUN source /opt/ros/humble/setup.bash && ros2 run micro_ros_setup create_agent_ws.sh
+RUN source /opt/ros/humble/setup.bash && ros2 run micro_ros_setup build_agent.sh
 SHELL ["/bin/sh", "-c"]
 
 WORKDIR /home/frostlab
