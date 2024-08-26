@@ -66,10 +66,8 @@ USER root
 RUN rosdep install --from-paths src --ignore-src -y
 USER frostlab
 
-SHELL ["/bin/bash", "-c"] 
-RUN source /opt/ros/humble/setup.bash && colcon build
-RUN source /opt/ros/humble/setup.bash && source install/local_setup.bash && ros2 run micro_ros_setup build_agent.sh
-SHELL ["/bin/sh", "-c"]
+RUN . /opt/ros/humble/setup.bash && colcon build
+RUN . /opt/ros/humble/setup.bash && . install/local_setup.bash && ros2 run micro_ros_setup build_agent.sh
 
 WORKDIR /home/frostlab
 
