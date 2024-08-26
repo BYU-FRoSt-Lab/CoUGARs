@@ -29,6 +29,7 @@ USER root
 RUN apt install -y libboost-all-dev python3-pip
 USER frostlab
 
+RUN python3 -m pip install -U mypy
 RUN git clone https://github.com/borglab/gtsam.git
 RUN mkdir /home/frostlab/gtsam/build
 
