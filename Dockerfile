@@ -19,6 +19,19 @@ RUN echo 'frostlab:frostlab' | chpasswd
 USER frostlab
 WORKDIR /home/frostlab
 
+# Build and install gtsam (from source)
+USER root
+RUN apt install -y libboost-all-dev python3-pip
+USER frostlab
+
+RUN git clone https://github.com/borglab/gtsam.git
+RUN mkdir /home/frostlab/gtsam/build
+
+WORKDIR /home/frostlab/gtsam/build
+RUN cmake .. -DGTSAM_BUILD_PYTHON=1 -DGTSAM_PYTHON_VERSION=3.10.12
+RUN make python-install
+WORKDIR /home/frostlab
+
 # Install Eigen
 RUN wget -O Eigen.zip https://gitlab.com/libeigen/eigen/-/archive/3.4.0/eigen-3.4.0.zip
 RUN unzip Eigen.zip
@@ -28,22 +41,6 @@ RUN cp -r eigen-3.4.0/Eigen /usr/local/include
 USER frostlab
 
 RUN rm Eigen.zip
-
-# Build and install gtsam (from source)
-USER root
-RUN apt install -y libboost-all-dev python3-pip
-USER frostlab
-
-RUN python3 -m pip install -U mypy
-RUN echo "export PATH=$PATH:/home/frostlab/.local/bin" >> /home/frostlab/.bashrc
-
-RUN git clone https://github.com/borglab/gtsam.git
-RUN mkdir /home/frostlab/gtsam/build
-
-WORKDIR /home/frostlab/gtsam/build
-RUN cmake .. -DGTSAM_BUILD_PYTHON=1 -DGTSAM_PYTHON_VERSION=3.10.12
-RUN export PATH=$PATH:/home/frostlab/.local/bin && make python-install
-WORKDIR /home/frostlab
 
 # Install PlatformIO
 USER root
