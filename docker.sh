@@ -8,9 +8,7 @@
 #   an already running container
 ##########################################################
 
-docker pull frostlab/cougars:latest
-
 cd ~/CougarsSetup
-docker compose -f latest-docker-compose.yaml up -d
-# docker compose -f dev-docker-compose.yaml up -d
+docker compose -f latest-docker-compose.yaml up -d --pull always
+# docker compose -f dev-docker-compose.yaml up -d --pull always
 docker exec -it cougars bash
