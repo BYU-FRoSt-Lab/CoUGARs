@@ -28,7 +28,6 @@ RUN cp -r eigen-3.4.0/Eigen /usr/local/include
 USER frostlab
 
 RUN rm Eigen.zip
-RUN rm -r eigen-3.4.0
 
 # Build and install gtsam (from source)
 USER root
