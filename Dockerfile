@@ -56,8 +56,6 @@ RUN ln -s /home/frostlab/.platformio/penv/bin/piodebuggdb /usr/local/bin/piodebu
 USER frostlab
 
 # Install the micro-ROS agent
-SHELL ["/bin/bash", "-c"] 
-RUN source /opt/ros/humble/setup.bash
 RUN mkdir microros_ws
 
 WORKDIR /home/frostlab/microros_ws
@@ -68,9 +66,11 @@ USER root
 RUN rosdep install --from-paths src --ignore-src -y
 USER frostlab
 
-RUN colcon build
-RUN source install/local_setup.bash
-RUN ros2 run micro_ros_setup build_agent.sh
+SHELL ["/bin/bash", "-c"] 
+RUN source /opt/ros/humble/setup.bash && colcon build
+RUN source install/local_setup.bash && ros2 run micro_ros_setup build_agent.sh
+SHELL ["/bin/sh", "-c"]
+
 WORKDIR /home/frostlab
 
 # Install MOOS-IvP
