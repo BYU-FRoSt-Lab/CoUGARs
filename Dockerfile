@@ -56,6 +56,9 @@ RUN ln -s /home/frostlab/.platformio/penv/bin/pio /usr/local/bin/pio
 RUN ln -s /home/frostlab/.platformio/penv/bin/piodebuggdb /usr/local/bin/piodebuggdb
 USER frostlab
 
+# Set up ROS sourcing
+RUN echo "source /opt/ros/humble/setup.bash" >> /home/frostlab/.bashrc
+
 # Install the micro-ROS agent
 RUN mkdir microros_ws
 
