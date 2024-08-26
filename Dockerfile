@@ -56,6 +56,7 @@ RUN ln -s /home/frostlab/.platformio/penv/bin/piodebuggdb /usr/local/bin/piodebu
 USER frostlab
 
 # Install the micro-ROS agent
+SHELL ["/bin/bash", "-c"] 
 RUN source /opt/ros/humble/setup.bash
 RUN mkdir microros_ws
 
