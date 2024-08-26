@@ -35,12 +35,14 @@ RUN apt install -y libboost-all-dev python3-pip
 USER frostlab
 
 RUN python3 -m pip install -U mypy
+RUN echo "export PATH=$PATH:/home/frostlab/.local/bin" >> /home/frostlab/.bashrc
+
 RUN git clone https://github.com/borglab/gtsam.git
 RUN mkdir /home/frostlab/gtsam/build
 
 WORKDIR /home/frostlab/gtsam/build
 RUN cmake .. -DGTSAM_BUILD_PYTHON=1 -DGTSAM_PYTHON_VERSION=3.10.12
-RUN make python-install
+RUN export PATH=$PATH:/home/frostlab/.local/bin && make python-install
 WORKDIR /home/frostlab
 
 # Install PlatformIO
@@ -95,7 +97,7 @@ RUN ./build-moos.sh
 RUN ./build-ivp.sh
 WORKDIR /home/frostlab
 
-RUN export PATH=$PATH:/home/frostlab/moos-ivp/bin
+RUN echo "export PATH=$PATH:/home/frostlab/moos-ivp/bin" >> /home/frostlab/.bashrc
 
 # Install general dependencies
 USER root
