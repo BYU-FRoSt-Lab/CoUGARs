@@ -33,6 +33,6 @@ cp -r ~/CougarsSetup/config ~/config
 cp ~/CougarsSetup/docker.sh ~/docker.sh
 
 # Install other useful apps
-sudo apt install -y vim
+sudo apt install -y vim tmux
 
 echo "ALERT: Make sure to set the vehicle-specific params in "teensy_id.sh" and "vehicle_config.yaml" in "~/config" now"
