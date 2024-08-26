@@ -61,7 +61,11 @@ RUN mkdir microros_ws
 WORKDIR /home/frostlab/microros_ws
 RUN git clone -b humble https://github.com/micro-ROS/micro_ros_setup.git src/micro_ros_setup
 RUN rosdep update
+
+USER root
 RUN rosdep install --from-paths src --ignore-src -y
+USER frostlab
+
 RUN colcon build
 RUN source install/local_setup.bash
 RUN ros2 run micro_ros_setup build_agent.sh
