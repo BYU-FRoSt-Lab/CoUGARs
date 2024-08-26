@@ -1,6 +1,6 @@
 services:
   cougars:
-    image: snelsondurrant/cougars:new
+    image: frostlab/cougars:latest
     container_name: cougars
     user: frostlab
     network_mode: host

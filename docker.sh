@@ -8,7 +8,7 @@
 #   an already running container
 ##########################################################
 
-docker pull snelsondurrant/cougars:latest
+docker pull frostlab/cougars:latest
 
 cd ~/CougarsSetup
 docker compose up -d
