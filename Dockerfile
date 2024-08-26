@@ -24,6 +24,17 @@ RUN echo 'frostlab:frostlab' | chpasswd
 USER frostlab
 WORKDIR /home/frostlab
 
+# Install Eigen
+RUN wget -O Eigen.zip https://gitlab.com/libeigen/eigen/-/archive/3.4.0/eigen-3.4.0.zip
+RUN unzip Eigen.zip
+
+USER root
+RUN cp -r eigen-3.4.0/Eigen /usr/local/include
+USER frostlab
+
+RUN rm Eigen.zip
+RUN rm -r eigen-3.4.0
+
 # Build and install gtsam (from source)
 USER root
 RUN apt install -y libboost-all-dev python3-pip
