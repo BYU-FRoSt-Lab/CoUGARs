@@ -2,6 +2,7 @@
 
 ##########################################################
 # PULLS AND RUNS THE NEWEST DOCKER IMAGE
+# - Specify the dev image by running "bash docker.sh dev"
 # - Run this script after running "setup.sh" to pull the
 #   most recent image and run it
 # - This can also be used to open a new bash terminal in
@@ -21,7 +22,7 @@ case $1 in
     *)
         echo ""
         echo "ALERT: Loading the standard image (arm64)..."
-        echo "Load the dev image (amd64) by running 'docker.sh dev'"
+        echo "Load the dev image (amd64) by running 'bash docker.sh dev'"
         echo ""
 
         docker compose -f latest-docker-compose.yaml up -d --pull always
