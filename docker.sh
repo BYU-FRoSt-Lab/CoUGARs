@@ -11,5 +11,6 @@
 docker pull frostlab/cougars:latest
 
 cd ~/CougarsSetup
-docker compose up -d
+docker compose -f latest-docker-compose.yaml up -d
+# docker compose -f dev-docker-compose.yaml up -d
 docker exec -it cougars bash
