@@ -19,6 +19,19 @@ RUN echo 'frostlab:frostlab' | chpasswd
 USER frostlab
 WORKDIR /home/frostlab
 
+# Build and install gtsam (from source)
+USER root
+RUN apt install -y libboost-all-dev python3-pip
+USER frostlab
+
+RUN git clone --depth 1 --branch 4.2 https://github.com/borglab/gtsam.git
+RUN mkdir /home/frostlab/gtsam/build
+
+WORKDIR /home/frostlab/gtsam/build
+RUN cmake .. -DGTSAM_BUILD_PYTHON=1 -DGTSAM_PYTHON_VERSION=3.10.12 -GTSAM_BUILD_WITH_MARCH_NATIVE=OFF
+RUN make python-install
+WORKDIR /home/frostlab
+
 # Install Eigen
 RUN wget -O Eigen.zip https://gitlab.com/libeigen/eigen/-/archive/3.4.0/eigen-3.4.0.zip
 RUN unzip Eigen.zip
@@ -85,15 +98,10 @@ RUN echo "export PATH=$PATH:/home/frostlab/moos-ivp/bin" >> /home/frostlab/.bash
 
 # Install general dependencies
 USER root
-RUN apt install -y vim psmisc network-manager systemd libboost-all-dev libgps-dev python3-libgpiod python3-pip
+RUN apt install -y vim psmisc network-manager systemd libgps-dev python3-libgpiod
 USER frostlab
 
-RUN pip3 install --upgrade pip
 RUN pip3 install scipy numpy matplotlib
-
-# THIS DOES NOT WORK ON THE PI ARCHITECTURE (AARCH64)
-RUN pip3 install gtsam
-
 RUN echo "export PATH=$PATH:/home/frostlab/.local/bin" >> /home/frostlab/.bashrc
 
 # Update and upgrade
