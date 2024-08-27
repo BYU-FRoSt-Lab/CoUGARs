@@ -20,17 +20,17 @@ USER frostlab
 WORKDIR /home/frostlab
 
 # Build and install gtsam (from source)
-USER root
-RUN apt install -y libboost-all-dev python3-pip
-USER frostlab
+# USER root
+# RUN apt install -y libboost-all-dev python3-pip
+# USER frostlab
 
-RUN git clone --depth 1 --branch 4.2 https://github.com/borglab/gtsam.git
-RUN mkdir /home/frostlab/gtsam/build
+# RUN git clone --depth 1 --branch 4.2 https://github.com/borglab/gtsam.git
+# RUN mkdir /home/frostlab/gtsam/build
 
-WORKDIR /home/frostlab/gtsam/build
-RUN cmake .. -DGTSAM_BUILD_PYTHON=ON -DGTSAM_PYTHON_VERSION=3.10.12 -DGTSAM_WITH_TBB=OFF
-RUN make python-install
-WORKDIR /home/frostlab
+# WORKDIR /home/frostlab/gtsam/build
+# RUN cmake .. -DGTSAM_BUILD_PYTHON=ON -DGTSAM_PYTHON_VERSION=3.10.12 -DGTSAM_WITH_TBB=OFF
+# RUN make python-install
+# WORKDIR /home/frostlab
 
 # # Install Eigen
 # RUN wget -O Eigen.zip https://gitlab.com/libeigen/eigen/-/archive/3.4.0/eigen-3.4.0.zip
