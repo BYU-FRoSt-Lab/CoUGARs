@@ -88,7 +88,8 @@ USER root
 RUN apt install -y vim psmisc network-manager systemd libgps-dev python3-libgpiod
 USER frostlab
 
-RUN pip3 install scipy numpy matplotlib gtsam
+RUN pip3 install scipy numpy matplotlib
+RUN pip3 install gtsam
 RUN echo "export PATH=$PATH:/home/frostlab/.local/bin" >> /home/frostlab/.bashrc
 
 # Update and upgrade
