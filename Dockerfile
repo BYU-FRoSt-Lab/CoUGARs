@@ -85,12 +85,15 @@ RUN echo "export PATH=$PATH:/home/frostlab/moos-ivp/bin" >> /home/frostlab/.bash
 
 # Install general dependencies
 USER root
-RUN apt install -y vim psmisc network-manager systemd libgps-dev python3-libgpiod python3-pip
+RUN apt install -y vim psmisc network-manager systemd libboost-all-dev libgps-dev python3-libgpiod python3-pip
 USER frostlab
 
 RUN pip3 install --upgrade pip
 RUN pip3 install scipy numpy matplotlib
+
+# THIS DOES NOT WORK ON THE PI ARCHITECTURE (AARCH64)
 RUN pip3 install gtsam
+
 RUN echo "export PATH=$PATH:/home/frostlab/.local/bin" >> /home/frostlab/.bashrc
 
 # Update and upgrade
