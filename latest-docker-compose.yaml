@@ -10,8 +10,8 @@ services:
       - /home/frostlab/config:/home/frostlab/config:rw
       - /dev:/dev:rw
       - /run/udev:/run/udev:ro
-      - /home/frostlab/CougarsRPi:/home/frostlab/ros2_ws:rw
-      - /home/frostlab/CougarsTeensy:/home/frostlab/teensy_ws:rw
+      - /home/frostlab/CougarsRPi:/home/frostlab/ros2_ws
+      - /home/frostlab/CougarsTeensy:/home/frostlab/teensy_ws
     command: /bin/bash
     stdin_open: true  # Equivalent to -it in docker run
     tty: true  # Equivalent to -it in docker run
