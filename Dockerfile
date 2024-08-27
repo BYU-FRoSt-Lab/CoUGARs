@@ -20,95 +20,95 @@ USER frostlab
 WORKDIR /home/frostlab
 
 # Build and install gtsam (from source)
-# USER root
-# RUN apt install -y libboost-all-dev python3-pip
-# USER frostlab
+USER root
+RUN apt install -y libboost-all-dev python3-pip
+USER frostlab
 
-# RUN git clone --depth 1 --branch 4.2 https://github.com/borglab/gtsam.git
-# RUN mkdir /home/frostlab/gtsam/build
+RUN git clone --depth 1 --branch 4.2 https://github.com/borglab/gtsam.git
+RUN mkdir /home/frostlab/gtsam/build
 
-# WORKDIR /home/frostlab/gtsam/build
-# RUN cmake .. -DGTSAM_BUILD_PYTHON=ON -DGTSAM_PYTHON_VERSION=3.10.12 -DGTSAM_WITH_TBB=OFF
-# RUN make python-install
-# WORKDIR /home/frostlab
+WORKDIR /home/frostlab/gtsam/build
+RUN cmake .. -DGTSAM_BUILD_PYTHON=ON -DGTSAM_PYTHON_VERSION=3.10.12
+RUN make python-install
+WORKDIR /home/frostlab
 
-# # Install Eigen
-# RUN wget -O Eigen.zip https://gitlab.com/libeigen/eigen/-/archive/3.4.0/eigen-3.4.0.zip
-# RUN unzip Eigen.zip
+# Install Eigen
+RUN wget -O Eigen.zip https://gitlab.com/libeigen/eigen/-/archive/3.4.0/eigen-3.4.0.zip
+RUN unzip Eigen.zip
 
-# USER root
-# RUN cp -r eigen-3.4.0/Eigen /usr/local/include
-# USER frostlab
+USER root
+RUN cp -r eigen-3.4.0/Eigen /usr/local/include
+USER frostlab
 
-# RUN rm Eigen.zip
+RUN rm Eigen.zip
 
-# # Install PlatformIO
-# USER root
-# RUN apt install -y python3-venv
-# USER frostlab
+# Install PlatformIO
+USER root
+RUN apt install -y python3-venv
+USER frostlab
 
-# RUN curl -fsSL -o get-platformio.py https://raw.githubusercontent.com/platformio/platformio-core-installer/master/get-platformio.py
-# RUN python3 get-platformio.py
-# RUN rm get-platformio.py
+RUN curl -fsSL -o get-platformio.py https://raw.githubusercontent.com/platformio/platformio-core-installer/master/get-platformio.py
+RUN python3 get-platformio.py
+RUN rm get-platformio.py
 
-# # Set up PlatformIO shell commands
-# RUN mkdir -p /usr/local/bin
+# Set up PlatformIO shell commands
+RUN mkdir -p /usr/local/bin
 
-# USER root
-# RUN ln -s /home/frostlab/.platformio/penv/bin/platformio /usr/local/bin/platformio
-# RUN ln -s /home/frostlab/.platformio/penv/bin/pio /usr/local/bin/pio
-# RUN ln -s /home/frostlab/.platformio/penv/bin/piodebuggdb /usr/local/bin/piodebuggdb
-# USER frostlab
+USER root
+RUN ln -s /home/frostlab/.platformio/penv/bin/platformio /usr/local/bin/platformio
+RUN ln -s /home/frostlab/.platformio/penv/bin/pio /usr/local/bin/pio
+RUN ln -s /home/frostlab/.platformio/penv/bin/piodebuggdb /usr/local/bin/piodebuggdb
+USER frostlab
 
-# # Set up ROS sourcing
-# RUN echo "source /opt/ros/humble/setup.bash" >> /home/frostlab/.bashrc
+# Set up ROS sourcing
+RUN echo "source /opt/ros/humble/setup.bash" >> /home/frostlab/.bashrc
 
-# # Install the micro-ROS agent
-# RUN mkdir microros_ws
+# Install the micro-ROS agent
+RUN mkdir microros_ws
 
-# WORKDIR /home/frostlab/microros_ws
-# RUN git clone -b humble https://github.com/micro-ROS/micro_ros_setup.git src/micro_ros_setup
-# RUN rosdep update
+WORKDIR /home/frostlab/microros_ws
+RUN git clone -b humble https://github.com/micro-ROS/micro_ros_setup.git src/micro_ros_setup
+RUN rosdep update
 
-# USER root
-# RUN rosdep install --from-paths src --ignore-src -y
-# USER frostlab
+USER root
+RUN rosdep install --from-paths src --ignore-src -y
+USER frostlab
 
-# SHELL ["/bin/bash", "-c"] 
-# RUN source /opt/ros/humble/setup.bash && colcon build
-# RUN source /opt/ros/humble/setup.bash && source install/setup.bash && ros2 run micro_ros_setup create_agent_ws.sh
-# RUN source /opt/ros/humble/setup.bash && source install/setup.bash && ros2 run micro_ros_setup build_agent.sh
-# SHELL ["/bin/sh", "-c"]
+SHELL ["/bin/bash", "-c"] 
+RUN source /opt/ros/humble/setup.bash && colcon build
+RUN source /opt/ros/humble/setup.bash && source install/setup.bash && ros2 run micro_ros_setup create_agent_ws.sh
+RUN source /opt/ros/humble/setup.bash && source install/setup.bash && ros2 run micro_ros_setup build_agent.sh
+SHELL ["/bin/sh", "-c"]
 
-# WORKDIR /home/frostlab
+WORKDIR /home/frostlab
 
-# # Install MOOS-IvP
-# USER root
-# RUN apt install -y cmake xterm subversion libfltk1.3-dev libtiff5-dev
-# USER frostlab
+# Install MOOS-IvP
+USER root
+RUN apt install -y cmake xterm subversion libfltk1.3-dev libtiff5-dev
+USER frostlab
 
-# RUN svn co https://oceanai.mit.edu/svn/moos-ivp-aro/trunk moos-ivp
+RUN svn co https://oceanai.mit.edu/svn/moos-ivp-aro/trunk moos-ivp
 
-# WORKDIR /home/frostlab/moos-ivp
-# RUN ./build-moos.sh
-# RUN ./build-ivp.sh
-# WORKDIR /home/frostlab
+WORKDIR /home/frostlab/moos-ivp
+RUN ./build-moos.sh
+RUN ./build-ivp.sh
+WORKDIR /home/frostlab
 
-# RUN echo "export PATH=$PATH:/home/frostlab/moos-ivp/bin" >> /home/frostlab/.bashrc
+RUN echo "export PATH=$PATH:/home/frostlab/moos-ivp/bin" >> /home/frostlab/.bashrc
 
-# # Install general dependencies
-# USER root
-# RUN apt install -y vim psmisc network-manager systemd libgps-dev python3-libgpiod
-# USER frostlab
+# Install general dependencies
+USER root
+RUN apt install -y vim psmisc network-manager systemd libgps-dev python3-libgpiod
+USER frostlab
 
-# RUN pip3 install scipy numpy matplotlib
-# RUN echo "export PATH=$PATH:/home/frostlab/.local/bin" >> /home/frostlab/.bashrc
+RUN pip3 install numpy==1.26.0 scipy matplotlib
+RUN echo "export PATH=$PATH:/home/frostlab/.local/bin" >> /home/frostlab/.bashrc
 
-# # Update and upgrade
-# USER root
-# RUN apt update
-# RUN apt upgrade -y
-# USER frostlab
+# Update and upgrade
+USER root
+RUN apt update
+RUN apt upgrade -y
+USER frostlab
 
-# # Initialize the GPIO pins on start
-# CMD ["bash","/home/frostlab/teensy_ws/init.sh"]
+# Initialize the GPIO pins on start
+CMD ["bash","/home/frostlab/teensy_ws/init.sh"]
