@@ -7,7 +7,7 @@ services:
     privileged: true
     volumes:
       # - ~/bag:/home/frostlab/ros2_ws/bag:rw
-      # - ~/config:/home/frostlab/config:rw
+      - ~/CougarsSetup/config:/home/frostlab/config:rw
       # - /dev:/dev:rw
       # - /run/udev:/run/udev:ro
       - ~/CougarsRPi:/home/frostlab/ros2_ws
