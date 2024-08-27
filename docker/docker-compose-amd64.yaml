@@ -1,6 +1,6 @@
 services:
   cougars:
-    image: frostlab/cougars:dev
+    image: frostlab/cougars:amd64
     container_name: cougars
     user: frostlab
     network_mode: host

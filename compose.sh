@@ -2,7 +2,7 @@
 
 ##########################################################
 # PULLS AND RUNS THE NEWEST DOCKER IMAGE
-# - Specify the dev image by running "bash docker.sh dev"
+# - Specify the dev image by running "bash compose.sh dev"
 # - Run this script after running "setup.sh" to pull the
 #   most recent image and run it
 # - This can also be used to open a new bash terminal in
@@ -13,19 +13,21 @@ cd ~/CougarsSetup
 case $1 in
     dev)
         echo ""
-        echo "ALERT: Loading the dev image (amd64)..."
+        echo "ALERT: Loading the development image (amd64)..."
         echo ""
 
-        docker compose -f dev-docker-compose.yaml up -d --pull always
+        docker image pull frostlab/cougars:amd64
+        docker compose -f docker/docker-compose-amd64.yaml up -d
 
         ;;
     *)
         echo ""
         echo "ALERT: Loading the latest vehicle image (arm64)..."
-        echo "Load the dev image (amd64) by running 'bash docker.sh dev'"
+        echo "Load the development image (amd64) by running 'bash compose.sh dev'"
         echo ""
 
-        docker compose -f latest-docker-compose.yaml up -d --pull always
+        docker image pull frostlab/cougars:arm64
+        docker compose -f docker/docker-compose-arm64.yaml up -d
         ;;
 esac
 

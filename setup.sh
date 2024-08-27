@@ -16,7 +16,7 @@ rm get-docker.sh
 sudo usermod -aG docker frostlab
 
 # Set up udev rules
-sudo cp /home/frostlab/CougarsSetup/00-teensy.rules /etc/udev/rules.d/00-teensy.rules
+sudo cp /home/frostlab/CougarsSetup/config/00-teensy.rules /etc/udev/rules.d/00-teensy.rules
 sudo udevadm control --reload-rules
 sudo udevadm trigger
 
