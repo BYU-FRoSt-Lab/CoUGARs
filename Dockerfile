@@ -28,7 +28,7 @@ RUN git clone --depth 1 --branch 4.2 https://github.com/borglab/gtsam.git
 RUN mkdir /home/frostlab/gtsam/build
 
 WORKDIR /home/frostlab/gtsam/build
-RUN cmake .. -DGTSAM_BUILD_PYTHON=1 -DGTSAM_WITH_TBB=OFF
+RUN cmake .. -DGTSAM_BUILD_PYTHON=1 -DGTSAM_PYTHON_VERSION=3.10.12 -DGTSAM_WITH_TBB=OFF
 RUN make python-install
 WORKDIR /home/frostlab
 
