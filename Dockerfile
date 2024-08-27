@@ -99,6 +99,7 @@ RUN echo "export PATH=$PATH:/home/frostlab/moos-ivp/bin" >> /home/frostlab/.bash
 # Install general dependencies
 USER root
 RUN apt install -y vim psmisc network-manager systemd libgps-dev python3-libgpiod
+RUN pip3 install scipy numpy matplotlib
 USER frostlab
 
 # Update and upgrade
