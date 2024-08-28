@@ -16,7 +16,6 @@ case $1 in
         echo "ALERT: Loading the development image (amd64)..."
         echo ""
 
-        docker image pull frostlab/cougars:amd64
         docker compose -f docker/docker-compose-amd64.yaml up -d
 
         ;;
@@ -26,7 +25,6 @@ case $1 in
         echo "Load the development image (amd64) by running 'bash compose.sh dev'"
         echo ""
 
-        docker image pull frostlab/cougars:arm64
         docker compose -f docker/docker-compose-arm64.yaml up -d
         ;;
 esac
