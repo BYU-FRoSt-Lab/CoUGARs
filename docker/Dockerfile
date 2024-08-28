@@ -101,7 +101,7 @@ USER root
 RUN apt install -y vim psmisc network-manager systemd libgps-dev python3-libgpiod
 USER frostlab
 
-RUN pip3 install numpy==1.26.0 scipy matplotlib
+RUN pip3 install numpy==1.26.0 scipy matplotlib pyproj
 RUN echo "export PATH=$PATH:/home/frostlab/.local/bin" >> /home/frostlab/.bashrc
 
 # Update and upgrade
