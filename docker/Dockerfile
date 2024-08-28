@@ -15,6 +15,7 @@ RUN apt install -y tytools
 # Set up a new user
 RUN useradd -ms /bin/bash frostlab
 RUN usermod -aG sudo frostlab
+RUN usermod -aG dialout frostlab
 RUN echo 'frostlab:frostlab' | chpasswd
 USER frostlab
 WORKDIR /home/frostlab
@@ -98,7 +99,7 @@ RUN echo "export PATH=$PATH:/home/frostlab/moos-ivp/bin" >> /home/frostlab/.bash
 
 # Install general dependencies
 USER root
-RUN apt install -y vim psmisc network-manager systemd libgps-dev python3-libgpiod
+RUN apt install -y vim psmisc network-manager systemd libgps-dev python3-libgpiod ros-humble-rosbag2-storage-mcap
 USER frostlab
 
 RUN pip3 install numpy==1.26.0 scipy matplotlib pyproj
