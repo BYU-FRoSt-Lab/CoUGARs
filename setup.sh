@@ -32,4 +32,7 @@ cp -r ~/CougarsSetup/config ~/config
 # Install other useful apps
 sudo apt install -y vim tmux
 
+# Add to chrony
+sudo echo "allow all" >> /etc/chrony/chrony.conf
+
 echo "ALERT: Make sure to set the vehicle-specific params in "teensy_id.sh" and "vehicle_config.yaml" in "~/config" now"
