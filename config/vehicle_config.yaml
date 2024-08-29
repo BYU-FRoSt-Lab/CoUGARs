@@ -9,7 +9,7 @@
 /**:
   ros__parameters:
     vehicle_id: 0
-    water_salinity_ppt: 0.0 # 35.0 for salt water. 0.0 for fresh water
+    water_salinity_ppt: 0 # 35 for salt water. 0 for fresh water
 
 /pid_control:
   ros__parameters:
