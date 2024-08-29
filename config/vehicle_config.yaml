@@ -55,6 +55,13 @@
     origin.longitude: -111.7126 # -111.7126 for Utah Lake
     origin.altitude: 0.0
 
+/gpsd_client:
+  ros__parameters:
+    use_gps_time: false
+    check_fix_by_variance: false
+    frame_id: gps
+    publish_rate: 10
+
 /seatrac_ahrs_convertor:
   ros__parameters:
     # https://www.ngdc.noaa.gov/geomag/calculators/magcalc.shtml?
