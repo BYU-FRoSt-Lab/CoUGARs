@@ -17,30 +17,15 @@ case $1 in
         echo ""
 
         docker compose -f docker/docker-compose-amd64.yaml up -d
-        docker exec -it cougars bash
-
-        ;;
-    dev-down)
-        echo ""
-        echo "ALERT: Stopping the development image..."
-        echo ""
-
-        docker compose -f docker/docker-compose-amd64.yaml down
-        ;;
-    down)
-        echo ""
-        echo "ALERT: Stopping the vehicle image..."
-        echo ""
-
-        docker compose -f docker/docker-compose-arm64.yaml down
         ;;
     *)
         echo ""
-        echo "ALERT: Loading the vehicle image (arm64)..."
+        echo "ALERT: Loading the latest vehicle image (arm64)..."
         echo "Load the development image (amd64) by running 'bash compose.sh dev'"
         echo ""
 
         docker compose -f docker/docker-compose-arm64.yaml up -d
-        docker exec -it cougars bash
         ;;
 esac
+
+docker exec -it cougars bash
