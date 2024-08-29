@@ -25,6 +25,10 @@ cd ~
 git clone https://github.com/snelsondurrant/CougarsRPi.git
 git clone https://github.com/snelsondurrant/CougarsTeensy.git
 
+# Set up config files
+cp ~/CougarsSetup/config/chrony.conf /etc/chrony/chrony.conf
+cp ~/CougarsSetup/config/.tmux.conf ~/.tmux.conf
+
 # Set up volumes
 mkdir ~/bag
 cp -r ~/CougarsSetup/config ~/config
