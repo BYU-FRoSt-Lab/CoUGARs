@@ -17,6 +17,7 @@ case $1 in
         echo ""
 
         docker compose -f docker/docker-compose-amd64.yaml up -d
+        docker exec -it cougars bash
 
         ;;
     dev-down)
@@ -40,7 +41,6 @@ case $1 in
         echo ""
 
         docker compose -f docker/docker-compose-arm64.yaml up -d
+        docker exec -it cougars bash
         ;;
 esac
-
-docker exec -it cougars bash
