@@ -44,5 +44,5 @@ mkdir ~/bag
 cp -r ~/CougarsSetup/config ~
 
 echo ""
-echo "ALERT: Make sure to set the vehicle-specific params in "teensy_id.sh" and "vehicle_config.yaml" in "~/config" now"
+echo "ALERT: Make sure to set the vehicle-specific params in "network_id.sh" and "vehicle_config.yaml" in "~/config" now"
 echo ""

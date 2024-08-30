@@ -12,7 +12,7 @@ services:
     volumes:
       - /home/frostlab/bag:/home/frostlab/ros2_ws/bag:rw
       - /home/frostlab/config:/home/frostlab/config:rw
-      - /etc/localtime:/etc/localtime:ro
+      - /etc/localtime:/etc/localtime:ro # Syncs the container's time with the host
       - /dev:/dev:rw
       - /run/udev:/run/udev:ro
       - /home/frostlab/CougarsRPi:/home/frostlab/ros2_ws
