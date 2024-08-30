@@ -31,7 +31,7 @@ sudo udevadm control --reload-rules
 sudo udevadm trigger
 
 # Set up config files
-cp ~/CougarsSetup/config/local/chrony.conf /etc/chrony/chrony.conf
+sudo cp ~/CougarsSetup/config/local/chrony.conf /etc/chrony/chrony.conf
 cp ~/CougarsSetup/config/local/.tmux.conf ~/.tmux.conf
 
 # Copy repos from GitHub
