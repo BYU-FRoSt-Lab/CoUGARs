@@ -111,5 +111,5 @@ RUN apt update
 RUN apt upgrade -y
 USER frostlab
 
-# Initialize the GPIO pins on start
+# Initialize the GPIO pins on start (TODO: Test if this works)
 CMD ["bash","/home/frostlab/teensy_ws/init.sh"]
