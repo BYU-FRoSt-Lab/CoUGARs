@@ -111,5 +111,7 @@ RUN apt update
 RUN apt upgrade -y
 USER frostlab
 
-# Initialize the GPIO pins on start (TODO: Test if this works)
-CMD ["bash","/home/frostlab/teensy_ws/init.sh"]
+# Add the GPIO init script to the ros entrypoint
+USER root
+RUN echo "bash /home/frostlab/teensy_ws/init.sh" >> /ros_entrypoint.sh
+USER frostlab
