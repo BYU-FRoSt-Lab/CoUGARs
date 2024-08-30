@@ -22,14 +22,17 @@ else
     echo ""
 fi
 
+# Install dependencies
+sudo apt install -y vim tmux chrony git
+
 # Set up udev rules
 sudo cp /home/frostlab/CougarsSetup/config/local/00-teensy.rules /etc/udev/rules.d/00-teensy.rules
 sudo udevadm control --reload-rules
 sudo udevadm trigger
 
 # Set up config files
-cp ~/CougarsSetup/config/local/chrony.conf /etc/chrony/
-cp ~/CougarsSetup/config/local/.tmux.conf ~/
+cp ~/CougarsSetup/config/local/chrony.conf /etc/chrony/chrony.conf
+cp ~/CougarsSetup/config/local/.tmux.conf ~/.tmux.conf
 
 # Copy repos from GitHub
 cd ~
@@ -38,9 +41,8 @@ git clone https://github.com/snelsondurrant/CougarsTeensy.git
 
 # Set up volumes
 mkdir ~/bag
-cp -r ~/CougarsSetup/config ~/
+cp -r ~/CougarsSetup/config ~
 
-# Install other useful apps
-sudo apt install -y vim tmux
-
+echo ""
 echo "ALERT: Make sure to set the vehicle-specific params in "teensy_id.sh" and "vehicle_config.yaml" in "~/config" now"
+echo ""
