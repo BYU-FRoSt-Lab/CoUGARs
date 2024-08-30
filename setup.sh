@@ -16,7 +16,7 @@ rm get-docker.sh
 sudo usermod -aG docker frostlab
 
 # Set up udev rules
-sudo cp /home/frostlab/CougarsSetup/config/system/00-teensy.rules /etc/udev/rules.d/00-teensy.rules
+sudo cp /home/frostlab/CougarsSetup/config/local/00-teensy.rules /etc/udev/rules.d/00-teensy.rules
 sudo udevadm control --reload-rules
 sudo udevadm trigger
 
@@ -26,8 +26,8 @@ git clone https://github.com/snelsondurrant/CougarsRPi.git
 git clone https://github.com/snelsondurrant/CougarsTeensy.git
 
 # Set up config files
-cp ~/CougarsSetup/config/system/chrony.conf /etc/chrony/chrony.conf
-cp ~/CougarsSetup/config/system/.tmux.conf ~/.tmux.conf
+cp ~/CougarsSetup/config/local/chrony.conf /etc/chrony/chrony.conf
+cp ~/CougarsSetup/config/local/.tmux.conf ~/.tmux.conf
 
 # Set up volumes
 mkdir ~/bag
