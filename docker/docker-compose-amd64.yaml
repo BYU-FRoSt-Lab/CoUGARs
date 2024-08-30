@@ -1,3 +1,9 @@
+##########################################################
+# DOCKER COMPOSE FILE (DEVELOPMENT IMAGE, AMD64)
+# - Feel free to modify the volume includes locally to 
+#   match your personal computer
+##########################################################
+
 services:
   cougars:
     image: frostlab/cougars:amd64

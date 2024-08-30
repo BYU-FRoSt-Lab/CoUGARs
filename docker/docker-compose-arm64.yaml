@@ -1,3 +1,7 @@
+##########################################################
+# DOCKER COMPOSE FILE (VEHICLE IMAGE, ARM64)
+##########################################################
+
 services:
   cougars:
     image: frostlab/cougars:arm64
