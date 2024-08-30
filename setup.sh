@@ -28,8 +28,8 @@ sudo udevadm control --reload-rules
 sudo udevadm trigger
 
 # Set up config files
-cp ~/CougarsSetup/config/local/chrony.conf /etc/chrony/chrony.conf
-cp ~/CougarsSetup/config/local/.tmux.conf ~/.tmux.conf
+cp ~/CougarsSetup/config/local/chrony.conf /etc/chrony/
+cp ~/CougarsSetup/config/local/.tmux.conf ~/
 
 # Copy repos from GitHub
 cd ~
@@ -38,7 +38,7 @@ git clone https://github.com/snelsondurrant/CougarsTeensy.git
 
 # Set up volumes
 mkdir ~/bag
-cp -r ~/CougarsSetup/config ~/config
+cp -r ~/CougarsSetup/config ~/
 
 # Install other useful apps
 sudo apt install -y vim tmux
