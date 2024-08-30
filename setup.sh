@@ -7,13 +7,20 @@
 #   the most current image
 ##########################################################
 
-# Install Docker
-curl -fsSL https://get.docker.com -o get-docker.sh
-sudo sh get-docker.sh
-rm get-docker.sh
+# Install Docker if not already installed
+if ! [ -x "$(command -v docker)" ]; then
+    
+    curl -fsSL https://get.docker.com -o get-docker.sh
+    sudo sh get-docker.sh
+    rm get-docker.sh
 
-# Add user permissions
-sudo usermod -aG docker frostlab
+    sudo usermod -aG docker frostlab
+else
+
+    echo ""
+    echo "ALERT: Docker is already installed"
+    echo ""
+fi
 
 # Set up udev rules
 sudo cp /home/frostlab/CougarsSetup/config/local/00-teensy.rules /etc/udev/rules.d/00-teensy.rules
