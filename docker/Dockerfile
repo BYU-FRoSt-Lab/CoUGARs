@@ -33,12 +33,15 @@ RUN cmake .. -DGTSAM_BUILD_PYTHON=ON -DGTSAM_PYTHON_VERSION=3.10.12
 RUN make python-install
 WORKDIR /home/frostlab
 
+RUN rm -r gtsam
+
 # Install Eigen
 RUN wget -O Eigen.zip https://gitlab.com/libeigen/eigen/-/archive/3.4.0/eigen-3.4.0.zip
 RUN unzip Eigen.zip
 
 USER root
 RUN cp -r eigen-3.4.0/Eigen /usr/local/include
+RUN rm -r eigen-3.4.0
 USER frostlab
 
 RUN rm Eigen.zip
