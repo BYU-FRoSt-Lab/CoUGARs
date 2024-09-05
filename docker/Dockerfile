@@ -103,9 +103,10 @@ WORKDIR /home/frostlab
 
 RUN echo "export PATH=$PATH:/home/frostlab/moos-ivp/bin" >> /home/frostlab/.bashrc
 
-# Set up matplotlib visibility if building the development image
+# Set up GUI visibility if building the development image
+USER root
 RUN if [ "$TARGETARCH" = "amd64" ]; then \
-    apt-get update && apt-get install -y \
+    apt update && apt install -y \
     libx11-dev \
     libxext-dev \
     libxrender-dev \
@@ -116,8 +117,12 @@ RUN if [ "$TARGETARCH" = "amd64" ]; then \
     gir1.2-gtk-3.0 \
     x11-apps \
     && apt-get clean \
-    && rm -rf /var/lib/apt/lists/* \
-    && pip install --no-cache-dir PyQt5; \
+    && rm -rf /var/lib/apt/lists/*; \
+    fi
+USER frostlab
+
+RUN if [ "$TARGETARCH" = "amd64" ]; then \
+    pip3 install --no-cache-dir PyQt5; \
     fi
 
 # Install general dependencies
