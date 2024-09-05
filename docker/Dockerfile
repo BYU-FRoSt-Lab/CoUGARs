@@ -118,3 +118,34 @@ USER frostlab
 USER root
 RUN echo "bash /home/frostlab/teensy_ws/init.sh" >> /ros_entrypoint.sh
 USER frostlab
+
+
+
+
+###################### TEST FOR MATPLOTLIB CAPABILITY ###############
+
+# Install required system dependencies for X11 and Qt5
+RUN apt-get update && apt-get install -y \
+    libx11-dev \
+    libxext-dev \
+    libxrender-dev \
+    libxrandr-dev \
+    qtbase5-dev \
+    libqt5x11extras5 \
+    python3-gi \
+    gir1.2-gtk-3.0 \
+    x11-apps \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install Matplotlib and any other Python dependencies
+RUN pip install --no-cache-dir Qt5Agg
+
+# Set up the environment variable for X11 display forwarding
+ENV DISPLAY=:0
+
+# Ensure X11 socket is accessible
+VOLUME ["/tmp/.X11-unix"]
+
+# Set the backend to Qt5Agg for interactive plotting
+ENV MPLBACKEND=Qt5Agg
