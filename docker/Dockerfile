@@ -139,7 +139,7 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # Install Matplotlib and any other Python dependencies
-RUN pip install --no-cache-dir Qt5Agg
+RUN pip install --no-cache-dir PyQt5
 
 # Set up the environment variable for X11 display forwarding
 ENV DISPLAY=:0
