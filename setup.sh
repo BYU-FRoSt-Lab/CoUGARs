@@ -38,8 +38,8 @@ cp ~/CougarsSetup/config/local/.tmux.conf ~/.tmux.conf
 
 # Copy repos from GitHub
 cd ~
-git clone https://github.com/snelsondurrant/CougarsRPi.git
-git clone https://github.com/snelsondurrant/CougarsTeensy.git
+git clone https://github.com/BYU-FRoSt-Lab/CougarsRPi.git
+git clone https://github.com/BYU-FRoSt-Lab/CougarsTeensy.git
 
 # Set up volumes
 mkdir ~/bag
