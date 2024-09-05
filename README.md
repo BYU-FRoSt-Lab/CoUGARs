@@ -2,4 +2,4 @@ This repo contains the basic files and scripts necessary to set up a new Coug-UV
 After flashing a new RPi 5, simply log into it over ssh, clone this repository, and run "setup.sh".
 You should then be able to spin up the latest Docker image as a container using "compose.sh".
 
-If you're looking to do remote development on the Coug-UV, check out these repos instead: https://github.com/snelsondurrant/CougarsRPi.git, https://github.com/snelsondurrant/CougarsTeensy.git
+If you're looking to do remote development on the Coug-UV, check out these repos instead: https://github.com/BYU-FRoSt-Lab/CougarsRPi.git, https://github.com/BYU-FRoSt-Lab/CougarsTeensy.git
