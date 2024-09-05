@@ -11,7 +11,8 @@ services:
     user: frostlab
     network_mode: host
     environment:
-      - DISPLAY=${DISPLAY}
+      DISPLAY: :0 # Required for GUI applications
+      MPLBACKEND: Qt5Agg # Required for GUI applications
     privileged: true
     volumes:
       # - ~/bag:/home/frostlab/ros2_ws/bag:rw

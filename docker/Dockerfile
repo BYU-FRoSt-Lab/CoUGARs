@@ -1,5 +1,8 @@
 FROM ros:humble-ros-base
 
+# Check architecture
+ARG TARGETARCH
+
 # Update and upgrade
 RUN apt update
 RUN apt upgrade -y
@@ -100,6 +103,23 @@ WORKDIR /home/frostlab
 
 RUN echo "export PATH=$PATH:/home/frostlab/moos-ivp/bin" >> /home/frostlab/.bashrc
 
+# Set up matplotlib visibility if building the development image
+RUN if [ "$TARGETARCH" = "amd64" ]; then \
+    apt-get update && apt-get install -y \
+    libx11-dev \
+    libxext-dev \
+    libxrender-dev \
+    libxrandr-dev \
+    qtbase5-dev \
+    libqt5x11extras5 \
+    python3-gi \
+    gir1.2-gtk-3.0 \
+    x11-apps \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/* \
+    && pip install --no-cache-dir PyQt5; \
+    fi
+
 # Install general dependencies
 USER root
 RUN apt install -y vim psmisc network-manager systemd libgps-dev python3-libgpiod ros-humble-rosbag2-storage-mcap netcat-openbsd
@@ -118,34 +138,3 @@ USER frostlab
 USER root
 RUN echo "bash /home/frostlab/teensy_ws/init.sh" >> /ros_entrypoint.sh
 USER frostlab
-
-
-
-
-###################### TEST FOR MATPLOTLIB CAPABILITY ###############
-
-# Install required system dependencies for X11 and Qt5
-RUN apt-get update && apt-get install -y \
-    libx11-dev \
-    libxext-dev \
-    libxrender-dev \
-    libxrandr-dev \
-    qtbase5-dev \
-    libqt5x11extras5 \
-    python3-gi \
-    gir1.2-gtk-3.0 \
-    x11-apps \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/*
-
-# Install Matplotlib and any other Python dependencies
-RUN pip install --no-cache-dir PyQt5
-
-# Set up the environment variable for X11 display forwarding
-ENV DISPLAY=:0
-
-# Ensure X11 socket is accessible
-VOLUME ["/tmp/.X11-unix"]
-
-# Set the backend to Qt5Agg for interactive plotting
-ENV MPLBACKEND=Qt5Agg
