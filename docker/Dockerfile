@@ -4,16 +4,16 @@ FROM ros:humble-ros-base
 ARG TARGETARCH
 
 # Update and upgrade
-RUN apt update
-RUN apt upgrade -y
+RUN apt update && apt upgrade -y
 
 # Add tytools (as root)
 RUN mkdir -p -m0755 /etc/apt/keyrings
-RUN apt install -y curl wget unzip
+RUN apt update && apt install -y curl \
+    wget \
+    unzip
 RUN curl https://download.koromix.dev/debian/koromix-archive-keyring.gpg -o /etc/apt/keyrings/koromix-archive-keyring.gpg
 RUN echo "deb [signed-by=/etc/apt/keyrings/koromix-archive-keyring.gpg] https://download.koromix.dev/debian stable main" > /etc/apt/sources.list.d/koromix.dev-stable.list
-RUN apt update
-RUN apt install -y tytools
+RUN apt update && install -y tytools
 
 # Set up a new user
 RUN useradd -ms /bin/bash frostlab
@@ -25,7 +25,9 @@ WORKDIR /home/frostlab
 
 # Build and install gtsam (from source)
 USER root
-RUN apt install -y libboost-all-dev python3-pip
+RUN apt update && apt install -y \
+    libboost-all-dev \
+    python3-pip
 USER frostlab
 
 RUN git clone --depth 1 --branch 4.2 https://github.com/borglab/gtsam.git
@@ -91,7 +93,11 @@ WORKDIR /home/frostlab
 
 # Install MOOS-IvP
 USER root
-RUN apt install -y cmake xterm subversion libfltk1.3-dev libtiff5-dev
+RUN apt install -y cmake \
+    xterm \
+    subversion \
+    libfltk1.3-dev \
+    libtiff5-dev
 USER frostlab
 
 RUN svn co https://oceanai.mit.edu/svn/moos-ivp-aro/trunk moos-ivp
@@ -103,7 +109,7 @@ WORKDIR /home/frostlab
 
 RUN echo "export PATH=$PATH:/home/frostlab/moos-ivp/bin" >> /home/frostlab/.bashrc
 
-# Set up GUI visibility if building the development image
+# Set up GUI visibility (matplotlib, rqt) if building the development image
 USER root
 RUN if [ "$TARGETARCH" = "amd64" ]; then \
     apt update && apt install -y \
@@ -116,7 +122,8 @@ RUN if [ "$TARGETARCH" = "amd64" ]; then \
     python3-gi \
     gir1.2-gtk-3.0 \
     x11-apps \
-    && apt-get clean \
+    ros-humble-rqt* \
+    && apt clean \
     && rm -rf /var/lib/apt/lists/*; \
     fi
 USER frostlab
@@ -127,16 +134,26 @@ RUN if [ "$TARGETARCH" = "amd64" ]; then \
 
 # Install general dependencies
 USER root
-RUN apt install -y vim psmisc network-manager systemd libgps-dev python3-libgpiod ros-humble-rosbag2-storage-mcap netcat-openbsd
+RUN apt update && apt install -y \
+    vim \
+    psmisc \
+    network-manager \
+    systemd \
+    libgps-dev \
+    python3-libgpiod \
+    ros-humble-rosbag2-storage-mcap \
+    netcat-openbsd
 USER frostlab
 
-RUN pip3 install numpy==1.26.0 scipy matplotlib pyproj
+RUN pip3 install numpy==1.26.0 \
+    scipy \
+    matplotlib \
+    pyproj
 RUN echo "export PATH=$PATH:/home/frostlab/.local/bin" >> /home/frostlab/.bashrc
 
 # Update and upgrade
 USER root
-RUN apt update
-RUN apt upgrade -y
+RUN apt update && apt upgrade -y
 USER frostlab
 
 # Add the GPIO init script to the ros entrypoint
