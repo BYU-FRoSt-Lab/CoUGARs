@@ -1,16 +1,19 @@
 FROM ros:humble-ros-base
 
+# Check architecture
+ARG TARGETARCH
+
 # Update and upgrade
-RUN apt update
-RUN apt upgrade -y
+RUN apt update && apt upgrade -y
 
 # Add tytools (as root)
 RUN mkdir -p -m0755 /etc/apt/keyrings
-RUN apt install -y curl wget unzip
+RUN apt update && apt install -y curl \
+    wget \
+    unzip
 RUN curl https://download.koromix.dev/debian/koromix-archive-keyring.gpg -o /etc/apt/keyrings/koromix-archive-keyring.gpg
 RUN echo "deb [signed-by=/etc/apt/keyrings/koromix-archive-keyring.gpg] https://download.koromix.dev/debian stable main" > /etc/apt/sources.list.d/koromix.dev-stable.list
-RUN apt update
-RUN apt install -y tytools
+RUN apt update && apt install -y tytools
 
 # Set up a new user
 RUN useradd -ms /bin/bash frostlab
@@ -22,7 +25,9 @@ WORKDIR /home/frostlab
 
 # Build and install gtsam (from source)
 USER root
-RUN apt install -y libboost-all-dev python3-pip
+RUN apt update && apt install -y \
+    libboost-all-dev \
+    python3-pip
 USER frostlab
 
 RUN git clone --depth 1 --branch 4.2 https://github.com/borglab/gtsam.git
@@ -88,7 +93,11 @@ WORKDIR /home/frostlab
 
 # Install MOOS-IvP
 USER root
-RUN apt install -y cmake xterm subversion libfltk1.3-dev libtiff5-dev
+RUN apt install -y cmake \
+    xterm \
+    subversion \
+    libfltk1.3-dev \
+    libtiff5-dev
 USER frostlab
 
 RUN svn co https://oceanai.mit.edu/svn/moos-ivp-aro/trunk moos-ivp
@@ -100,32 +109,10 @@ WORKDIR /home/frostlab
 
 RUN echo "export PATH=$PATH:/home/frostlab/moos-ivp/bin" >> /home/frostlab/.bashrc
 
-# Install general dependencies
+# Set up GUI visibility (matplotlib, rqt) if building the development image
 USER root
-RUN apt install -y vim psmisc network-manager systemd libgps-dev python3-libgpiod ros-humble-rosbag2-storage-mcap netcat-openbsd
-USER frostlab
-
-RUN pip3 install numpy==1.26.0 scipy matplotlib pyproj
-RUN echo "export PATH=$PATH:/home/frostlab/.local/bin" >> /home/frostlab/.bashrc
-
-# Update and upgrade
-USER root
-RUN apt update
-RUN apt upgrade -y
-USER frostlab
-
-# Add the GPIO init script to the ros entrypoint
-USER root
-RUN echo "bash /home/frostlab/teensy_ws/init.sh" >> /ros_entrypoint.sh
-USER frostlab
-
-
-
-
-###################### TEST FOR MATPLOTLIB CAPABILITY ###############
-
-# Install required system dependencies for X11 and Qt5
-RUN apt-get update && apt-get install -y \
+RUN if [ "$TARGETARCH" = "amd64" ]; then \
+    apt update && apt install -y \
     libx11-dev \
     libxext-dev \
     libxrender-dev \
@@ -135,17 +122,41 @@ RUN apt-get update && apt-get install -y \
     python3-gi \
     gir1.2-gtk-3.0 \
     x11-apps \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/*
+    ros-humble-rqt* \
+    && apt clean \
+    && rm -rf /var/lib/apt/lists/*; \
+    fi
+USER frostlab
 
-# Install Matplotlib and any other Python dependencies
-RUN pip install --no-cache-dir PyQt5
+RUN if [ "$TARGETARCH" = "amd64" ]; then \
+    pip3 install --no-cache-dir PyQt5; \
+    fi
 
-# Set up the environment variable for X11 display forwarding
-ENV DISPLAY=:0
+# Install general dependencies
+USER root
+RUN apt update && apt install -y \
+    vim \
+    psmisc \
+    network-manager \
+    systemd \
+    libgps-dev \
+    python3-libgpiod \
+    ros-humble-rosbag2-storage-mcap \
+    netcat-openbsd
+USER frostlab
 
-# Ensure X11 socket is accessible
-VOLUME ["/tmp/.X11-unix"]
+RUN pip3 install numpy==1.26.0 \
+    scipy \
+    matplotlib \
+    pyproj
+RUN echo "export PATH=$PATH:/home/frostlab/.local/bin" >> /home/frostlab/.bashrc
 
-# Set the backend to Qt5Agg for interactive plotting
-ENV MPLBACKEND=Qt5Agg
+# Update and upgrade
+USER root
+RUN apt update && apt upgrade -y
+USER frostlab
+
+# Add the GPIO init script to the ros entrypoint
+USER root
+RUN echo "bash /home/frostlab/teensy_ws/init.sh" >> /ros_entrypoint.sh
+USER frostlab
