@@ -51,9 +51,9 @@
 
 /gps_odom:
   ros__parameters:
-    origin.latitude: 40.2735 # 40.2735 for Utah Lake
-    origin.longitude: -111.7126 # -111.7126 for Utah Lake
-    origin.altitude: 0.0
+    origin.latitude: 40.238833 # 40.2735 for Utah Lake
+    origin.longitude: -111.742249 # -111.7126 for Utah Lake
+    origin.altitude: 1367.00
 
 /gpsd_client:
   ros__parameters:
