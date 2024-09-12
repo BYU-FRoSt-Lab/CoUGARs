@@ -7,6 +7,18 @@
 #   the most current image
 ##########################################################
 
+function printInfo {
+  echo -e "\033[0m\033[36m[INFO] $1\033[0m"
+}
+
+function printWarning {
+  echo -e "\033[0m\033[33m[WARNING] $1\033[0m"
+}
+
+function printError {
+  echo -e "\033[0m\033[31m[ERROR] $1\033[0m"
+}
+
 # Install Docker if not already installed
 if ! [ -x "$(command -v docker)" ]; then
     
@@ -18,7 +30,7 @@ if ! [ -x "$(command -v docker)" ]; then
 else
 
     echo ""
-    echo "ALERT: Docker is already installed"
+    printWarning "Docker is already installed"
     echo ""
 fi
 
@@ -46,5 +58,5 @@ mkdir ~/bag
 cp -r ~/CougarsSetup/config ~
 
 echo ""
-echo "ALERT: Make sure to set the vehicle-specific params in "network_id.sh" and "vehicle_config.yaml" in "~/config" now"
+printInfo "Make sure to set the vehicle-specific params in "network_id.sh" and "vehicle_config.yaml" in "~/config" now"
 echo ""

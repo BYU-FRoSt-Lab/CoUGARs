@@ -123,6 +123,7 @@ RUN if [ "$TARGETARCH" = "amd64" ]; then \
     gir1.2-gtk-3.0 \
     x11-apps \
     ros-humble-rqt* \
+    ros-humble-plotjuggler-ros \
     && apt clean \
     && rm -rf /var/lib/apt/lists/*; \
     fi
@@ -156,7 +157,3 @@ USER root
 RUN apt update && apt upgrade -y
 USER frostlab
 
-# Add the GPIO init script to the ros entrypoint
-USER root
-RUN echo "bash /home/frostlab/teensy_ws/init.sh" >> /ros_entrypoint.sh
-USER frostlab

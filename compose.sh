@@ -9,20 +9,32 @@
 #   an already running container
 ##########################################################
 
+function printInfo {
+  echo -e "\033[0m\033[36m[INFO] $1\033[0m"
+}
+
+function printWarning {
+  echo -e "\033[0m\033[33m[WARNING] $1\033[0m"
+}
+
+function printError {
+  echo -e "\033[0m\033[31m[ERROR] $1\033[0m"
+}
+
 cd ~/CougarsSetup
 case $1 in
-    down)
+    "down")
 
         # check the system architecture
         if [ "$(uname -m)" == "aarch64" ]; then
             echo ""
-            echo "ALERT: Stopping the vehicle image..."
+            printInfo "Stopping the vehicle image..."
             echo ""
 
             docker compose -f docker/docker-compose-arm64.yaml down
         else
             echo ""
-            echo "ALERT: Stopping the development image..."
+            printInfo "Stopping the development image..."
             echo ""
 
             docker compose -f docker/docker-compose-amd64.yaml down
@@ -33,13 +45,13 @@ case $1 in
         # check the system architecture
         if [ "$(uname -m)" == "aarch64" ]; then
             echo ""
-            echo "ALERT: Loading the vehicle image (arm64)..."
+            printInfo "Loading the vehicle image (arm64)..."
             echo ""
 
             docker compose -f docker/docker-compose-arm64.yaml up -d
         else
             echo ""
-            echo "ALERT: Loading the development image (amd64)..."
+            printInfo "Loading the development image (amd64)..."
             echo ""
 
             docker compose -f docker/docker-compose-amd64.yaml up -d

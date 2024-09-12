@@ -17,14 +17,14 @@
     depth_kp: 0.0
     depth_ki: 0.0
     depth_kd: 0.0
-    depth_min_output: 0
-    depth_max_output: 0
+    depth_min_output: -25
+    depth_max_output: 25
     depth_bias: 0
     heading_kp: 0.0
     heading_ki: 0.0
     heading_kd: 0.0
-    heading_min_output: 0
-    heading_max_output: 0
+    heading_min_output: -25
+    heading_max_output: 25
     heading_bias: 0
     speed_kp: 0.0
     speed_ki: 0.0
