@@ -129,6 +129,7 @@ RUN if [ "$TARGETARCH" = "amd64" ]; then \
     fi
 USER frostlab
 
+# Install development Python dependencies
 RUN if [ "$TARGETARCH" = "amd64" ]; then \
     pip3 install --no-cache-dir PyQt5; \
     fi
@@ -146,6 +147,7 @@ RUN apt update && apt install -y \
     netcat-openbsd
 USER frostlab
 
+# Install general Python dependencies
 RUN pip3 install numpy==1.26.0 \
     scipy \
     matplotlib \

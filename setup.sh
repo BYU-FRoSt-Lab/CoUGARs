@@ -1,9 +1,10 @@
 #!/bin/bash
+# Created by Nelson Durrant, Sep 2024
 
 ##########################################################
 # SETS UP DOCKER IMAGE REQS ON A NEW RPI
 # - Run this script on a newly flashed Raspberry Pi 5.
-#   After running it, run "docker.sh" to load in and run
+#   After running it, run 'compose.sh' to load in and run
 #   the most current image
 ##########################################################
 
@@ -37,7 +38,7 @@ fi
 # Install dependencies
 sudo apt update
 sudo apt upgrade -y
-sudo apt install -y vim tmux chrony git
+sudo apt install -y vim tmux chrony git rsync
 
 # Set up volumes
 mkdir ~/bag
@@ -58,5 +59,5 @@ git clone https://github.com/BYU-FRoSt-Lab/CougarsRPi.git
 git clone https://github.com/BYU-FRoSt-Lab/CougarsTeensy.git
 
 echo ""
-printInfo "[INFO] Make sure to set the vehicle-specific params in "network_id.sh" and "vehicle_config.yaml" in "~/config" now"
+printInfo "Make sure to set the vehicle-specific params in "network_id.sh" and "vehicle_config.yaml" in "~/config" now"
 echo ""
