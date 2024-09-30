@@ -18,12 +18,6 @@ services:
       - /dev:/dev:rw
       - /run/udev:/run/udev:ro
     command: /bin/bash
-    deploy:
-      resources:
-        limits:
-          cpus: '3.0'
-    cpuset: "1-3"
-
     stdin_open: true  # Equivalent to -it in docker run
     tty: true  # Equivalent to -it in docker run
     restart: always  # Optional: Keeps the container running after exit unless you want it to be removed like with --rm

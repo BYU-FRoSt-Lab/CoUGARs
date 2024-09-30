@@ -109,7 +109,7 @@ WORKDIR /home/frostlab
 
 RUN echo "export PATH=$PATH:/home/frostlab/moos-ivp/bin" >> /home/frostlab/.bashrc
 
-# Set up GUI visibility (matplotlib, rqt) if building the development image
+# Set up GUI visibility (matplotlib, rqt, plotjuggler) if building the development image
 USER root
 RUN if [ "$TARGETARCH" = "amd64" ]; then \
     apt update && apt install -y \
@@ -156,4 +156,3 @@ RUN echo "export PATH=$PATH:/home/frostlab/.local/bin" >> /home/frostlab/.bashrc
 USER root
 RUN apt update && apt upgrade -y
 USER frostlab
-

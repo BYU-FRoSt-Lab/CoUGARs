@@ -39,24 +39,24 @@ sudo apt update
 sudo apt upgrade -y
 sudo apt install -y vim tmux chrony git
 
+# Set up volumes
+mkdir ~/bag
+cp -r ~/CougarsSetup/config ~
+
 # Set up udev rules
-sudo cp /home/frostlab/CougarsSetup/config/local/00-teensy.rules /etc/udev/rules.d/00-teensy.rules
+sudo ln -s /home/frostlab/config/local/00-teensy.rules /etc/udev/rules.d/00-teensy.rules
 sudo udevadm control --reload-rules
 sudo udevadm trigger
 
 # Set up config files
-sudo cp ~/CougarsSetup/config/local/chrony.conf /etc/chrony/chrony.conf
-cp ~/CougarsSetup/config/local/.tmux.conf ~/.tmux.conf
+sudo ln -s /home/frostlab/config/local/chrony.conf /etc/chrony/chrony.conf
+sudo ln -s /home/frostlab/config/local/.tmux.conf /home/frostlab/.tmux.conf
 
 # Copy repos from GitHub
 cd ~
 git clone https://github.com/BYU-FRoSt-Lab/CougarsRPi.git
 git clone https://github.com/BYU-FRoSt-Lab/CougarsTeensy.git
 
-# Set up volumes
-mkdir ~/bag
-cp -r ~/CougarsSetup/config ~
-
 echo ""
-printInfo "Make sure to set the vehicle-specific params in "network_id.sh" and "vehicle_config.yaml" in "~/config" now"
+printInfo "[INFO] Make sure to set the vehicle-specific params in "network_id.sh" and "vehicle_config.yaml" in "~/config" now"
 echo ""
