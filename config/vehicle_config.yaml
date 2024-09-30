@@ -13,6 +13,7 @@
 
 /pid_control:
   ros__parameters:
+    trim_ratio: 0.0 # multiplied by the velocity to get the fin offset
     pid_timer_period: 80 # in ms, 80 from experimentation with the depth sensor
     depth_kp: 0.0
     depth_ki: 0.0
@@ -36,15 +37,15 @@
 /manual_control:
   ros__parameters:
     command_timer_period: 0.5 # in seconds
-    state_1_count: 0 # in intervals based on command_timer_period
+    state_1_count: 0 # time spent in state 1 (in intervals based on command_timer_period)
     state_1_depth: 0.0
     state_1_heading: 0.0
     state_1_speed: 0.0
-    state_2_count: 0 # in intervals based on command_timer_period
+    state_2_count: 0 # time spent in state 2 (in intervals based on command_timer_period)
     state_2_depth: 0.0
     state_2_heading: 0.0
     state_2_speed: 0.0
-    state_3_count: 0 # in intervals based on command_timer_period
+    state_3_count: 0 # time spent in state 3 (in intervals based on command_timer_period)
     state_3_depth: 0.0
     state_3_heading: 0.0
     state_3_speed: 0.0
@@ -73,7 +74,7 @@
 
 /battery_sub:
   ros__parameters:
-    critical_voltage: 14.0 # shutdown voltage (fail safe)
+    critical_voltage: 14.0 # shutdown voltage (safety check)
 
 /modem_pinger:
   ros__parameters:
