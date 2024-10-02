@@ -36,7 +36,7 @@ fi
 # Install dependencies
 sudo apt update
 sudo apt upgrade -y
-sudo apt install -y vim tmux chrony git rsync
+sudo apt install -y vim tmux chrony git rsync mosh
 
 # Set up volumes
 mkdir ~/bag
