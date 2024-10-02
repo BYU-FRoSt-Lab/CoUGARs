@@ -1,8 +1,6 @@
 #!/bin/bash
 # Created by ADD HERE, Sep 2024
-
-##########################################################
-# ADD HERE
-##########################################################
+#
+# Add here
 
 sudo systemctl restart chrony

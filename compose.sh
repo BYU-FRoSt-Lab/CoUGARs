@@ -1,14 +1,12 @@
 #!/bin/bash
 # Created by Nelson Durrant, Sep 2024
-
-##########################################################
-# PULLS AND RUNS THE NEWEST DOCKER IMAGE
+#
+# Pulls and runs the most recent Docker image
 # - Use 'bash compose.sh down' to stop the image
 # - Run this script after running 'setup.sh' to pull the
 #   most recent image and run it
 # - This can also be used to open a new bash terminal in
 #   an already running container
-##########################################################
 
 function printInfo {
   echo -e "\033[0m\033[36m[INFO] $1\033[0m"

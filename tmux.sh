@@ -1,10 +1,8 @@
 #!/bin/bash
 # Created by Nelson Durrant, Sep 2024
-
-##########################################################
-# STARTS (OR ENTERS A RUNNING) TMUX SESSION
+#
+# Starts or enters the tmux session
 # - Use 'bash tmux.sh kill' to kill the session
-##########################################################
 
 function printInfo {
   echo -e "\033[0m\033[36m[INFO] $1\033[0m"

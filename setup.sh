@@ -1,12 +1,10 @@
 #!/bin/bash
 # Created by Nelson Durrant, Sep 2024
-
-##########################################################
-# SETS UP DOCKER IMAGE REQS ON A NEW RPI
+#
+# Sets up CoUGARs requirements on a new RPi 5
 # - Run this script on a newly flashed Raspberry Pi 5.
 #   After running it, run 'compose.sh' to load in and run
 #   the most current image
-##########################################################
 
 function printInfo {
   echo -e "\033[0m\033[36m[INFO] $1\033[0m"

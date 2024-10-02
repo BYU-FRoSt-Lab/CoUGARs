@@ -1,3 +1,9 @@
+# Created by Nelson Durrant, Sep 2024
+#
+# DOCKER FILE FOR BOTH VEHICLE AND DEVELOPMENT IMAGES
+# - This Dockerfile will automatically check the architecture of the 
+#   target device and build the appropriate image
+
 FROM ros:humble-ros-base
 
 # Check architecture
