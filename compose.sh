@@ -20,7 +20,6 @@ function printError {
   echo -e "\033[0m\033[31m[ERROR] $1\033[0m"
 }
 
-cd ~/CougarsSetup
 case $1 in
     "down")
 
