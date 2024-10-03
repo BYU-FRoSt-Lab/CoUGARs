@@ -33,6 +33,9 @@
     speed_min_output: 0
     speed_max_output: 0
     speed_bias: 0
+    top_fin_offset: 0.0
+    right_fin_offset: 0.0
+    left_fin_offset: 0.0
 
 /manual_control:
   ros__parameters:
