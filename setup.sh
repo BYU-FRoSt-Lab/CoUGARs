@@ -39,8 +39,8 @@ sudo apt upgrade -y
 sudo apt install -y vim tmux chrony git rsync mosh
 
 # Set up volumes
-mkdir ~/bag
-cp -r ~/CougarsSetup/config ~
+mkdir /home/frostlab/bag
+cp -r /home/frostlab/CougarsSetup/config home/frostlab
 
 # Set up udev rules
 sudo ln -s /home/frostlab/config/local/00-teensy.rules /etc/udev/rules.d/00-teensy.rules
