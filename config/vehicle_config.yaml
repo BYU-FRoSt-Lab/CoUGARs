@@ -9,55 +9,52 @@
 /**:
   ros__parameters:
     vehicle_id: 0
-    water_salinity_ppt: 0 # 35 for salt water. 0 for fresh water
+    water_salinity_ppt: 0 # 0 for fresh water, 35 for salt water
+
+/coug_kinematics:
+  ros__parameters:
+    trim_ratio: 0.0 # multiplied by the velocity
+    top_fin_offset: 0.0 # offset in degrees for the top fin (from front of vehicle)
+    right_fin_offset: 0.0 # offset in degrees for the right fin (from front of vehicle)
+    left_fin_offset: 0.0 # offset in degrees for the left fin (from front of vehicle)
 
 /pid_control:
   ros__parameters:
-    trim_ratio: 0.0 # multiplied by the velocity to get the fin offset
     pid_timer_period: 80 # in ms, 80 from experimentation with the depth sensor
     depth_kp: 0.0
     depth_ki: 0.0
     depth_kd: 0.0
-    depth_min_output: -25
-    depth_max_output: 25
+    depth_min_output: -25 # minimum fin angle from center (-25 from advice from NSWC PCD)
+    depth_max_output: 25 # maximum fin angle from center (25 from advice from NSWC PCD)
     depth_bias: 0
     heading_kp: 0.0
     heading_ki: 0.0
     heading_kd: 0.0
-    heading_min_output: -25
-    heading_max_output: 25
+    heading_min_output: -25 # minimum fin angle from center (-25 from advice from NSWC PCD)
+    heading_max_output: 25 # maximum fin angle from center (25 from advice from NSWC PCD)
     heading_bias: 0
-    speed_kp: 0.0
-    speed_ki: 0.0
-    speed_kd: 0.0
-    speed_min_output: 0
-    speed_max_output: 0
-    speed_bias: 0
-    top_fin_offset: 0.0
-    right_fin_offset: 0.0
-    left_fin_offset: 0.0
 
 /manual_control:
   ros__parameters:
     command_timer_period: 0.5 # in seconds
     state_1_count: 0 # time spent in state 1 (in intervals based on command_timer_period)
-    state_1_depth: 0.0
-    state_1_heading: 0.0
-    state_1_speed: 0.0
+    state_1_depth: 0.0 # in meters (positive is deeper)
+    state_1_heading: 0.0 # in degrees
+    state_1_speed: 0.0 # TODO: add here
     state_2_count: 0 # time spent in state 2 (in intervals based on command_timer_period)
-    state_2_depth: 0.0
-    state_2_heading: 0.0
-    state_2_speed: 0.0
+    state_2_depth: 0.0 # in meters (positive is deeper)
+    state_2_heading: 0.0 # in degrees
+    state_2_speed: 0.0 # TODO: add here
     state_3_count: 0 # time spent in state 3 (in intervals based on command_timer_period)
-    state_3_depth: 0.0
-    state_3_heading: 0.0
-    state_3_speed: 0.0
+    state_3_depth: 0.0 # in meters (positive is deeper)
+    state_3_heading: 0.0 # in degrees
+    state_3_speed: 0.0 # TODO: add here
 
 /gps_odom:
   ros__parameters:
     origin.latitude: 40.238833 # 40.2735 for Utah Lake
     origin.longitude: -111.742249 # -111.7126 for Utah Lake
-    origin.altitude: 1367.00
+    origin.altitude: 1367.00 # from testing
 
 /gpsd_client:
   ros__parameters:
@@ -73,11 +70,11 @@
 
 /depth_convertor:
   ros__parameters:
-    fluid_pressure_atm: 87250.0 # 87250.0 from testing
+    fluid_pressure_atm: 87250.0 # 87250.0 from testing, TODO: add units
 
 /battery_sub:
   ros__parameters:
-    critical_voltage: 14.0 # shutdown voltage (safety check)
+    critical_voltage: 14.0 # shutdown voltage in volts (safety check)
 
 /modem_pinger:
   ros__parameters:
