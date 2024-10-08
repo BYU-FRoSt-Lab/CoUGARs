@@ -115,7 +115,7 @@ WORKDIR /home/frostlab
 
 RUN echo "export PATH=$PATH:/home/frostlab/moos-ivp/bin" >> /home/frostlab/.bashrc
 
-# Set up GUI visibility (matplotlib, rqt, plotjuggler) if building the development image
+# Install development dependencies (rqt, plotjuggler, rosdoc2, etc.)
 USER root
 RUN if [ "$TARGETARCH" = "amd64" ]; then \
     apt update && apt install -y \
@@ -130,6 +130,7 @@ RUN if [ "$TARGETARCH" = "amd64" ]; then \
     x11-apps \
     ros-humble-rqt* \
     ros-humble-plotjuggler-ros \
+    python3-rosdoc2 \
     && apt clean \
     && rm -rf /var/lib/apt/lists/*; \
     fi
@@ -140,7 +141,7 @@ RUN if [ "$TARGETARCH" = "amd64" ]; then \
     pip3 install --no-cache-dir PyQt5; \
     fi
 
-# Install general dependencies
+# Install dependencies
 USER root
 RUN apt update && apt install -y \
     vim \
@@ -153,7 +154,7 @@ RUN apt update && apt install -y \
     netcat-openbsd
 USER frostlab
 
-# Install general Python dependencies
+# Install Python dependencies
 RUN pip3 install numpy==1.26.0 \
     scipy \
     matplotlib \
