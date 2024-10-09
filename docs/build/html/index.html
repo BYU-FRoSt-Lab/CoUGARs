@@ -43,6 +43,7 @@
               <!-- Local TOC -->
               <div class="local-toc"><ul>
 <li><a class="reference internal" href="#">Welcome to Configurable Underwater Group of Autonomous Robots (CoUGARs)’s documentation!</a><ul>
+<li><a class="reference internal" href="#_CPPv410BatteryPub"><code class="docutils literal notranslate"><span class="pre">BatteryPub</span></code></a></li>
 <li><a class="reference internal" href="#_CPPv46states"><code class="docutils literal notranslate"><span class="pre">states</span></code></a><ul>
 <li><a class="reference internal" href="#_CPPv4N6states13WAITING_AGENTE"><code class="docutils literal notranslate"><span class="pre">states::WAITING_AGENT</span></code></a></li>
 <li><a class="reference internal" href="#_CPPv4N6states15AGENT_AVAILABLEE"><code class="docutils literal notranslate"><span class="pre">states::AGENT_AVAILABLE</span></code></a></li>
@@ -109,7 +110,21 @@
 <h1>Welcome to Configurable Underwater Group of Autonomous Robots (CoUGARs)’s documentation!<a class="headerlink" href="#welcome-to-configurable-underwater-group-of-autonomous-robots-cougars-s-documentation" title="Link to this heading"></a></h1>
 <div class="toctree-wrapper compound">
 </div>
-<p id="module-scripts">Micro-ROS node for the CougUV. </p>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv410BatteryPub">
+<span id="_CPPv310BatteryPub"></span><span id="_CPPv210BatteryPub"></span><span id="BatteryPub"></span><span class="target" id="classBatteryPub"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">BatteryPub</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">private</span></span><span class="w"> </span><span class="n"><span class="pre">Publisher</span></span><a class="headerlink" href="#_CPPv410BatteryPub" title="Link to this definition"></a><br /></dt>
+<dd><p>Publisher for battery sensor data. </p>
+<p>
+This class is a publisher for the battery sensor data. It publishes the battery data to the micro-ROS agent. <dl class="simple">
+<dt><strong>Author</strong></dt><dd><p>Nelson Durrant </p>
+</dd>
+<dt><strong>Date</strong></dt><dd><p>September 2024</p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<p>Micro-ROS node for the CougUV. </p>
 <p>
 This node is the micro-ROS node for the CougUV. It controls the actuators (servos and thruster) and reads the sensor data (battery, leak, and pressure). The node communicates with the Raspberry Pi over micro-ROS.<dl class="simple">
 <dt><strong>Author</strong></dt><dd><p>Nelson Durrant </p>
@@ -430,7 +445,7 @@ This node is the micro-ROS node for the CougUV. It controls the actuators (servo
 
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv411battery_pub">
-<span id="_CPPv311battery_pub"></span><span id="_CPPv211battery_pub"></span><span id="battery_pub__BatteryPub"></span><span class="target" id="main_8cpp_1ababf2ce58bfce2468b7dc38dce6493f7"></span><span class="n"><span class="pre">BatteryPub</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">battery_pub</span></span></span><a class="headerlink" href="#_CPPv411battery_pub" title="Link to this definition"></a><br /></dt>
+<span id="_CPPv311battery_pub"></span><span id="_CPPv211battery_pub"></span><span id="battery_pub__BatteryPub"></span><span class="target" id="main_8cpp_1ababf2ce58bfce2468b7dc38dce6493f7"></span><a class="reference internal" href="#_CPPv410BatteryPub" title="BatteryPub"><span class="n"><span class="pre">BatteryPub</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">battery_pub</span></span></span><a class="headerlink" href="#_CPPv411battery_pub" title="Link to this definition"></a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp var">

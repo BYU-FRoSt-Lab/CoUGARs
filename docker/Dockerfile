@@ -133,6 +133,7 @@ RUN if [ "$TARGETARCH" = "amd64" ]; then \
     x11-apps \
     ros-humble-rqt* \
     ros-humble-plotjuggler-ros \
+    python3-rosdoc2 \
     && apt clean \
     && rm -rf /var/lib/apt/lists/*; \
     fi
