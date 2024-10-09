@@ -19,9 +19,9 @@ services:
     privileged: true
     volumes:
       # - ~/bag:~/ros2_ws/bag:rw
-      - ~/CougarsSetup/config:~/config:rw
-      - ~/CougarsRPi:~/ros2_ws:rw
-      - ~/CougarsTeensy:~/teensy_ws:rw
+      - ../config:~/config:rw
+      - ../CougarsRPi:~/ros2_ws:rw
+      - ../CougarsTeensy:~/teensy_ws:rw
       - /etc/localtime:/etc/localtime:ro # Syncs the container's time with the host
       - /run/udev:/run/udev:ro
       - /dev:/dev:rw
