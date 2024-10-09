@@ -1,0 +1,209 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="depth__convertor_8cpp" kind="file" language="C++">
+    <compoundname>depth_convertor.cpp</compoundname>
+    <includes local="no">chrono</includes>
+    <includes local="no">functional</includes>
+    <includes local="no">memory</includes>
+    <includes local="no">string</includes>
+    <includes local="yes">geometry_msgs/msg/pose_with_covariance_stamped.hpp</includes>
+    <includes local="yes">rclcpp/rclcpp.hpp</includes>
+    <includes local="yes">sensor_msgs/msg/fluid_pressure.hpp</includes>
+    <incdepgraph>
+      <node id="3">
+        <label>functional</label>
+      </node>
+      <node id="5">
+        <label>string</label>
+      </node>
+      <node id="7">
+        <label>rclcpp/rclcpp.hpp</label>
+      </node>
+      <node id="1">
+        <label>/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_localization/src/depth_convertor.cpp</label>
+        <link refid="depth__convertor_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>sensor_msgs/msg/fluid_pressure.hpp</label>
+      </node>
+      <node id="2">
+        <label>chrono</label>
+      </node>
+      <node id="6">
+        <label>geometry_msgs/msg/pose_with_covariance_stamped.hpp</label>
+      </node>
+      <node id="4">
+        <label>memory</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="classDepthConvertor" prot="public">DepthConvertor</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="depth__convertor_8cpp_1a6801baa546c6112d19eb095111d24720" prot="public" static="no">
+        <name>GRAVITY</name>
+        <initializer>9.81</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_localization/src/depth_convertor.cpp" line="6" column="9" bodyfile="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_localization/src/depth_convertor.cpp" bodystart="6" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="depth__convertor_8cpp_1ae13964a8a3ccfef4cd82f49b55e27d03" prot="public" static="no">
+        <name>FLUID_DENSITY_BASE</name>
+        <initializer>997</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_localization/src/depth_convertor.cpp" line="7" column="9" bodyfile="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_localization/src/depth_convertor.cpp" bodystart="7" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="depth__convertor_8cpp_1a40ba3dcf6fce3a49be9444da2f08b012" prot="public" static="no" mutable="no">
+        <type>rmw_qos_profile_t</type>
+        <definition>rmw_qos_profile_t qos_profile</definition>
+        <argsstring></argsstring>
+        <name>qos_profile</name>
+        <initializer>= rmw_qos_profile_sensor_data</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_localization/src/depth_convertor.cpp" line="16" column="19" bodyfile="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_localization/src/depth_convertor.cpp" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="depth__convertor_8cpp_1a780fcbbccc2b3ce6d42fd10e0638cd3b" prot="public" static="no" mutable="no">
+        <type>auto</type>
+        <definition>auto qos</definition>
+        <argsstring></argsstring>
+        <name>qos</name>
+        <initializer>= rclcpp::QoS(
+    rclcpp::QoSInitialization(qos_profile.history, qos_profile.depth),
+    <ref refid="vehicle__status_8cpp_1a40ba3dcf6fce3a49be9444da2f08b012" kindref="member">qos_profile</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_localization/src/depth_convertor.cpp" line="17" column="6" bodyfile="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_localization/src/depth_convertor.cpp" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="depth__convertor_8cpp_1a0ddf1224851353fc92bfbff6f499fa97" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int main</definition>
+        <argsstring>(int argc, char *argv[])</argsstring>
+        <name>main</name>
+        <param>
+          <type>int</type>
+          <declname>argc</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>argv</declname>
+          <array>[]</array>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_localization/src/depth_convertor.cpp" line="115" column="5" bodyfile="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_localization/src/depth_convertor.cpp" bodystart="115" bodyend="120"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&lt;chrono&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;functional&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;memory&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>GRAVITY<sp/>9.81<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>m/s^2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>FLUID_DENSITY_BASE<sp/>997<sp/></highlight><highlight class="comment">//<sp/>kg/m^3</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;geometry_msgs/msg/pose_with_covariance_stamped.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;rclcpp/rclcpp.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;sensor_msgs/msg/fluid_pressure.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal">std::chrono_literals;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>std::placeholders::_1;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal">rmw_qos_profile_t<sp/><ref refid="depth__convertor_8cpp_1a40ba3dcf6fce3a49be9444da2f08b012" kindref="member">qos_profile</ref><sp/>=<sp/>rmw_qos_profile_sensor_data;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/><ref refid="depth__convertor_8cpp_1a780fcbbccc2b3ce6d42fd10e0638cd3b" kindref="member">qos</ref><sp/>=<sp/>rclcpp::QoS(</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>rclcpp::QoSInitialization(<ref refid="depth__convertor_8cpp_1a40ba3dcf6fce3a49be9444da2f08b012" kindref="member">qos_profile</ref>.history,<sp/><ref refid="depth__convertor_8cpp_1a40ba3dcf6fce3a49be9444da2f08b012" kindref="member">qos_profile</ref>.depth),</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="depth__convertor_8cpp_1a40ba3dcf6fce3a49be9444da2f08b012" kindref="member">qos_profile</ref>);</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34" refid="classDepthConvertor" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classDepthConvertor" kindref="compound">DepthConvertor</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>rclcpp::Node<sp/>{</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><ref refid="classDepthConvertor" kindref="compound">DepthConvertor</ref>()<sp/>:<sp/>Node(</highlight><highlight class="stringliteral">&quot;depth_convertor&quot;</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;declare_parameter(</highlight><highlight class="stringliteral">&quot;water_salinity_ppt&quot;</highlight><highlight class="normal">,<sp/>0.0);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;declare_parameter(</highlight><highlight class="stringliteral">&quot;fluid_pressure_atm&quot;</highlight><highlight class="normal">,<sp/>87250.0);</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>depth_publisher_<sp/>=</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;create_publisher&lt;geometry_msgs::msg::PoseWithCovarianceStamped&gt;(</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;depth_data&quot;</highlight><highlight class="normal">,<sp/>10);</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/>pressure_subscription_<sp/>=</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;create_subscription&lt;sensor_msgs::msg::FluidPressure&gt;(</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;pressure/data&quot;</highlight><highlight class="normal">,<sp/><ref refid="depth__convertor_8cpp_1a780fcbbccc2b3ce6d42fd10e0638cd3b" kindref="member">qos</ref>,</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::bind(&amp;DepthConvertor::pressure_callback,<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>_1));</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>pressure_callback(</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>sensor_msgs::msg::FluidPressure::SharedPtr<sp/>pressure_msg)<sp/>{</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/>geometry_msgs::msg::PoseWithCovarianceStamped<sp/>depth_msg;</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/>depth_msg.header.stamp<sp/>=</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pressure_msg-&gt;header.stamp;<sp/></highlight><highlight class="comment">//<sp/>copy<sp/>exact<sp/>time<sp/>from<sp/>the<sp/>sensor<sp/>message</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/>depth_msg.pose.pose.position.z<sp/>=</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(this-&gt;get_parameter(</highlight><highlight class="stringliteral">&quot;fluid_pressure_atm&quot;</highlight><highlight class="normal">).as_double()<sp/>-</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pressure_msg-&gt;fluid_pressure<sp/>*<sp/>100)<sp/>/</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>((<ref refid="depth__convertor_8cpp_1ae13964a8a3ccfef4cd82f49b55e27d03" kindref="member">FLUID_DENSITY_BASE</ref><sp/>+</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;get_parameter(</highlight><highlight class="stringliteral">&quot;water_salinity_ppt&quot;</highlight><highlight class="normal">).as_double())<sp/>*</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="depth__convertor_8cpp_1a6801baa546c6112d19eb095111d24720" kindref="member">GRAVITY</ref>);</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/>depth_publisher_-&gt;publish(depth_msg);</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>micro-ROS<sp/>objects</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/>rclcpp::Publisher&lt;geometry_msgs::msg::PoseWithCovarianceStamped&gt;::SharedPtr</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>depth_publisher_;</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/>rclcpp::Subscription&lt;sensor_msgs::msg::FluidPressure&gt;::SharedPtr</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>pressure_subscription_;</highlight></codeline>
+<codeline lineno="113"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="depth__convertor_8cpp_1a0ddf1224851353fc92bfbff6f499fa97" kindref="member">main</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>argc,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*argv[])<sp/>{</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/>rclcpp::init(argc,<sp/>argv);</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/>rclcpp::spin(std::make_shared&lt;DepthConvertor&gt;());</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/>rclcpp::shutdown();</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="120"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_localization/src/depth_convertor.cpp"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,182 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="coug__kinematics_8cpp" kind="file" language="C++">
+    <compoundname>coug_kinematics.cpp</compoundname>
+    <includes local="no">chrono</includes>
+    <includes local="no">functional</includes>
+    <includes local="no">memory</includes>
+    <includes local="no">string</includes>
+    <includes local="yes">frost_interfaces/msg/u_command.hpp</includes>
+    <includes local="yes">rclcpp/rclcpp.hpp</includes>
+    <incdepgraph>
+      <node id="3">
+        <label>functional</label>
+      </node>
+      <node id="1">
+        <label>/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src/coug_kinematics.cpp</label>
+        <link refid="coug__kinematics_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>string</label>
+      </node>
+      <node id="7">
+        <label>rclcpp/rclcpp.hpp</label>
+      </node>
+      <node id="6">
+        <label>frost_interfaces/msg/u_command.hpp</label>
+      </node>
+      <node id="2">
+        <label>chrono</label>
+      </node>
+      <node id="4">
+        <label>memory</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="classCougKinematics" prot="public">CougKinematics</innerclass>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="coug__kinematics_8cpp_1a40ba3dcf6fce3a49be9444da2f08b012" prot="public" static="no" mutable="no">
+        <type>rmw_qos_profile_t</type>
+        <definition>rmw_qos_profile_t qos_profile</definition>
+        <argsstring></argsstring>
+        <name>qos_profile</name>
+        <initializer>= rmw_qos_profile_sensor_data</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src/coug_kinematics.cpp" line="12" column="19" bodyfile="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src/coug_kinematics.cpp" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="coug__kinematics_8cpp_1a780fcbbccc2b3ce6d42fd10e0638cd3b" prot="public" static="no" mutable="no">
+        <type>auto</type>
+        <definition>auto qos</definition>
+        <argsstring></argsstring>
+        <name>qos</name>
+        <initializer>= rclcpp::QoS(
+    rclcpp::QoSInitialization(qos_profile.history, qos_profile.depth),
+    <ref refid="vehicle__status_8cpp_1a40ba3dcf6fce3a49be9444da2f08b012" kindref="member">qos_profile</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src/coug_kinematics.cpp" line="13" column="6" bodyfile="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src/coug_kinematics.cpp" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="coug__kinematics_8cpp_1a0ddf1224851353fc92bfbff6f499fa97" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int main</definition>
+        <argsstring>(int argc, char *argv[])</argsstring>
+        <name>main</name>
+        <param>
+          <type>int</type>
+          <declname>argc</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>argv</declname>
+          <array>[]</array>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src/coug_kinematics.cpp" line="129" column="5" bodyfile="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src/coug_kinematics.cpp" bodystart="129" bodyend="134"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&lt;chrono&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;functional&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;memory&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;frost_interfaces/msg/u_command.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;rclcpp/rclcpp.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal">std::chrono_literals;</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>std::placeholders::_1;</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal">rmw_qos_profile_t<sp/><ref refid="coug__kinematics_8cpp_1a40ba3dcf6fce3a49be9444da2f08b012" kindref="member">qos_profile</ref><sp/>=<sp/>rmw_qos_profile_sensor_data;</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/><ref refid="coug__kinematics_8cpp_1a780fcbbccc2b3ce6d42fd10e0638cd3b" kindref="member">qos</ref><sp/>=<sp/>rclcpp::QoS(</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/>rclcpp::QoSInitialization(<ref refid="coug__kinematics_8cpp_1a40ba3dcf6fce3a49be9444da2f08b012" kindref="member">qos_profile</ref>.history,<sp/><ref refid="coug__kinematics_8cpp_1a40ba3dcf6fce3a49be9444da2f08b012" kindref="member">qos_profile</ref>.depth),</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="coug__kinematics_8cpp_1a40ba3dcf6fce3a49be9444da2f08b012" kindref="member">qos_profile</ref>);</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31" refid="classCougKinematics" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classCougKinematics" kindref="compound">CougKinematics</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>rclcpp::Node<sp/>{</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><ref refid="classCougKinematics" kindref="compound">CougKinematics</ref>()<sp/>:<sp/>Node(</highlight><highlight class="stringliteral">&quot;coug_kinematics&quot;</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;declare_parameter(</highlight><highlight class="stringliteral">&quot;trim_ratio&quot;</highlight><highlight class="normal">,<sp/>0.0);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;declare_parameter(</highlight><highlight class="stringliteral">&quot;top_fin_offset&quot;</highlight><highlight class="normal">,<sp/>0.0);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;declare_parameter(</highlight><highlight class="stringliteral">&quot;right_fin_offset&quot;</highlight><highlight class="normal">,<sp/>0.0);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;declare_parameter(</highlight><highlight class="stringliteral">&quot;left_fin_offset&quot;</highlight><highlight class="normal">,<sp/>0.0);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>command_publisher_<sp/>=</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;create_publisher&lt;frost_interfaces::msg::UCommand&gt;(</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;kinematics/command&quot;</highlight><highlight class="normal">,<sp/>10);</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/>command_subscription_<sp/>=</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;create_subscription&lt;frost_interfaces::msg::UCommand&gt;(</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;controls/command&quot;</highlight><highlight class="normal">,<sp/>10,</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::bind(&amp;CougKinematics::command_callback,<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>_1));</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>command_callback(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>frost_interfaces::msg::UCommand<sp/>&amp;msg)<sp/>{</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>command<sp/>=<sp/>frost_interfaces::msg::UCommand();</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/>command.header.stamp<sp/>=<sp/>msg.header.stamp;</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/>command.fin[0]<sp/>=</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>msg.fin[0]<sp/>+<sp/>this-&gt;get_parameter(</highlight><highlight class="stringliteral">&quot;top_fin_offset&quot;</highlight><highlight class="normal">).as_double()<sp/>+</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;get_parameter(</highlight><highlight class="stringliteral">&quot;trim_ratio&quot;</highlight><highlight class="normal">).as_double()<sp/>*<sp/>msg.thruster;</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/>command.fin[1]<sp/>=</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>msg.fin[1]<sp/>+<sp/>this-&gt;get_parameter(</highlight><highlight class="stringliteral">&quot;right_fin_offset&quot;</highlight><highlight class="normal">).as_double()<sp/>+</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;get_parameter(</highlight><highlight class="stringliteral">&quot;trim_ratio&quot;</highlight><highlight class="normal">).as_double()<sp/>*<sp/>msg.thruster;</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/>command.fin[2]<sp/>=</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>msg.fin[2]<sp/>+<sp/>this-&gt;get_parameter(</highlight><highlight class="stringliteral">&quot;left_fin_offset&quot;</highlight><highlight class="normal">).as_double()<sp/>+</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;get_parameter(</highlight><highlight class="stringliteral">&quot;trim_ratio&quot;</highlight><highlight class="normal">).as_double()<sp/>*<sp/>msg.thruster;</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/>command.thruster<sp/>=<sp/>msg.thruster;</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/>command_publisher_-&gt;publish(command);</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>micro-ROS<sp/>objects</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/>rclcpp::Publisher&lt;frost_interfaces::msg::UCommand&gt;::SharedPtr</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>command_publisher_;</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/>rclcpp::Subscription&lt;frost_interfaces::msg::UCommand&gt;::SharedPtr</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>command_subscription_;</highlight></codeline>
+<codeline lineno="127"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="coug__kinematics_8cpp_1a0ddf1224851353fc92bfbff6f499fa97" kindref="member">main</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>argc,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*argv[])<sp/>{</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/>rclcpp::init(argc,<sp/>argv);</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/>rclcpp::spin(std::make_shared&lt;CougKinematics&gt;());</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/>rclcpp::shutdown();</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="134"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src/coug_kinematics.cpp"/>
+  </compounddef>
+</doxygen>

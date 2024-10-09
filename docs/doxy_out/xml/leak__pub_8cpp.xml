@@ -1,0 +1,113 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="leak__pub_8cpp" kind="file" language="C++">
+    <compoundname>leak_pub.cpp</compoundname>
+    <includes refid="leak__pub_8h" local="yes">leak_pub.h</includes>
+    <incdepgraph>
+      <node id="9">
+        <label>frost_interfaces/msg/leak_status.h</label>
+      </node>
+      <node id="8">
+        <label>rclc/rclc.h</label>
+      </node>
+      <node id="3">
+        <label>publisher.h</label>
+        <link refid="publisher_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>rcl/rcl.h</label>
+      </node>
+      <node id="5">
+        <label>micro_ros_platformio.h</label>
+      </node>
+      <node id="2">
+        <label>leak_pub.h</label>
+        <link refid="leak__pub_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>std_msgs/msg/bool.h</label>
+      </node>
+      <node id="7">
+        <label>rclc/executor.h</label>
+      </node>
+      <node id="1">
+        <label>/home/nelsondurrant/CougarsSetup/CougarsTeensy/cougars/src/leak_pub.cpp</label>
+        <link refid="leak__pub_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>Arduino.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="leak__pub_8cpp_1ae223226789cba1c52a8998012545d897" prot="public" static="no">
+        <name>NS_TO_S</name>
+        <param><defname>ns</defname></param>
+        <initializer>(ns / 1000000000)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nelsondurrant/CougarsSetup/CougarsTeensy/cougars/src/leak_pub.cpp" line="3" column="9" bodyfile="/home/nelsondurrant/CougarsSetup/CougarsTeensy/cougars/src/leak_pub.cpp" bodystart="3" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="leak__pub_8cpp_1a1461c6cf9fc2e8c1d2e895c772c0582d" prot="public" static="no">
+        <name>NS_REMAINDER</name>
+        <param><defname>ns</defname></param>
+        <initializer>(ns % 1000000000)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nelsondurrant/CougarsSetup/CougarsTeensy/cougars/src/leak_pub.cpp" line="4" column="9" bodyfile="/home/nelsondurrant/CougarsSetup/CougarsTeensy/cougars/src/leak_pub.cpp" bodystart="4" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="leak__pub_8h" kindref="compound">leak_pub.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>NS_TO_S(ns)<sp/>(ns<sp/>/<sp/>1000000000)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>NS_REMAINDER(ns)<sp/>(ns<sp/>%<sp/>1000000000)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classLeakPub_1a90140205a1308064a69becd1bf9b2d59" kindref="member">LeakPub::setup</ref>(rcl_node_t<sp/><ref refid="main_8cpp_1ab69e3b0b5d335275c7e2da94c0886b1c" kindref="member">node</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><ref refid="publisher_8h_1a9cb001747cb67f240459b3b105a63529" kindref="member">RCCHECK</ref>(rclc_publisher_init_best_effort(</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>&amp;<ref refid="classPublisher_1ad9c34822680c614d681b3f3ab052435c" kindref="member">publisher</ref>,<sp/>&amp;<ref refid="main_8cpp_1ab69e3b0b5d335275c7e2da94c0886b1c" kindref="member">node</ref>,</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>ROSIDL_GET_MSG_TYPE_SUPPORT(frost_interfaces,<sp/>msg,<sp/>LeakStatus),</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;leak/data&quot;</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="12"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classLeakPub_1a876c1530b82783640ee659f45d769dee" kindref="member">LeakPub::publish</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>leak)<sp/>{</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/>msg.leak<sp/>=<sp/>leak;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/>msg.header.stamp.sec<sp/>=<sp/><ref refid="leak__pub_8cpp_1ae223226789cba1c52a8998012545d897" kindref="member">NS_TO_S</ref>(rmw_uros_epoch_nanos());</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/>msg.header.stamp.nanosec<sp/>=<sp/><ref refid="leak__pub_8cpp_1a1461c6cf9fc2e8c1d2e895c772c0582d" kindref="member">NS_REMAINDER</ref>(rmw_uros_epoch_nanos());</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><ref refid="publisher_8h_1a7970198dc43b523050ff0fa9b0a94b8d" kindref="member">RCSOFTCHECK</ref>(rcl_publish(&amp;<ref refid="classPublisher_1ad9c34822680c614d681b3f3ab052435c" kindref="member">publisher</ref>,<sp/>&amp;msg,<sp/>NULL));</highlight></codeline>
+<codeline lineno="20"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="/home/nelsondurrant/CougarsSetup/CougarsTeensy/cougars/src/leak_pub.cpp"/>
+  </compounddef>
+</doxygen>

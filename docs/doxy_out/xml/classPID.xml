@@ -1,0 +1,391 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classPID" kind="class" language="C++" prot="public">
+    <compoundname>PID</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classPID_1a9bff6d497fdd262f6f0f74a76604d22a" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float PID::kp</definition>
+        <argsstring></argsstring>
+        <name>kp</name>
+        <briefdescription>
+<para>The proportional constant. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This constant is used to compute the proportional term of the <ref refid="classPID" kindref="compound">PID</ref> controller. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src/pid.cpp" line="108" column="9" bodyfile="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src/pid.cpp" bodystart="108" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classPID_1af2b185d6025a735e294c3ca698562648" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float PID::ki</definition>
+        <argsstring></argsstring>
+        <name>ki</name>
+        <briefdescription>
+<para>The integral constant. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This constant is used to compute the integral term of the <ref refid="classPID" kindref="compound">PID</ref> controller. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src/pid.cpp" line="115" column="9" bodyfile="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src/pid.cpp" bodystart="115" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classPID_1ac8f8dd4ddd347ff859db4e1dc3af90d5" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float PID::kd</definition>
+        <argsstring></argsstring>
+        <name>kd</name>
+        <briefdescription>
+<para>The derivative constant. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This constant is used to compute the derivative term of the <ref refid="classPID" kindref="compound">PID</ref> controller. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src/pid.cpp" line="122" column="9" bodyfile="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src/pid.cpp" bodystart="122" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classPID_1ad69fb86eb3f525385c41d5cb77bd7764" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int PID::min_output</definition>
+        <argsstring></argsstring>
+        <name>min_output</name>
+        <briefdescription>
+<para>The minimum output value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This value is the minimum output value that the <ref refid="classPID" kindref="compound">PID</ref> controller can output. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src/pid.cpp" line="129" column="7" bodyfile="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src/pid.cpp" bodystart="129" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classPID_1aff3a14d051c809906ad2c8854ac501d2" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int PID::max_output</definition>
+        <argsstring></argsstring>
+        <name>max_output</name>
+        <briefdescription>
+<para>The maximum output value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This value is the maximum output value that the <ref refid="classPID" kindref="compound">PID</ref> controller can output. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src/pid.cpp" line="136" column="7" bodyfile="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src/pid.cpp" bodystart="136" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classPID_1a055a96727f97beb6fa335e4512a3b763" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float PID::interval</definition>
+        <argsstring></argsstring>
+        <name>interval</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src/pid.cpp" line="138" column="9" bodyfile="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src/pid.cpp" bodystart="138" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classPID_1a3dda1a704366e28cfa5b0135a1f297e9" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int PID::bias</definition>
+        <argsstring></argsstring>
+        <name>bias</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src/pid.cpp" line="139" column="7" bodyfile="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src/pid.cpp" bodystart="139" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classPID_1a0e5d49534b4925162583cc0b1e124a50" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float PID::integral</definition>
+        <argsstring></argsstring>
+        <name>integral</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src/pid.cpp" line="140" column="9" bodyfile="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src/pid.cpp" bodystart="140" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classPID_1a1f0ff0f0fd541e152c572f0050aecaaf" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float PID::integral_prior</definition>
+        <argsstring></argsstring>
+        <name>integral_prior</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src/pid.cpp" line="141" column="9" bodyfile="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src/pid.cpp" bodystart="141" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classPID_1a58024226a4cabe7c195ec7f8ec41523b" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float PID::error</definition>
+        <argsstring></argsstring>
+        <name>error</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src/pid.cpp" line="142" column="9" bodyfile="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src/pid.cpp" bodystart="142" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classPID_1ad0679c98f3f75c371518a75d7b1414b8" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float PID::error_prior</definition>
+        <argsstring></argsstring>
+        <name>error_prior</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src/pid.cpp" line="143" column="9" bodyfile="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src/pid.cpp" bodystart="143" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classPID_1a65e03137e6442acb9852b8626220b6d3" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float PID::derivative</definition>
+        <argsstring></argsstring>
+        <name>derivative</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src/pid.cpp" line="144" column="9" bodyfile="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src/pid.cpp" bodystart="144" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classPID_1ac45989ea9f3b37e98124e32aebbd695d" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int PID::integral_index</definition>
+        <argsstring></argsstring>
+        <name>integral_index</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src/pid.cpp" line="146" column="7" bodyfile="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src/pid.cpp" bodystart="146" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classPID_1a4eb0be2dcdf593eca1c52f21efd94e6f" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float PID::integralArray[INTEGRAL_ARRAY_SIZE]</definition>
+        <argsstring>[INTEGRAL_ARRAY_SIZE]</argsstring>
+        <name>integralArray</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src/pid.cpp" line="147" column="9" bodyfile="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src/pid.cpp" bodystart="147" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classPID_1a0311b6f7de348499ce24e53ba353514a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>PID::PID</definition>
+        <argsstring>()</argsstring>
+        <name>PID</name>
+        <briefdescription>
+<para>Creates a new <ref refid="classPID" kindref="compound">PID</ref> controller. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This constructor creates a new <ref refid="classPID" kindref="compound">PID</ref> controller with default values. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src/pid.cpp" line="22" column="3" bodyfile="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src/pid.cpp" bodystart="22" bodyend="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classPID_1a8a4ba6a0eeb745761a530e581d086172" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void PID::calibrate</definition>
+        <argsstring>(float p, float i, float d, int min, int max, float timer_interval, int adjust)</argsstring>
+        <name>calibrate</name>
+        <param>
+          <type>float</type>
+          <declname>p</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>i</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>d</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>min</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>max</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>timer_interval</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>adjust</declname>
+        </param>
+        <briefdescription>
+<para>Calibrates the <ref refid="classPID" kindref="compound">PID</ref> controller. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This method calibrates the <ref refid="classPID" kindref="compound">PID</ref> controller with the specified <ref refid="classPID" kindref="compound">PID</ref> constants, output limits, interval, and bias value.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The proportional constant. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>i</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The integral constant. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>d</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The derivative constant. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>min</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The minimum output value. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>max</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The maximum output value. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>timer_interval</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The interval at which the <ref refid="classPID" kindref="compound">PID</ref> controller is called. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>adjust</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The bias value. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src/pid.cpp" line="38" column="8" bodyfile="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src/pid.cpp" bodystart="38" bodyend="59"/>
+      </memberdef>
+      <memberdef kind="function" id="classPID_1a74627581b775cea0b1af46d309735168" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int PID::compute</definition>
+        <argsstring>(float desired, float actual)</argsstring>
+        <name>compute</name>
+        <param>
+          <type>float</type>
+          <declname>desired</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>actual</declname>
+        </param>
+        <briefdescription>
+<para>Computes the output value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This method computes the output value based on the desired and actual values. The output value is computed using the <ref refid="classPID" kindref="compound">PID</ref> constants, output limits, interval, and bias value that were previously set.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>desired</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The desired value. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>actual</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The actual value. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The output value. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src/pid.cpp" line="72" column="7" bodyfile="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src/pid.cpp" bodystart="72" bodyend="99"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>A simple <ref refid="classPID" kindref="compound">PID</ref> controller class. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Nelson Durrant </para>
+</simplesect>
+<simplesect kind="date"><para>September 2024</para>
+</simplesect>
+This class is a simple implementation of a <ref refid="classPID" kindref="compound">PID</ref> controller. It is designed to be used in a feedback loop to control a system. The <ref refid="classPID" kindref="compound">PID</ref> controller is initialized with the <ref refid="classPID" kindref="compound">PID</ref> constants, the output limits, the interval at which the <ref refid="classPID" kindref="compound">PID</ref> controller is called, and the bias value. The <ref refid="classPID" kindref="compound">PID</ref> controller can then be used to compute the output value based on the desired and actual values. </para>
+    </detaileddescription>
+    <location file="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src/pid.cpp" line="14" column="1" bodyfile="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src/pid.cpp" bodystart="14" bodyend="148"/>
+    <listofallmembers>
+      <member refid="classPID_1a3dda1a704366e28cfa5b0135a1f297e9" prot="private" virt="non-virtual"><scope>PID</scope><name>bias</name></member>
+      <member refid="classPID_1a8a4ba6a0eeb745761a530e581d086172" prot="public" virt="non-virtual"><scope>PID</scope><name>calibrate</name></member>
+      <member refid="classPID_1a74627581b775cea0b1af46d309735168" prot="public" virt="non-virtual"><scope>PID</scope><name>compute</name></member>
+      <member refid="classPID_1a65e03137e6442acb9852b8626220b6d3" prot="private" virt="non-virtual"><scope>PID</scope><name>derivative</name></member>
+      <member refid="classPID_1a58024226a4cabe7c195ec7f8ec41523b" prot="private" virt="non-virtual"><scope>PID</scope><name>error</name></member>
+      <member refid="classPID_1ad0679c98f3f75c371518a75d7b1414b8" prot="private" virt="non-virtual"><scope>PID</scope><name>error_prior</name></member>
+      <member refid="classPID_1a0e5d49534b4925162583cc0b1e124a50" prot="private" virt="non-virtual"><scope>PID</scope><name>integral</name></member>
+      <member refid="classPID_1ac45989ea9f3b37e98124e32aebbd695d" prot="private" virt="non-virtual"><scope>PID</scope><name>integral_index</name></member>
+      <member refid="classPID_1a1f0ff0f0fd541e152c572f0050aecaaf" prot="private" virt="non-virtual"><scope>PID</scope><name>integral_prior</name></member>
+      <member refid="classPID_1a4eb0be2dcdf593eca1c52f21efd94e6f" prot="private" virt="non-virtual"><scope>PID</scope><name>integralArray</name></member>
+      <member refid="classPID_1a055a96727f97beb6fa335e4512a3b763" prot="private" virt="non-virtual"><scope>PID</scope><name>interval</name></member>
+      <member refid="classPID_1ac8f8dd4ddd347ff859db4e1dc3af90d5" prot="private" virt="non-virtual"><scope>PID</scope><name>kd</name></member>
+      <member refid="classPID_1af2b185d6025a735e294c3ca698562648" prot="private" virt="non-virtual"><scope>PID</scope><name>ki</name></member>
+      <member refid="classPID_1a9bff6d497fdd262f6f0f74a76604d22a" prot="private" virt="non-virtual"><scope>PID</scope><name>kp</name></member>
+      <member refid="classPID_1aff3a14d051c809906ad2c8854ac501d2" prot="private" virt="non-virtual"><scope>PID</scope><name>max_output</name></member>
+      <member refid="classPID_1ad69fb86eb3f525385c41d5cb77bd7764" prot="private" virt="non-virtual"><scope>PID</scope><name>min_output</name></member>
+      <member refid="classPID_1a0311b6f7de348499ce24e53ba353514a" prot="public" virt="non-virtual"><scope>PID</scope><name>PID</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,102 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classSeatracAHRSConverter" kind="class" language="C++" prot="public">
+    <compoundname>SeatracAHRSConverter</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">rclcpp::Node</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classSeatracAHRSConverter_1a85efe3db08a0dc2da9e3eeffed70a516" prot="private" static="no" mutable="no">
+        <type>rclcpp::Subscription&lt; frost_interfaces::msg::ModemRec &gt;::SharedPtr</type>
+        <definition>rclcpp::Subscription&lt;frost_interfaces::msg::ModemRec&gt;::SharedPtr SeatracAHRSConverter::modem_subscriber_</definition>
+        <argsstring></argsstring>
+        <name>modem_subscriber_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_localization/src/seatrac_ahrs_convertor.cpp" line="65" column="7" bodyfile="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_localization/src/seatrac_ahrs_convertor.cpp" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classSeatracAHRSConverter_1a3428df8000e9b608012f3f523c5f282f" prot="private" static="no" mutable="no">
+        <type>rclcpp::Publisher&lt; sensor_msgs::msg::Imu &gt;::SharedPtr</type>
+        <definition>rclcpp::Publisher&lt;sensor_msgs::msg::Imu&gt;::SharedPtr SeatracAHRSConverter::modem_imu_pub_</definition>
+        <argsstring></argsstring>
+        <name>modem_imu_pub_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_localization/src/seatrac_ahrs_convertor.cpp" line="66" column="33" bodyfile="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_localization/src/seatrac_ahrs_convertor.cpp" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classSeatracAHRSConverter_1a50e7b3d00de2e083ff6acc04336c88da" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>SeatracAHRSConverter::SeatracAHRSConverter</definition>
+        <argsstring>()</argsstring>
+        <name>SeatracAHRSConverter</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_localization/src/seatrac_ahrs_convertor.cpp" line="11" column="3" bodyfile="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_localization/src/seatrac_ahrs_convertor.cpp" bodystart="11" bodyend="24"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classSeatracAHRSConverter_1a95f96c248eb67ad3eb6e9ada89f54f39" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void SeatracAHRSConverter::modem_callback</definition>
+        <argsstring>(const frost_interfaces::msg::ModemRec::SharedPtr msg)</argsstring>
+        <name>modem_callback</name>
+        <param>
+          <type>const frost_interfaces::msg::ModemRec::SharedPtr</type>
+          <declname>msg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_localization/src/seatrac_ahrs_convertor.cpp" line="27" column="8" bodyfile="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_localization/src/seatrac_ahrs_convertor.cpp" bodystart="27" bodyend="62"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>SeatracAHRSConverter</label>
+        <link refid="classSeatracAHRSConverter"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>rclcpp::Node</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>SeatracAHRSConverter</label>
+        <link refid="classSeatracAHRSConverter"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>rclcpp::Node</label>
+      </node>
+    </collaborationgraph>
+    <location file="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_localization/src/seatrac_ahrs_convertor.cpp" line="9" column="1" bodyfile="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_localization/src/seatrac_ahrs_convertor.cpp" bodystart="9" bodyend="67"/>
+    <listofallmembers>
+      <member refid="classSeatracAHRSConverter_1a95f96c248eb67ad3eb6e9ada89f54f39" prot="private" virt="non-virtual"><scope>SeatracAHRSConverter</scope><name>modem_callback</name></member>
+      <member refid="classSeatracAHRSConverter_1a3428df8000e9b608012f3f523c5f282f" prot="private" virt="non-virtual"><scope>SeatracAHRSConverter</scope><name>modem_imu_pub_</name></member>
+      <member refid="classSeatracAHRSConverter_1a85efe3db08a0dc2da9e3eeffed70a516" prot="private" virt="non-virtual"><scope>SeatracAHRSConverter</scope><name>modem_subscriber_</name></member>
+      <member refid="classSeatracAHRSConverter_1a50e7b3d00de2e083ff6acc04336c88da" prot="public" virt="non-virtual"><scope>SeatracAHRSConverter</scope><name>SeatracAHRSConverter</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,286 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.9.1" xml:lang="en-US">
+  <compound refid="classBatteryPub" kind="class"><name>BatteryPub</name>
+    <member refid="classBatteryPub_1a798245566b6ee3a7eb0e0a1e197327e1" kind="variable"><name>msg</name></member>
+    <member refid="classBatteryPub_1a1361e66ff663b7f5811e12e12b51c935" kind="function"><name>setup</name></member>
+    <member refid="classBatteryPub_1ab6e03ac84debea08d656881e2ff9c984" kind="function"><name>publish</name></member>
+    <member refid="classBatteryPub_1a26ae34a9146d37d7a2a1885ae0a97bed" kind="function"><name>destroy</name></member>
+  </compound>
+  <compound refid="classCougControls" kind="class"><name>CougControls</name>
+    <member refid="classCougControls_1a9601bab14928d368c2a8d2cf548d8611" kind="variable"><name>controls_timer_</name></member>
+    <member refid="classCougControls_1a0a952e938f0dbf6ff2c8a98930a55085" kind="variable"><name>u_command_publisher_</name></member>
+    <member refid="classCougControls_1ae04b7ab8cfe9e5d18f89042c8273f23a" kind="variable"><name>desired_depth_subscription_</name></member>
+    <member refid="classCougControls_1ad576992c61951cf0fd6586286525cc1e" kind="variable"><name>desired_heading_subscription_</name></member>
+    <member refid="classCougControls_1a4066b5dbc7803df03b56554bb0eecf36" kind="variable"><name>desired_speed_subscription_</name></member>
+    <member refid="classCougControls_1add6352c79b41ddb1dba0e9aa94e2538d" kind="variable"><name>actual_depth_subscription_</name></member>
+    <member refid="classCougControls_1a1c6f4bf5bab258aa663eea475486a575" kind="variable"><name>actual_heading_subscription_</name></member>
+    <member refid="classCougControls_1a230fdd8f0ceee816eb96eb07cc3e341f" kind="variable"><name>init_subscription_</name></member>
+    <member refid="classCougControls_1a9b01a8961dcc58b90af41d000d6a006b" kind="variable"><name>init_flag</name></member>
+    <member refid="classCougControls_1a981aafdcfff8ff0fb5d05c4e9dbd8891" kind="variable"><name>myHeadingPID</name></member>
+    <member refid="classCougControls_1af93c94bb6034d0fc46d0ad196dbc244e" kind="variable"><name>myDepthPID</name></member>
+    <member refid="classCougControls_1abcf3f3a929389c0f215fe07589b14197" kind="variable"><name>desired_depth</name></member>
+    <member refid="classCougControls_1a2be1b03b65278882d7adc6338e7d1283" kind="variable"><name>desired_heading</name></member>
+    <member refid="classCougControls_1a7d3612c244a73587fd99036e6e7bcfad" kind="variable"><name>desired_speed</name></member>
+    <member refid="classCougControls_1a4e1f59c60b49e41f8c105bed7824a37c" kind="variable"><name>actual_depth</name></member>
+    <member refid="classCougControls_1a14c85af7393f722e937e43cbb2553f9f" kind="variable"><name>actual_heading</name></member>
+    <member refid="classCougControls_1ac6fb9ac660ad081d9ebc140745eb799c" kind="function"><name>CougControls</name></member>
+    <member refid="classCougControls_1a596c55ce528e4205a147a7769a39e76d" kind="function"><name>init_callback</name></member>
+    <member refid="classCougControls_1a4bcb630c0006cb7d6679aaa1bd996f29" kind="function"><name>desired_depth_callback</name></member>
+    <member refid="classCougControls_1ab3dba97e33c1e918b91f2a09160d4f23" kind="function"><name>desired_heading_callback</name></member>
+    <member refid="classCougControls_1a0aa8506d619b258e68e5084a6d7d6597" kind="function"><name>desired_speed_callback</name></member>
+    <member refid="classCougControls_1ab221d3e30e561a36e7732e1ab168f056" kind="function"><name>actual_depth_callback</name></member>
+    <member refid="classCougControls_1a93a0e4a5ec301c05a2a96d21f48aa8ba" kind="function"><name>actual_heading_callback</name></member>
+    <member refid="classCougControls_1a88c096bc7d4aad1307f6d745a2a941f0" kind="function"><name>timer_callback</name></member>
+  </compound>
+  <compound refid="classCougKinematics" kind="class"><name>CougKinematics</name>
+    <member refid="classCougKinematics_1a4213abadeb632f32a9b2be2bf1d67edd" kind="variable"><name>command_publisher_</name></member>
+    <member refid="classCougKinematics_1a4315a6ee05f2a927d2c754314c6dd3a4" kind="variable"><name>command_subscription_</name></member>
+    <member refid="classCougKinematics_1a3d5324d55a7a97e251224a408ea7f631" kind="function"><name>CougKinematics</name></member>
+    <member refid="classCougKinematics_1a4fbcd3d7902f6dbc160b67c7143cde83" kind="function"><name>command_callback</name></member>
+  </compound>
+  <compound refid="classDepthConvertor" kind="class"><name>DepthConvertor</name>
+    <member refid="classDepthConvertor_1a33012bcfb3f59a6ff6734e89caf50beb" kind="variable"><name>depth_publisher_</name></member>
+    <member refid="classDepthConvertor_1aadea494f9e35405c00131c30109bb698" kind="variable"><name>pressure_subscription_</name></member>
+    <member refid="classDepthConvertor_1ac68a7b44b8d422329318974ba78ec663" kind="function"><name>DepthConvertor</name></member>
+    <member refid="classDepthConvertor_1a092c3ead8cd0e7ac32fa2d8a26785374" kind="function"><name>pressure_callback</name></member>
+  </compound>
+  <compound refid="classDVLConvertor" kind="class"><name>DVLConvertor</name>
+    <member refid="classDVLConvertor_1a7c6d7449d21d90fb76ef15c88f3e8e96" kind="variable"><name>publisher_dvl_velocity</name></member>
+    <member refid="classDVLConvertor_1aecd92f1ff6e984dcab359dbf58d7ef55" kind="variable"><name>publisher_dvl_dead_reckoning</name></member>
+    <member refid="classDVLConvertor_1afc14e7bf9ecd96fee5dad6f3b837ebcb" kind="variable"><name>publisher_dvl_depth</name></member>
+    <member refid="classDVLConvertor_1ac252643d19450e62891a572d3b7378a2" kind="variable"><name>subscriber_dvl_data</name></member>
+    <member refid="classDVLConvertor_1a36fd50e2677bf4d97b8e27520cbac239" kind="variable"><name>subscriber_dvl_position</name></member>
+    <member refid="classDVLConvertor_1a2b86c2072d0b43e244c5e901d0ed0e5a" kind="function"><name>DVLConvertor</name></member>
+    <member refid="classDVLConvertor_1a0b9705e5597c7ccdfffa7dca3f13fc15" kind="function"><name>dvl_data_callback</name></member>
+    <member refid="classDVLConvertor_1aec8d4dc41ae16aa9d6277c7f25e5e50d" kind="function"><name>degreesToRadians</name></member>
+    <member refid="classDVLConvertor_1aff3e697be60ad20eea690661a2546de2" kind="function"><name>dvl_pos_callback</name></member>
+  </compound>
+  <compound refid="classLeakPub" kind="class"><name>LeakPub</name>
+    <member refid="classLeakPub_1a8f6d35b4064c88d212fb85f2ed993a2e" kind="variable"><name>msg</name></member>
+    <member refid="classLeakPub_1a90140205a1308064a69becd1bf9b2d59" kind="function"><name>setup</name></member>
+    <member refid="classLeakPub_1a876c1530b82783640ee659f45d769dee" kind="function"><name>publish</name></member>
+    <member refid="classLeakPub_1a26ae34a9146d37d7a2a1885ae0a97bed" kind="function"><name>destroy</name></member>
+  </compound>
+  <compound refid="classMOOSBridge" kind="class"><name>MOOSBridge</name>
+    <member refid="classMOOSBridge_1a7e11791cb4d90e798e082e98e859b0a0" kind="variable"><name>subscription_vehicle_status_</name></member>
+    <member refid="classMOOSBridge_1aa88004c4fa2d6e3c8253f49c1dd3faa1" kind="function"><name>MOOSBridge</name></member>
+    <member refid="classMOOSBridge_1a1b937f3f1f43d7050274fb84c9ab2b55" kind="function"><name>ros_vehicle_status_listener</name></member>
+  </compound>
+  <compound refid="classPID" kind="class"><name>PID</name>
+    <member refid="classPID_1a9bff6d497fdd262f6f0f74a76604d22a" kind="variable"><name>kp</name></member>
+    <member refid="classPID_1af2b185d6025a735e294c3ca698562648" kind="variable"><name>ki</name></member>
+    <member refid="classPID_1ac8f8dd4ddd347ff859db4e1dc3af90d5" kind="variable"><name>kd</name></member>
+    <member refid="classPID_1ad69fb86eb3f525385c41d5cb77bd7764" kind="variable"><name>min_output</name></member>
+    <member refid="classPID_1aff3a14d051c809906ad2c8854ac501d2" kind="variable"><name>max_output</name></member>
+    <member refid="classPID_1a055a96727f97beb6fa335e4512a3b763" kind="variable"><name>interval</name></member>
+    <member refid="classPID_1a3dda1a704366e28cfa5b0135a1f297e9" kind="variable"><name>bias</name></member>
+    <member refid="classPID_1a0e5d49534b4925162583cc0b1e124a50" kind="variable"><name>integral</name></member>
+    <member refid="classPID_1a1f0ff0f0fd541e152c572f0050aecaaf" kind="variable"><name>integral_prior</name></member>
+    <member refid="classPID_1a58024226a4cabe7c195ec7f8ec41523b" kind="variable"><name>error</name></member>
+    <member refid="classPID_1ad0679c98f3f75c371518a75d7b1414b8" kind="variable"><name>error_prior</name></member>
+    <member refid="classPID_1a65e03137e6442acb9852b8626220b6d3" kind="variable"><name>derivative</name></member>
+    <member refid="classPID_1ac45989ea9f3b37e98124e32aebbd695d" kind="variable"><name>integral_index</name></member>
+    <member refid="classPID_1a4eb0be2dcdf593eca1c52f21efd94e6f" kind="variable"><name>integralArray</name></member>
+    <member refid="classPID_1a0311b6f7de348499ce24e53ba353514a" kind="function"><name>PID</name></member>
+    <member refid="classPID_1a8a4ba6a0eeb745761a530e581d086172" kind="function"><name>calibrate</name></member>
+    <member refid="classPID_1a74627581b775cea0b1af46d309735168" kind="function"><name>compute</name></member>
+  </compound>
+  <compound refid="classPressurePub" kind="class"><name>PressurePub</name>
+    <member refid="classPressurePub_1aef5dcdc3b19ff004ec77f971f0dc59a6" kind="variable"><name>msg</name></member>
+    <member refid="classPressurePub_1a8a327163f2bf2caba602b3695786cc93" kind="function"><name>setup</name></member>
+    <member refid="classPressurePub_1a4462568a0d8d7330b5be13ffa0c58a8a" kind="function"><name>publish</name></member>
+    <member refid="classPressurePub_1a26ae34a9146d37d7a2a1885ae0a97bed" kind="function"><name>destroy</name></member>
+  </compound>
+  <compound refid="classPublisher" kind="class"><name>Publisher</name>
+    <member refid="classPublisher_1ad9c34822680c614d681b3f3ab052435c" kind="variable"><name>publisher</name></member>
+    <member refid="classPublisher_1a98d333e2b575251708ca89acb2512bc6" kind="function"><name>setup</name></member>
+    <member refid="classPublisher_1a26ae34a9146d37d7a2a1885ae0a97bed" kind="function"><name>destroy</name></member>
+    <member refid="classPublisher_1a81914f338676981cffeab3d1eff0d4aa" kind="function"><name>error_loop</name></member>
+  </compound>
+  <compound refid="classSeatracAHRSConverter" kind="class"><name>SeatracAHRSConverter</name>
+    <member refid="classSeatracAHRSConverter_1a85efe3db08a0dc2da9e3eeffed70a516" kind="variable"><name>modem_subscriber_</name></member>
+    <member refid="classSeatracAHRSConverter_1a3428df8000e9b608012f3f523c5f282f" kind="variable"><name>modem_imu_pub_</name></member>
+    <member refid="classSeatracAHRSConverter_1a50e7b3d00de2e083ff6acc04336c88da" kind="function"><name>SeatracAHRSConverter</name></member>
+    <member refid="classSeatracAHRSConverter_1a95f96c248eb67ad3eb6e9ada89f54f39" kind="function"><name>modem_callback</name></member>
+  </compound>
+  <compound refid="classVehicleStatus" kind="class"><name>VehicleStatus</name>
+    <member refid="classVehicleStatus_1a993601981ae6df046ba72f0a20d8fdeb" kind="variable"><name>update_timer_</name></member>
+    <member refid="classVehicleStatus_1afab0fe9032ddd3b3e4955c7efc46ab4a" kind="variable"><name>depth_subscription_</name></member>
+    <member refid="classVehicleStatus_1ae7bf884219990227914c5de3c7c77f25" kind="variable"><name>velocity_subscription_</name></member>
+    <member refid="classVehicleStatus_1aa1ed84138ff49f2c77ab915f64abbf37" kind="variable"><name>x_y_subscription_</name></member>
+    <member refid="classVehicleStatus_1ade7290af718e7b6860e313c1d2f8f368" kind="variable"><name>modem_yaw_subscription_</name></member>
+    <member refid="classVehicleStatus_1acf22ca1a3716772dadae7198d845fcd0" kind="variable"><name>vehicle_status_publisher_</name></member>
+    <member refid="classVehicleStatus_1ae481455ff986082cc2ad9f016b1fde31" kind="variable"><name>q_x</name></member>
+    <member refid="classVehicleStatus_1a379f9320b5960a9afeff055e65d4812d" kind="variable"><name>q_y</name></member>
+    <member refid="classVehicleStatus_1ad4327c443ee1c7598caf2153832a4b1f" kind="variable"><name>q_z</name></member>
+    <member refid="classVehicleStatus_1ad317f6afce8ff0674c4a468019b9501f" kind="variable"><name>q_w</name></member>
+    <member refid="classVehicleStatus_1adbda6a3fbf4a116e8ac2a2e1918e2235" kind="variable"><name>x_velocity</name></member>
+    <member refid="classVehicleStatus_1ade043dd95b267daa4f6e10024f764b93" kind="variable"><name>depth</name></member>
+    <member refid="classVehicleStatus_1a8b019c7d1b3b6c0d867b1bae5f2e3d97" kind="variable"><name>x_pos</name></member>
+    <member refid="classVehicleStatus_1abde6e38020f0311f53fd70a318c19551" kind="variable"><name>y_pos</name></member>
+    <member refid="classVehicleStatus_1af73bff026fcb568c8dc14379cb41e109" kind="variable"><name>yaw</name></member>
+    <member refid="classVehicleStatus_1abbb98e39b790442acc8c77dccafbc89a" kind="function"><name>VehicleStatus</name></member>
+    <member refid="classVehicleStatus_1ad6d22875dbdf88e16b87c6c3a5ab5920" kind="function"><name>x_y_callback</name></member>
+    <member refid="classVehicleStatus_1afa565c1c4e3ab4c88044cc9aef2251f8" kind="function"><name>depth_callback</name></member>
+    <member refid="classVehicleStatus_1a6902095193de0201c66a9705bffc2892" kind="function"><name>velocity_callback</name></member>
+    <member refid="classVehicleStatus_1a1797e9f4401652a00451cffbd300cace" kind="function"><name>modem_yaw_callback</name></member>
+    <member refid="classVehicleStatus_1ad4cfb8d2cb0dd0f2bfdf4a95438429b6" kind="function"><name>broadcast_status_callback</name></member>
+  </compound>
+  <compound refid="namespacerclcpp" kind="namespace"><name>rclcpp</name>
+  </compound>
+  <compound refid="namespacestd_1_1chrono__literals" kind="namespace"><name>std::chrono_literals</name>
+  </compound>
+  <compound refid="coug__controls_8cpp" kind="file"><name>coug_controls.cpp</name>
+    <member refid="coug__controls_8cpp_1a40ba3dcf6fce3a49be9444da2f08b012" kind="variable"><name>qos_profile</name></member>
+    <member refid="coug__controls_8cpp_1a780fcbbccc2b3ce6d42fd10e0638cd3b" kind="variable"><name>qos</name></member>
+    <member refid="coug__controls_8cpp_1a0ddf1224851353fc92bfbff6f499fa97" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="coug__kinematics_8cpp" kind="file"><name>coug_kinematics.cpp</name>
+    <member refid="coug__kinematics_8cpp_1a40ba3dcf6fce3a49be9444da2f08b012" kind="variable"><name>qos_profile</name></member>
+    <member refid="coug__kinematics_8cpp_1a780fcbbccc2b3ce6d42fd10e0638cd3b" kind="variable"><name>qos</name></member>
+    <member refid="coug__kinematics_8cpp_1a0ddf1224851353fc92bfbff6f499fa97" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="moos__bridge_8cpp" kind="file"><name>moos_bridge.cpp</name>
+    <member refid="moos__bridge_8cpp_1ab262685e60a13ca93d7d8ef03d87f31f" kind="define"><name>MOOS_MISSION_DIR</name></member>
+    <member refid="moos__bridge_8cpp_1a2b181c0c8d00bab2bc2f3e23acbb8063" kind="typedef"><name>MsgVector</name></member>
+    <member refid="moos__bridge_8cpp_1ae91353bc51204da54a10acab91ebc376" kind="typedef"><name>CommsStatusVector</name></member>
+    <member refid="moos__bridge_8cpp_1add0549dba280d84bc067ceab2d80e04d" kind="variable"><name>Comms</name></member>
+    <member refid="moos__bridge_8cpp_1aa9e772c394beceea46d860acb5b46685" kind="variable"><name>desired_depth_publisher_</name></member>
+    <member refid="moos__bridge_8cpp_1af5160110926ed501bd2cb5e301603451" kind="variable"><name>desired_heading_publisher_</name></member>
+    <member refid="moos__bridge_8cpp_1a2f756e1ea2f1603a5a45d320be92e955" kind="variable"><name>desired_speed_publisher_</name></member>
+    <member refid="moos__bridge_8cpp_1a6be152e8761701d01dfbe3ffaefcfc44" kind="function"><name>OnConnect</name></member>
+    <member refid="moos__bridge_8cpp_1a515259521f650dcb62c11cf8641b030a" kind="function"><name>PublishDesiredValue</name></member>
+    <member refid="moos__bridge_8cpp_1a3038a0d4da73e5a9eec4d9c74dc08318" kind="function"><name>OnMail</name></member>
+    <member refid="moos__bridge_8cpp_1a0ddf1224851353fc92bfbff6f499fa97" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="pid_8cpp" kind="file"><name>pid.cpp</name>
+    <member refid="pid_8cpp_1a406dc2bd4bf507a0ca28cce0cc0ae9c9" kind="define"><name>INTEGRAL_ARRAY_SIZE</name></member>
+  </compound>
+  <compound refid="depth__convertor_8cpp" kind="file"><name>depth_convertor.cpp</name>
+    <member refid="depth__convertor_8cpp_1a6801baa546c6112d19eb095111d24720" kind="define"><name>GRAVITY</name></member>
+    <member refid="depth__convertor_8cpp_1ae13964a8a3ccfef4cd82f49b55e27d03" kind="define"><name>FLUID_DENSITY_BASE</name></member>
+    <member refid="depth__convertor_8cpp_1a40ba3dcf6fce3a49be9444da2f08b012" kind="variable"><name>qos_profile</name></member>
+    <member refid="depth__convertor_8cpp_1a780fcbbccc2b3ce6d42fd10e0638cd3b" kind="variable"><name>qos</name></member>
+    <member refid="depth__convertor_8cpp_1a0ddf1224851353fc92bfbff6f499fa97" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="dvl__convertor_8cpp" kind="file"><name>dvl_convertor.cpp</name>
+    <member refid="dvl__convertor_8cpp_1a40ba3dcf6fce3a49be9444da2f08b012" kind="variable"><name>qos_profile</name></member>
+    <member refid="dvl__convertor_8cpp_1a780fcbbccc2b3ce6d42fd10e0638cd3b" kind="variable"><name>qos</name></member>
+    <member refid="dvl__convertor_8cpp_1a0ddf1224851353fc92bfbff6f499fa97" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="seatrac__ahrs__convertor_8cpp" kind="file"><name>seatrac_ahrs_convertor.cpp</name>
+    <member refid="seatrac__ahrs__convertor_8cpp_1a0ddf1224851353fc92bfbff6f499fa97" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="vehicle__status_8cpp" kind="file"><name>vehicle_status.cpp</name>
+    <member refid="vehicle__status_8cpp_1a145b755a49074981133b758968d156d4" kind="define"><name>UPDATE_TIMER_MS</name></member>
+    <member refid="vehicle__status_8cpp_1a0c8beb662260254241dfbbf8a8ee5f99" kind="define"><name>PI_NUM</name></member>
+    <member refid="vehicle__status_8cpp_1a40ba3dcf6fce3a49be9444da2f08b012" kind="variable"><name>qos_profile</name></member>
+    <member refid="vehicle__status_8cpp_1a780fcbbccc2b3ce6d42fd10e0638cd3b" kind="variable"><name>qos</name></member>
+    <member refid="vehicle__status_8cpp_1a0ddf1224851353fc92bfbff6f499fa97" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="battery__pub_8h" kind="file"><name>battery_pub.h</name>
+  </compound>
+  <compound refid="leak__pub_8h" kind="file"><name>leak_pub.h</name>
+  </compound>
+  <compound refid="pressure__pub_8h" kind="file"><name>pressure_pub.h</name>
+  </compound>
+  <compound refid="publisher_8h" kind="file"><name>publisher.h</name>
+    <member refid="publisher_8h_1aa188b6e39b24babf3be88ad461edda36" kind="define"><name>NS_S</name></member>
+    <member refid="publisher_8h_1ae223226789cba1c52a8998012545d897" kind="define"><name>NS_TO_S</name></member>
+    <member refid="publisher_8h_1a1461c6cf9fc2e8c1d2e895c772c0582d" kind="define"><name>NS_REMAINDER</name></member>
+    <member refid="publisher_8h_1a9cb001747cb67f240459b3b105a63529" kind="define"><name>RCCHECK</name></member>
+    <member refid="publisher_8h_1a7970198dc43b523050ff0fa9b0a94b8d" kind="define"><name>RCSOFTCHECK</name></member>
+  </compound>
+  <compound refid="battery__pub_8cpp" kind="file"><name>battery_pub.cpp</name>
+  </compound>
+  <compound refid="leak__pub_8cpp" kind="file"><name>leak_pub.cpp</name>
+    <member refid="leak__pub_8cpp_1ae223226789cba1c52a8998012545d897" kind="define"><name>NS_TO_S</name></member>
+    <member refid="leak__pub_8cpp_1a1461c6cf9fc2e8c1d2e895c772c0582d" kind="define"><name>NS_REMAINDER</name></member>
+  </compound>
+  <compound refid="main_8cpp" kind="file"><name>main.cpp</name>
+    <member refid="main_8cpp_1a942aaee1e0f53df83a7cae110d727ff0" kind="define"><name>ENABLE_SERVOS</name></member>
+    <member refid="main_8cpp_1ad682458c5f8737f6804982f44b514ad5" kind="define"><name>ENABLE_THRUSTER</name></member>
+    <member refid="main_8cpp_1ad6b8db87712c71951ab67e14182a29b7" kind="define"><name>ENABLE_PRESSURE</name></member>
+    <member refid="main_8cpp_1a72262e754adf7baf244f9fa47c15e1d2" kind="define"><name>ENABLE_BT_DEBUG</name></member>
+    <member refid="main_8cpp_1ab3935ba9b16dcda80eca9c91dc4a9a19" kind="define"><name>EXECUTE_EVERY_N_MS</name></member>
+    <member refid="main_8cpp_1ad4455691936f92fdd6c37566fc58ba1f" kind="define"><name>BAUD_RATE</name></member>
+    <member refid="main_8cpp_1af605ad2cc80f8f9a7ded74009b24c6d5" kind="define"><name>CALLBACK_TOTAL</name></member>
+    <member refid="main_8cpp_1a8b06d2e9648501088d9fcc2b3c714690" kind="define"><name>SYNC_TIMEOUT</name></member>
+    <member refid="main_8cpp_1a21c9a6dd50dac33eded62f5230da33e3" kind="define"><name>BT_MC_RX</name></member>
+    <member refid="main_8cpp_1af5f126c36ffc52d539b232facd644531" kind="define"><name>BT_MC_TX</name></member>
+    <member refid="main_8cpp_1a54fb2e697d06412f1df1f246528f98db" kind="define"><name>SERVO_PIN1</name></member>
+    <member refid="main_8cpp_1a2358bf36e4130f9192ca22b04564bf78" kind="define"><name>SERVO_PIN2</name></member>
+    <member refid="main_8cpp_1aa2844b520f3e69eb56edde7e6bdb8ee0" kind="define"><name>SERVO_PIN3</name></member>
+    <member refid="main_8cpp_1ac5a3ff6febcb0c6dbf98c74e8fff07f4" kind="define"><name>THRUSTER_PIN</name></member>
+    <member refid="main_8cpp_1ae7f6917411b54a5c51ba9baba7c70798" kind="define"><name>VOLT_PIN</name></member>
+    <member refid="main_8cpp_1a813d6b208edd662faa8b100b8e6b4369" kind="define"><name>CURRENT_PIN</name></member>
+    <member refid="main_8cpp_1a6767b1b87d2607586edac4ccc264a1ca" kind="define"><name>LEAK_PIN</name></member>
+    <member refid="main_8cpp_1ab4553be4db9860d940f81d7447173b2f" kind="define"><name>LED_PIN</name></member>
+    <member refid="main_8cpp_1ab9aa5b56d984e5fee1b12cdfce5265f5" kind="define"><name>DEFAULT_SERVO</name></member>
+    <member refid="main_8cpp_1a6c6eafa621ccb8e488cb2b90c38b9bb4" kind="define"><name>THRUSTER_OFF</name></member>
+    <member refid="main_8cpp_1a78a73a2407c0d63cd1810dc4439bb344" kind="define"><name>SERVO_OUT_HIGH</name></member>
+    <member refid="main_8cpp_1a84f683adc12593607818902c067443bf" kind="define"><name>SERVO_OUT_LOW</name></member>
+    <member refid="main_8cpp_1a4bef1bdab442f2f070157bb0d21f321c" kind="define"><name>THRUSTER_OUT_HIGH</name></member>
+    <member refid="main_8cpp_1adda173dd4a2880eaa2832e6e8795cd11" kind="define"><name>THRUSTER_OUT_LOW</name></member>
+    <member refid="main_8cpp_1a86ab1083117316547bd3ffffcac49126" kind="define"><name>THRUSTER_IN_HIGH</name></member>
+    <member refid="main_8cpp_1a6577fea59e1409dfe839dc5742fb03f2" kind="define"><name>THRUSTER_IN_LOW</name></member>
+    <member refid="main_8cpp_1ae41566ad7730a2bd95ff58f839c43f6f" kind="define"><name>BT_DEBUG_RATE</name></member>
+    <member refid="main_8cpp_1a487166e197ff871feae6f13dc63ec68c" kind="define"><name>I2C_RATE</name></member>
+    <member refid="main_8cpp_1aee417ef99c9c3a59c7dd2e1112e7916b" kind="define"><name>BATTERY_MS</name></member>
+    <member refid="main_8cpp_1a5bd07a795448af3f61f1f6de06463445" kind="define"><name>LEAK_MS</name></member>
+    <member refid="main_8cpp_1aff9a498fcc65172b5a88f268f4e6bdc8" kind="define"><name>PRESSURE_MS</name></member>
+    <member refid="main_8cpp_1aa19be6305a5a4485e1e70de70ed7d677" kind="enum"><name>states</name></member>
+    <member refid="main_8cpp_1aa19be6305a5a4485e1e70de70ed7d677a4b07b1c37e48ea6881eb449841444e1d" kind="enumvalue"><name>WAITING_AGENT</name></member>
+    <member refid="main_8cpp_1aa19be6305a5a4485e1e70de70ed7d677a8350504a9b42263345a187afc2a8f68e" kind="enumvalue"><name>AGENT_AVAILABLE</name></member>
+    <member refid="main_8cpp_1aa19be6305a5a4485e1e70de70ed7d677a086ba9293c4067ddc1011eb4dffde038" kind="enumvalue"><name>AGENT_CONNECTED</name></member>
+    <member refid="main_8cpp_1aa19be6305a5a4485e1e70de70ed7d677ac731163daa32a8b5dbbda4811a67fd1b" kind="enumvalue"><name>AGENT_DISCONNECTED</name></member>
+    <member refid="main_8cpp_1a69715aba74526f43c76f3c4576d1d776" kind="variable"><name>last_received</name></member>
+    <member refid="main_8cpp_1ad7ca784e9d6a36f1a990ccef47340149" kind="variable"><name>support</name></member>
+    <member refid="main_8cpp_1acc1518bac7ff8bf75ac11589055d7578" kind="variable"><name>allocator</name></member>
+    <member refid="main_8cpp_1ab69e3b0b5d335275c7e2da94c0886b1c" kind="variable"><name>node</name></member>
+    <member refid="main_8cpp_1a864bc8f364fa8dd00b7265f7fd39ce84" kind="variable"><name>executor</name></member>
+    <member refid="main_8cpp_1adf673e6d48bde321870e7389d0fd3a2b" kind="variable"><name>command_msg</name></member>
+    <member refid="main_8cpp_1a38adf196df51513c6d7c15150e91c69d" kind="variable"><name>command_sub</name></member>
+    <member refid="main_8cpp_1ababf2ce58bfce2468b7dc38dce6493f7" kind="variable"><name>battery_pub</name></member>
+    <member refid="main_8cpp_1aafa81c979da110a109ca38521e8bb42e" kind="variable"><name>leak_pub</name></member>
+    <member refid="main_8cpp_1a75ffc6c4c2d6702a3f379bf2513ac8e1" kind="variable"><name>pressure_pub</name></member>
+    <member refid="main_8cpp_1ad282831427871253f8f6b74232d5e425" kind="variable"><name>myPressure</name></member>
+    <member refid="main_8cpp_1ac559bc920cd1ad5655c740616594b1b5" kind="variable"><name>myServo1</name></member>
+    <member refid="main_8cpp_1ac773ef935f8c08f2f6d2b5c358ecea29" kind="variable"><name>myServo2</name></member>
+    <member refid="main_8cpp_1ab232a7b77d64adaf0c683ca167311ab7" kind="variable"><name>myServo3</name></member>
+    <member refid="main_8cpp_1accdcea30823dd428e6aea6c4e8657ba6" kind="variable"><name>myThruster</name></member>
+    <member refid="main_8cpp_1aa56f777b40743798ee0726ba4ded17a9" kind="variable"><name>state</name></member>
+    <member refid="main_8cpp_1a4733c8e7867f5f8c26f81c326cafe7b4" kind="function"><name>BTSerial</name></member>
+    <member refid="main_8cpp_1a1ba932e26c7eb955eb2ad83e9f4adaf1" kind="function"><name>error_loop</name></member>
+    <member refid="main_8cpp_1a98ff7fd3dd310e11aac835bf0632b4bc" kind="function"><name>command_sub_callback</name></member>
+    <member refid="main_8cpp_1a6ebcd257d8ca3d30c19a587407dcc007" kind="function"><name>create_entities</name></member>
+    <member refid="main_8cpp_1a6ec56d5719b6286a3f5fd83f5b26eddd" kind="function"><name>destroy_entities</name></member>
+    <member refid="main_8cpp_1a4fc01d736fe50cf5b977f755b675f11d" kind="function"><name>setup</name></member>
+    <member refid="main_8cpp_1aea35450bc9674e2b231d84e35a7f6c17" kind="function"><name>read_battery</name></member>
+    <member refid="main_8cpp_1a1d49f4ddd16b1a0b5e16db4d173a93fa" kind="function"><name>read_leak</name></member>
+    <member refid="main_8cpp_1aee2d2b4de37abd0aec9d441d54069678" kind="function"><name>read_pressure</name></member>
+    <member refid="main_8cpp_1afe461d27b9c48d5921c00d521181f12f" kind="function"><name>loop</name></member>
+  </compound>
+  <compound refid="pressure__pub_8cpp" kind="file"><name>pressure_pub.cpp</name>
+  </compound>
+  <compound refid="dir_ec15f93c79717f50383ad4a9b95c1a72" kind="dir"><name>/home/nelsondurrant/CougarsSetup/CougarsTeensy/cougars</name>
+  </compound>
+  <compound refid="dir_e801e2f56a9523410c7bf1e6c15139e8" kind="dir"><name>/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control</name>
+  </compound>
+  <compound refid="dir_18c4efe67291a03075fcf5864d48d4c4" kind="dir"><name>/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_localization</name>
+  </compound>
+  <compound refid="dir_bf7e9d09880990416d8755d2c54a7064" kind="dir"><name>/home/nelsondurrant/CougarsSetup/CougarsRPi</name>
+  </compound>
+  <compound refid="dir_7e202a835c4b618ab47c825737d48a5f" kind="dir"><name>/home/nelsondurrant/CougarsSetup/CougarsTeensy</name>
+  </compound>
+  <compound refid="dir_ca7add27825895c5c2e55060e5d103a1" kind="dir"><name>/home/nelsondurrant/CougarsSetup/CougarsTeensy/cougars/include</name>
+  </compound>
+  <compound refid="dir_361b1e3634ff87d78695ed57d09b492c" kind="dir"><name>/home/nelsondurrant/CougarsSetup/CougarsRPi/src</name>
+  </compound>
+  <compound refid="dir_07b4975dad94d8e28ee153312dfdb4eb" kind="dir"><name>/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src</name>
+  </compound>
+  <compound refid="dir_8267b4b8b445911a62515b05d1d10dff" kind="dir"><name>/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_localization/src</name>
+  </compound>
+  <compound refid="dir_d9bea3c79ca3d2bc2ca5c6f732494a16" kind="dir"><name>/home/nelsondurrant/CougarsSetup/CougarsTeensy/cougars/src</name>
+  </compound>
+</doxygenindex>

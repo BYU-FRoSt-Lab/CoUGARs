@@ -10,20 +10,16 @@
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
-import os
-import sys
-sys.path.insert(0, os.path.abspath('../../CougarsTeensy/gpio_tools'))
-sys.path.insert(0, os.path.abspath('../../CougarsRPi/src/cougars_control/launch'))
-sys.path.insert(0, os.path.abspath('../../CougarsRPi/src/cougars_control/scripts'))
-sys.path.insert(0, os.path.abspath('../../CougarsRPi/src/cougars_localization/launch'))
-sys.path.insert(0, os.path.abspath('../../CougarsRPi/src/cougars_localization/scripts'))
+# import os
+# import sys
+# sys.path.insert(0, os.path.abspath('.'))
 
 
 # -- Project information -----------------------------------------------------
 
 project = 'Configurable Underwater Group of Autonomous Robots (CoUGARs)'
-copyright = '2024, Nelson Durrant'
-author = 'Nelson Durrant'
+copyright = '2024, BYU Field Robotic Systems Lab'
+author = 'BYU Field Robotic Systems Lab'
 
 # The full version, including alpha/beta/rc tags
 release = '1.0.0'

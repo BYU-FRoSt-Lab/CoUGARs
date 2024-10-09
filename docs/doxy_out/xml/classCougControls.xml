@@ -1,0 +1,621 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classCougControls" kind="class" language="C++" prot="public">
+    <compoundname>CougControls</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">rclcpp::Node</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classCougControls_1a9601bab14928d368c2a8d2cf548d8611" prot="private" static="no" mutable="no">
+        <type>rclcpp::TimerBase::SharedPtr</type>
+        <definition>rclcpp::TimerBase::SharedPtr CougControls::controls_timer_</definition>
+        <argsstring></argsstring>
+        <name>controls_timer_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src/coug_controls.cpp" line="374" column="32" bodyfile="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src/coug_controls.cpp" bodystart="374" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classCougControls_1a0a952e938f0dbf6ff2c8a98930a55085" prot="private" static="no" mutable="no">
+        <type>rclcpp::Publisher&lt; frost_interfaces::msg::UCommand &gt;::SharedPtr</type>
+        <definition>rclcpp::Publisher&lt;frost_interfaces::msg::UCommand&gt;::SharedPtr CougControls::u_command_publisher_</definition>
+        <argsstring></argsstring>
+        <name>u_command_publisher_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src/coug_controls.cpp" line="376" column="7" bodyfile="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src/coug_controls.cpp" bodystart="376" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classCougControls_1ae04b7ab8cfe9e5d18f89042c8273f23a" prot="private" static="no" mutable="no">
+        <type>rclcpp::Subscription&lt; frost_interfaces::msg::DesiredDepth &gt;::SharedPtr</type>
+        <definition>rclcpp::Subscription&lt;frost_interfaces::msg::DesiredDepth&gt;::SharedPtr CougControls::desired_depth_subscription_</definition>
+        <argsstring></argsstring>
+        <name>desired_depth_subscription_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src/coug_controls.cpp" line="378" column="7" bodyfile="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src/coug_controls.cpp" bodystart="378" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classCougControls_1ad576992c61951cf0fd6586286525cc1e" prot="private" static="no" mutable="no">
+        <type>rclcpp::Subscription&lt; frost_interfaces::msg::DesiredHeading &gt;::SharedPtr</type>
+        <definition>rclcpp::Subscription&lt;frost_interfaces::msg::DesiredHeading&gt;::SharedPtr CougControls::desired_heading_subscription_</definition>
+        <argsstring></argsstring>
+        <name>desired_heading_subscription_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src/coug_controls.cpp" line="380" column="7" bodyfile="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src/coug_controls.cpp" bodystart="380" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classCougControls_1a4066b5dbc7803df03b56554bb0eecf36" prot="private" static="no" mutable="no">
+        <type>rclcpp::Subscription&lt; frost_interfaces::msg::DesiredSpeed &gt;::SharedPtr</type>
+        <definition>rclcpp::Subscription&lt;frost_interfaces::msg::DesiredSpeed&gt;::SharedPtr CougControls::desired_speed_subscription_</definition>
+        <argsstring></argsstring>
+        <name>desired_speed_subscription_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src/coug_controls.cpp" line="382" column="7" bodyfile="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src/coug_controls.cpp" bodystart="382" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classCougControls_1add6352c79b41ddb1dba0e9aa94e2538d" prot="private" static="no" mutable="no">
+        <type>rclcpp::Subscription&lt; geometry_msgs::msg::PoseWithCovarianceStamped &gt;::SharedPtr</type>
+        <definition>rclcpp::Subscription&lt;geometry_msgs::msg::PoseWithCovarianceStamped&gt;::SharedPtr CougControls::actual_depth_subscription_</definition>
+        <argsstring></argsstring>
+        <name>actual_depth_subscription_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src/coug_controls.cpp" line="384" column="7" bodyfile="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src/coug_controls.cpp" bodystart="384" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classCougControls_1a1c6f4bf5bab258aa663eea475486a575" prot="private" static="no" mutable="no">
+        <type>rclcpp::Subscription&lt; frost_interfaces::msg::ModemRec &gt;::SharedPtr</type>
+        <definition>rclcpp::Subscription&lt;frost_interfaces::msg::ModemRec&gt;::SharedPtr CougControls::actual_heading_subscription_</definition>
+        <argsstring></argsstring>
+        <name>actual_heading_subscription_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src/coug_controls.cpp" line="386" column="7" bodyfile="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src/coug_controls.cpp" bodystart="386" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classCougControls_1a230fdd8f0ceee816eb96eb07cc3e341f" prot="private" static="no" mutable="no">
+        <type>rclcpp::Subscription&lt; std_msgs::msg::Empty &gt;::SharedPtr</type>
+        <definition>rclcpp::Subscription&lt;std_msgs::msg::Empty&gt;::SharedPtr CougControls::init_subscription_</definition>
+        <argsstring></argsstring>
+        <name>init_subscription_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src/coug_controls.cpp" line="387" column="36" bodyfile="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src/coug_controls.cpp" bodystart="387" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classCougControls_1a9b01a8961dcc58b90af41d000d6a006b" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool CougControls::init_flag</definition>
+        <argsstring></argsstring>
+        <name>init_flag</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src/coug_controls.cpp" line="390" column="8" bodyfile="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src/coug_controls.cpp" bodystart="390" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classCougControls_1a981aafdcfff8ff0fb5d05c4e9dbd8891" prot="private" static="no" mutable="no">
+        <type><ref refid="classPID" kindref="compound">PID</ref></type>
+        <definition>PID CougControls::myHeadingPID</definition>
+        <argsstring></argsstring>
+        <name>myHeadingPID</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src/coug_controls.cpp" line="393" column="7" bodyfile="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src/coug_controls.cpp" bodystart="393" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classCougControls_1af93c94bb6034d0fc46d0ad196dbc244e" prot="private" static="no" mutable="no">
+        <type><ref refid="classPID" kindref="compound">PID</ref></type>
+        <definition>PID CougControls::myDepthPID</definition>
+        <argsstring></argsstring>
+        <name>myDepthPID</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src/coug_controls.cpp" line="394" column="7" bodyfile="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src/coug_controls.cpp" bodystart="394" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classCougControls_1abcf3f3a929389c0f215fe07589b14197" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float CougControls::desired_depth</definition>
+        <argsstring></argsstring>
+        <name>desired_depth</name>
+        <initializer>= 0.0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src/coug_controls.cpp" line="397" column="9" bodyfile="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src/coug_controls.cpp" bodystart="397" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classCougControls_1a2be1b03b65278882d7adc6338e7d1283" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float CougControls::desired_heading</definition>
+        <argsstring></argsstring>
+        <name>desired_heading</name>
+        <initializer>= 0.0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src/coug_controls.cpp" line="398" column="9" bodyfile="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src/coug_controls.cpp" bodystart="398" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classCougControls_1a7d3612c244a73587fd99036e6e7bcfad" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float CougControls::desired_speed</definition>
+        <argsstring></argsstring>
+        <name>desired_speed</name>
+        <initializer>= 0.0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src/coug_controls.cpp" line="399" column="9" bodyfile="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src/coug_controls.cpp" bodystart="399" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classCougControls_1a4e1f59c60b49e41f8c105bed7824a37c" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float CougControls::actual_depth</definition>
+        <argsstring></argsstring>
+        <name>actual_depth</name>
+        <initializer>= 0.0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src/coug_controls.cpp" line="402" column="9" bodyfile="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src/coug_controls.cpp" bodystart="402" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classCougControls_1a14c85af7393f722e937e43cbb2553f9f" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float CougControls::actual_heading</definition>
+        <argsstring></argsstring>
+        <name>actual_heading</name>
+        <initializer>= 0.0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src/coug_controls.cpp" line="403" column="9" bodyfile="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src/coug_controls.cpp" bodystart="403" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classCougControls_1ac6fb9ac660ad081d9ebc140745eb799c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>CougControls::CougControls</definition>
+        <argsstring>()</argsstring>
+        <name>CougControls</name>
+        <briefdescription>
+<para>Creates a new controls node. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This constructor creates a new controls node with default values. </para>
+        </detaileddescription>
+        <inbodydescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>timer_period</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The period of the control loop in milliseconds. The default value is 80 ms from experimentation with the BlueRobotics depth sensor.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>depth_kp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The proportional constant for the depth <ref refid="classPID" kindref="compound">PID</ref> controller. The default value is 0.0.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>depth_ki</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The integral constant for the depth <ref refid="classPID" kindref="compound">PID</ref> controller. The default value is 0.0.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>depth_kd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The derivative constant for the depth <ref refid="classPID" kindref="compound">PID</ref> controller. The default value is 0.0.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>depth_min_output</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The minimum output value for the depth <ref refid="classPID" kindref="compound">PID</ref> controller. The default value is 0.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>depth_max_output</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The maximum output value for the depth <ref refid="classPID" kindref="compound">PID</ref> controller. The default value is 0.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>depth_bias</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The bias value for the depth <ref refid="classPID" kindref="compound">PID</ref> controller. The default value is 0.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>heading_kp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The proportional constant for the heading <ref refid="classPID" kindref="compound">PID</ref> controller. The default value is 0.0.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>heading_ki</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The integral constant for the heading <ref refid="classPID" kindref="compound">PID</ref> controller. The default value is 0.0.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>heading_kd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The derivative constant for the heading <ref refid="classPID" kindref="compound">PID</ref> controller. The default value is 0.0.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>heading_min_output</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The minimum output value for the heading <ref refid="classPID" kindref="compound">PID</ref> controller. The default value is 0.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>heading_max_output</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The maximum output value for the heading <ref refid="classPID" kindref="compound">PID</ref> controller. The default value is 0.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>heading_bias</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The bias value for the heading <ref refid="classPID" kindref="compound">PID</ref> controller. The default value is 0.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+Control command publisher.</para>
+<para>This publisher publishes the control commands to the &quot;control_command&quot; topic. It uses the UCommand message type.</para>
+<para>Initialization subscriber.</para>
+<para>This subscriber subscribes to the &quot;init&quot; topic. It uses the Empty message type.</para>
+<para>Desired depth subscriber.</para>
+<para>This subscriber subscribes to the &quot;desired_depth&quot; topic. It uses the DesiredDepth message type.</para>
+<para>Desired heading subscriber.</para>
+<para>This subscriber subscribes to the &quot;desired_heading&quot; topic. It uses the DesiredHeading message type.</para>
+<para>Desired speed subscriber.</para>
+<para>This subscriber subscribes to the &quot;desired_speed&quot; topic. It uses the DesiredSpeed message type.</para>
+<para>Depth subscriber.</para>
+<para>This subscriber subscribes to the &quot;depth_data&quot; topic. It uses the PoseWithCovarianceStamped message type.</para>
+<para>Yaw subscriber.</para>
+<para>This subscriber subscribes to the &quot;modem_rec&quot; topic. It uses the ModemRec message type.</para>
+<para>Control timer.</para>
+<para>This timer calls the control loop at the specified period.</para>
+        </inbodydescription>
+        <location file="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src/coug_controls.cpp" line="50" column="3" bodyfile="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src/coug_controls.cpp" bodystart="50" bodyend="253"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classCougControls_1a596c55ce528e4205a147a7769a39e76d" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void CougControls::init_callback</definition>
+        <argsstring>(const std_msgs::msg::Empty::SharedPtr msg)</argsstring>
+        <name>init_callback</name>
+        <param>
+          <type>const std_msgs::msg::Empty::SharedPtr</type>
+          <declname>msg</declname>
+        </param>
+        <briefdescription>
+<para>Callback function for the init subscription. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This method initializes the controls node by setting the init flag to true.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>msg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The Empty message recieved from the init topic. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src/coug_controls.cpp" line="264" column="8" bodyfile="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src/coug_controls.cpp" bodystart="264" bodyend="270"/>
+      </memberdef>
+      <memberdef kind="function" id="classCougControls_1a4bcb630c0006cb7d6679aaa1bd996f29" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void CougControls::desired_depth_callback</definition>
+        <argsstring>(const frost_interfaces::msg::DesiredDepth &amp;depth_msg)</argsstring>
+        <name>desired_depth_callback</name>
+        <param>
+          <type>const frost_interfaces::msg::DesiredDepth &amp;</type>
+          <declname>depth_msg</declname>
+        </param>
+        <briefdescription>
+<para>Callback function for the desired_depth subscription. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This method sets the desired depth value to the value received from the desired depth message.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>depth_msg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The DesiredDepth message recieved from the desired_depth topic. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src/coug_controls.cpp" line="282" column="3" bodyfile="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src/coug_controls.cpp" bodystart="282" bodyend="284"/>
+      </memberdef>
+      <memberdef kind="function" id="classCougControls_1ab3dba97e33c1e918b91f2a09160d4f23" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void CougControls::desired_heading_callback</definition>
+        <argsstring>(const frost_interfaces::msg::DesiredHeading &amp;heading_msg)</argsstring>
+        <name>desired_heading_callback</name>
+        <param>
+          <type>const frost_interfaces::msg::DesiredHeading &amp;</type>
+          <declname>heading_msg</declname>
+        </param>
+        <briefdescription>
+<para>Callback function for the desired_heading subscription. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This method sets the desired heading value to the value received from the desired heading message.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>heading_msg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The DesiredHeading message recieved from the desired_heading topic. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src/coug_controls.cpp" line="295" column="8" bodyfile="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src/coug_controls.cpp" bodystart="295" bodyend="298"/>
+      </memberdef>
+      <memberdef kind="function" id="classCougControls_1a0aa8506d619b258e68e5084a6d7d6597" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void CougControls::desired_speed_callback</definition>
+        <argsstring>(const frost_interfaces::msg::DesiredSpeed &amp;speed_msg)</argsstring>
+        <name>desired_speed_callback</name>
+        <param>
+          <type>const frost_interfaces::msg::DesiredSpeed &amp;</type>
+          <declname>speed_msg</declname>
+        </param>
+        <briefdescription>
+<para>Callback function for the desired_speed subscription. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This method sets the desired speed value to the value received from the desired speed message.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>speed_msg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The DesiredSpeed message recieved from the desired_speed topic. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src/coug_controls.cpp" line="310" column="3" bodyfile="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src/coug_controls.cpp" bodystart="310" bodyend="312"/>
+      </memberdef>
+      <memberdef kind="function" id="classCougControls_1ab221d3e30e561a36e7732e1ab168f056" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void CougControls::actual_depth_callback</definition>
+        <argsstring>(const geometry_msgs::msg::PoseWithCovarianceStamped &amp;depth_msg)</argsstring>
+        <name>actual_depth_callback</name>
+        <param>
+          <type>const geometry_msgs::msg::PoseWithCovarianceStamped &amp;</type>
+          <declname>depth_msg</declname>
+        </param>
+        <briefdescription>
+<para>Callback function for the depth subscription. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This method sets the actual depth value to the value received from the depth message.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>depth_msg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The PoseWithCovarianceStamped message recieved from the depth_data topic. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src/coug_controls.cpp" line="323" column="8" bodyfile="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src/coug_controls.cpp" bodystart="323" bodyend="326"/>
+      </memberdef>
+      <memberdef kind="function" id="classCougControls_1a93a0e4a5ec301c05a2a96d21f48aa8ba" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void CougControls::actual_heading_callback</definition>
+        <argsstring>(const frost_interfaces::msg::ModemRec &amp;heading_msg)</argsstring>
+        <name>actual_heading_callback</name>
+        <param>
+          <type>const frost_interfaces::msg::ModemRec &amp;</type>
+          <declname>heading_msg</declname>
+        </param>
+        <briefdescription>
+<para>Callback function for the yaw subscription. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This method sets the actual heading value to the value received from the yaw message.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>heading_msg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The ModemRec message recieved from the modem_rec topic. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src/coug_controls.cpp" line="337" column="3" bodyfile="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src/coug_controls.cpp" bodystart="337" bodyend="345"/>
+      </memberdef>
+      <memberdef kind="function" id="classCougControls_1a88c096bc7d4aad1307f6d745a2a941f0" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void CougControls::timer_callback</definition>
+        <argsstring>()</argsstring>
+        <name>timer_callback</name>
+        <briefdescription>
+<para>Callback function for the <ref refid="classPID" kindref="compound">PID</ref> control timer. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This method computes the control commands using the <ref refid="classPID" kindref="compound">PID</ref> controllers and publishes the control commands to the control_command topic. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src/coug_controls.cpp" line="353" column="8" bodyfile="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src/coug_controls.cpp" bodystart="353" bodyend="371"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>A simple controls node. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Nelson Durrant </para>
+</simplesect>
+<simplesect kind="date"><para>September 2024</para>
+</simplesect>
+This node subscribes to desired depth, heading, and speed topics and actual depth and heading topics. It then computes the control commands using various controllers and publishes the control commands to a control command topic.</para>
+<para>Subscribes:<itemizedlist>
+<listitem><para>init (std_msgs/msg/Empty)</para>
+</listitem><listitem><para>desired_depth (frost_interfaces/msg/DesiredDepth)</para>
+</listitem><listitem><para>desired_heading (frost_interfaces/msg/DesiredHeading)</para>
+</listitem><listitem><para>desired_speed (frost_interfaces/msg/DesiredSpeed)</para>
+</listitem><listitem><para>depth_data (geometry_msgs/msg/PoseWithCovarianceStamped)</para>
+</listitem><listitem><para>modem_rec (frost_interfaces/msg/ModemRec) Publishes:</para>
+</listitem><listitem><para>controls/command (frost_interfaces/msg/UCommand) </para>
+</listitem></itemizedlist>
+</para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>CougControls</label>
+        <link refid="classCougControls"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>rclcpp::Node</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>CougControls</label>
+        <link refid="classCougControls"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>rclcpp::Node</label>
+      </node>
+    </collaborationgraph>
+    <location file="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src/coug_controls.cpp" line="43" column="1" bodyfile="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src/coug_controls.cpp" bodystart="43" bodyend="404"/>
+    <listofallmembers>
+      <member refid="classCougControls_1a4e1f59c60b49e41f8c105bed7824a37c" prot="private" virt="non-virtual"><scope>CougControls</scope><name>actual_depth</name></member>
+      <member refid="classCougControls_1ab221d3e30e561a36e7732e1ab168f056" prot="private" virt="non-virtual"><scope>CougControls</scope><name>actual_depth_callback</name></member>
+      <member refid="classCougControls_1add6352c79b41ddb1dba0e9aa94e2538d" prot="private" virt="non-virtual"><scope>CougControls</scope><name>actual_depth_subscription_</name></member>
+      <member refid="classCougControls_1a14c85af7393f722e937e43cbb2553f9f" prot="private" virt="non-virtual"><scope>CougControls</scope><name>actual_heading</name></member>
+      <member refid="classCougControls_1a93a0e4a5ec301c05a2a96d21f48aa8ba" prot="private" virt="non-virtual"><scope>CougControls</scope><name>actual_heading_callback</name></member>
+      <member refid="classCougControls_1a1c6f4bf5bab258aa663eea475486a575" prot="private" virt="non-virtual"><scope>CougControls</scope><name>actual_heading_subscription_</name></member>
+      <member refid="classCougControls_1a9601bab14928d368c2a8d2cf548d8611" prot="private" virt="non-virtual"><scope>CougControls</scope><name>controls_timer_</name></member>
+      <member refid="classCougControls_1ac6fb9ac660ad081d9ebc140745eb799c" prot="public" virt="non-virtual"><scope>CougControls</scope><name>CougControls</name></member>
+      <member refid="classCougControls_1abcf3f3a929389c0f215fe07589b14197" prot="private" virt="non-virtual"><scope>CougControls</scope><name>desired_depth</name></member>
+      <member refid="classCougControls_1a4bcb630c0006cb7d6679aaa1bd996f29" prot="private" virt="non-virtual"><scope>CougControls</scope><name>desired_depth_callback</name></member>
+      <member refid="classCougControls_1ae04b7ab8cfe9e5d18f89042c8273f23a" prot="private" virt="non-virtual"><scope>CougControls</scope><name>desired_depth_subscription_</name></member>
+      <member refid="classCougControls_1a2be1b03b65278882d7adc6338e7d1283" prot="private" virt="non-virtual"><scope>CougControls</scope><name>desired_heading</name></member>
+      <member refid="classCougControls_1ab3dba97e33c1e918b91f2a09160d4f23" prot="private" virt="non-virtual"><scope>CougControls</scope><name>desired_heading_callback</name></member>
+      <member refid="classCougControls_1ad576992c61951cf0fd6586286525cc1e" prot="private" virt="non-virtual"><scope>CougControls</scope><name>desired_heading_subscription_</name></member>
+      <member refid="classCougControls_1a7d3612c244a73587fd99036e6e7bcfad" prot="private" virt="non-virtual"><scope>CougControls</scope><name>desired_speed</name></member>
+      <member refid="classCougControls_1a0aa8506d619b258e68e5084a6d7d6597" prot="private" virt="non-virtual"><scope>CougControls</scope><name>desired_speed_callback</name></member>
+      <member refid="classCougControls_1a4066b5dbc7803df03b56554bb0eecf36" prot="private" virt="non-virtual"><scope>CougControls</scope><name>desired_speed_subscription_</name></member>
+      <member refid="classCougControls_1a596c55ce528e4205a147a7769a39e76d" prot="private" virt="non-virtual"><scope>CougControls</scope><name>init_callback</name></member>
+      <member refid="classCougControls_1a9b01a8961dcc58b90af41d000d6a006b" prot="private" virt="non-virtual"><scope>CougControls</scope><name>init_flag</name></member>
+      <member refid="classCougControls_1a230fdd8f0ceee816eb96eb07cc3e341f" prot="private" virt="non-virtual"><scope>CougControls</scope><name>init_subscription_</name></member>
+      <member refid="classCougControls_1af93c94bb6034d0fc46d0ad196dbc244e" prot="private" virt="non-virtual"><scope>CougControls</scope><name>myDepthPID</name></member>
+      <member refid="classCougControls_1a981aafdcfff8ff0fb5d05c4e9dbd8891" prot="private" virt="non-virtual"><scope>CougControls</scope><name>myHeadingPID</name></member>
+      <member refid="classCougControls_1a88c096bc7d4aad1307f6d745a2a941f0" prot="private" virt="non-virtual"><scope>CougControls</scope><name>timer_callback</name></member>
+      <member refid="classCougControls_1a0a952e938f0dbf6ff2c8a98930a55085" prot="private" virt="non-virtual"><scope>CougControls</scope><name>u_command_publisher_</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

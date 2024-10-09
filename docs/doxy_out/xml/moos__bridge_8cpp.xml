@@ -1,0 +1,470 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="moos__bridge_8cpp" kind="file" language="C++">
+    <compoundname>moos_bridge.cpp</compoundname>
+    <includes local="no">Eigen/Dense</includes>
+    <includes local="no">Eigen/Geometry</includes>
+    <includes local="no">functional</includes>
+    <includes local="no">memory</includes>
+    <includes local="yes">frost_interfaces/msg/desired_depth.hpp</includes>
+    <includes local="yes">frost_interfaces/msg/desired_heading.hpp</includes>
+    <includes local="yes">frost_interfaces/msg/desired_speed.hpp</includes>
+    <includes local="yes">frost_interfaces/msg/vehicle_status.hpp</includes>
+    <includes local="yes">nav_msgs/msg/odometry.hpp</includes>
+    <includes local="yes">rclcpp/rclcpp.hpp</includes>
+    <includes local="yes">std_msgs/msg/string.hpp</includes>
+    <includes local="yes">MOOS/libMOOS/Comms/MOOSAsyncCommClient.h</includes>
+    <includes local="yes">MOOS/libMOOS/Comms/MOOSCommClient.h</includes>
+    <includes local="yes">MOOS/libMOOS/Comms/MOOSMsg.h</includes>
+    <includes local="yes">MOOS/libMOOS/Utils/CommandLineParser.h</includes>
+    <includes local="no">exception</includes>
+    <includes local="no">cstdlib</includes>
+    <includes local="no">iostream</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src/moos_bridge.cpp</label>
+        <link refid="moos__bridge_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>functional</label>
+      </node>
+      <node id="10">
+        <label>nav_msgs/msg/odometry.hpp</label>
+      </node>
+      <node id="3">
+        <label>Eigen/Geometry</label>
+      </node>
+      <node id="14">
+        <label>MOOS/libMOOS/Comms/MOOSCommClient.h</label>
+      </node>
+      <node id="11">
+        <label>rclcpp/rclcpp.hpp</label>
+      </node>
+      <node id="17">
+        <label>exception</label>
+      </node>
+      <node id="9">
+        <label>frost_interfaces/msg/vehicle_status.hpp</label>
+      </node>
+      <node id="8">
+        <label>frost_interfaces/msg/desired_speed.hpp</label>
+      </node>
+      <node id="2">
+        <label>Eigen/Dense</label>
+      </node>
+      <node id="18">
+        <label>cstdlib</label>
+      </node>
+      <node id="19">
+        <label>iostream</label>
+      </node>
+      <node id="6">
+        <label>frost_interfaces/msg/desired_depth.hpp</label>
+      </node>
+      <node id="15">
+        <label>MOOS/libMOOS/Comms/MOOSMsg.h</label>
+      </node>
+      <node id="13">
+        <label>MOOS/libMOOS/Comms/MOOSAsyncCommClient.h</label>
+      </node>
+      <node id="7">
+        <label>frost_interfaces/msg/desired_heading.hpp</label>
+      </node>
+      <node id="16">
+        <label>MOOS/libMOOS/Utils/CommandLineParser.h</label>
+      </node>
+      <node id="12">
+        <label>std_msgs/msg/string.hpp</label>
+      </node>
+      <node id="5">
+        <label>memory</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="classMOOSBridge" prot="public">MOOSBridge</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="moos__bridge_8cpp_1ab262685e60a13ca93d7d8ef03d87f31f" prot="public" static="no">
+        <name>MOOS_MISSION_DIR</name>
+        <initializer>&quot;/home/frostlab/ros2_ws/moos_tools/&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src/moos_bridge.cpp" line="26" column="9" bodyfile="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src/moos_bridge.cpp" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="moos__bridge_8cpp_1a2b181c0c8d00bab2bc2f3e23acbb8063" prot="public" static="no">
+        <type>std::vector&lt; CMOOSMsg &gt;</type>
+        <definition>typedef std::vector&lt;CMOOSMsg&gt; MsgVector</definition>
+        <argsstring></argsstring>
+        <name>MsgVector</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src/moos_bridge.cpp" line="31" column="21" bodyfile="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src/moos_bridge.cpp" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="moos__bridge_8cpp_1ae91353bc51204da54a10acab91ebc376" prot="public" static="no">
+        <type>std::vector&lt; MOOS::ClientCommsStatus &gt;</type>
+        <definition>typedef std::vector&lt;MOOS::ClientCommsStatus&gt; CommsStatusVector</definition>
+        <argsstring></argsstring>
+        <name>CommsStatusVector</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src/moos_bridge.cpp" line="32" column="21" bodyfile="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src/moos_bridge.cpp" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="moos__bridge_8cpp_1add0549dba280d84bc067ceab2d80e04d" prot="public" static="no" mutable="no">
+        <type>MOOS::MOOSAsyncCommClient</type>
+        <definition>MOOS::MOOSAsyncCommClient Comms</definition>
+        <argsstring></argsstring>
+        <name>Comms</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src/moos_bridge.cpp" line="30" column="27" bodyfile="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src/moos_bridge.cpp" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="moos__bridge_8cpp_1aa9e772c394beceea46d860acb5b46685" prot="public" static="no" mutable="no">
+        <type>rclcpp::Publisher&lt; frost_interfaces::msg::DesiredDepth &gt;::SharedPtr</type>
+        <definition>rclcpp::Publisher&lt;frost_interfaces::msg::DesiredDepth&gt;::SharedPtr desired_depth_publisher_</definition>
+        <argsstring></argsstring>
+        <name>desired_depth_publisher_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src/moos_bridge.cpp" line="37" column="5" bodyfile="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src/moos_bridge.cpp" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="moos__bridge_8cpp_1af5160110926ed501bd2cb5e301603451" prot="public" static="no" mutable="no">
+        <type>rclcpp::Publisher&lt; frost_interfaces::msg::DesiredHeading &gt;::SharedPtr</type>
+        <definition>rclcpp::Publisher&lt;frost_interfaces::msg::DesiredHeading&gt;::SharedPtr desired_heading_publisher_</definition>
+        <argsstring></argsstring>
+        <name>desired_heading_publisher_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src/moos_bridge.cpp" line="39" column="5" bodyfile="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src/moos_bridge.cpp" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="moos__bridge_8cpp_1a2f756e1ea2f1603a5a45d320be92e955" prot="public" static="no" mutable="no">
+        <type>rclcpp::Publisher&lt; frost_interfaces::msg::DesiredSpeed &gt;::SharedPtr</type>
+        <definition>rclcpp::Publisher&lt;frost_interfaces::msg::DesiredSpeed&gt;::SharedPtr desired_speed_publisher_</definition>
+        <argsstring></argsstring>
+        <name>desired_speed_publisher_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src/moos_bridge.cpp" line="41" column="5" bodyfile="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src/moos_bridge.cpp" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="moos__bridge_8cpp_1a6be152e8761701d01dfbe3ffaefcfc44" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool OnConnect</definition>
+        <argsstring>(void *pParam)</argsstring>
+        <name>OnConnect</name>
+        <param>
+          <type>void *</type>
+          <declname>pParam</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src/moos_bridge.cpp" line="99" column="6" bodyfile="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src/moos_bridge.cpp" bodystart="99" bodyend="113"/>
+      </memberdef>
+      <memberdef kind="function" id="moos__bridge_8cpp_1a515259521f650dcb62c11cf8641b030a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void PublishDesiredValue</definition>
+        <argsstring>(double value, std::string key)</argsstring>
+        <name>PublishDesiredValue</name>
+        <param>
+          <type>double</type>
+          <declname>value</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src/moos_bridge.cpp" line="115" column="6" bodyfile="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src/moos_bridge.cpp" bodystart="115" bodyend="134"/>
+      </memberdef>
+      <memberdef kind="function" id="moos__bridge_8cpp_1a3038a0d4da73e5a9eec4d9c74dc08318" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool OnMail</definition>
+        <argsstring>(void *pParam)</argsstring>
+        <name>OnMail</name>
+        <param>
+          <type>void *</type>
+          <declname>pParam</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src/moos_bridge.cpp" line="137" column="6" bodyfile="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src/moos_bridge.cpp" bodystart="137" bodyend="153"/>
+      </memberdef>
+      <memberdef kind="function" id="moos__bridge_8cpp_1a0ddf1224851353fc92bfbff6f499fa97" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int main</definition>
+        <argsstring>(int argc, char *argv[])</argsstring>
+        <name>main</name>
+        <param>
+          <type>int</type>
+          <declname>argc</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>argv</declname>
+          <array>[]</array>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src/moos_bridge.cpp" line="155" column="5" bodyfile="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src/moos_bridge.cpp" bodystart="155" bodyend="168"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&lt;Eigen/Dense&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;Eigen/Geometry&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;functional&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;memory&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">//<sp/>ros2<sp/>stuff</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;frost_interfaces/msg/desired_depth.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;frost_interfaces/msg/desired_heading.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;frost_interfaces/msg/desired_speed.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;frost_interfaces/msg/vehicle_status.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;nav_msgs/msg/odometry.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;rclcpp/rclcpp.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;std_msgs/msg/string.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="comment">//<sp/>MOOS<sp/>stuff</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="comment">//<sp/>https://gobysoft.org/doc/moos/class_c_m_o_o_s_msg.html</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;MOOS/libMOOS/Comms/MOOSAsyncCommClient.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;MOOS/libMOOS/Comms/MOOSCommClient.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;MOOS/libMOOS/Comms/MOOSMsg.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;MOOS/libMOOS/Utils/CommandLineParser.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;exception&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cstdlib&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MOOS_MISSION_DIR<sp/>&quot;/home/frostlab/ros2_ws/moos_tools/&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>std::placeholders::_1;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal">MOOS::MOOSAsyncCommClient<sp/><ref refid="moos__bridge_8cpp_1add0549dba280d84bc067ceab2d80e04d" kindref="member">Comms</ref>;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>std::vector&lt;CMOOSMsg&gt;<sp/><ref refid="moos__bridge_8cpp_1a2b181c0c8d00bab2bc2f3e23acbb8063" kindref="member">MsgVector</ref>;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>std::vector&lt;MOOS::ClientCommsStatus&gt;<sp/><ref refid="moos__bridge_8cpp_1ae91353bc51204da54a10acab91ebc376" kindref="member">CommsStatusVector</ref>;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="comment">//<sp/>global<sp/>for<sp/>moos<sp/>and<sp/>ros<sp/>to<sp/>be<sp/>able<sp/>to<sp/>use</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal">rclcpp::Publisher&lt;frost_interfaces::msg::DesiredDepth&gt;::SharedPtr</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="moos__bridge_8cpp_1aa9e772c394beceea46d860acb5b46685" kindref="member">desired_depth_publisher_</ref>;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal">rclcpp::Publisher&lt;frost_interfaces::msg::DesiredHeading&gt;::SharedPtr</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="moos__bridge_8cpp_1af5160110926ed501bd2cb5e301603451" kindref="member">desired_heading_publisher_</ref>;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal">rclcpp::Publisher&lt;frost_interfaces::msg::DesiredSpeed&gt;::SharedPtr</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="moos__bridge_8cpp_1a2f756e1ea2f1603a5a45d320be92e955" kindref="member">desired_speed_publisher_</ref>;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="comment">//<sp/>MOOS<sp/>functions</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45" refid="classMOOSBridge" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classMOOSBridge" kindref="compound">MOOSBridge</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>rclcpp::Node<sp/>{</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><ref refid="classMOOSBridge_1aa88004c4fa2d6e3c8253f49c1dd3faa1" kindref="member">MOOSBridge</ref>()<sp/>:<sp/>Node(</highlight><highlight class="stringliteral">&quot;moos_bridge&quot;</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>vehicle<sp/>status<sp/>listener</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>subscription_vehicle_status_<sp/>=</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;create_subscription&lt;frost_interfaces::msg::VehicleStatus&gt;(</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;vehicle_status&quot;</highlight><highlight class="normal">,<sp/>10,</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::bind(&amp;MOOSBridge::ros_vehicle_status_listener,<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>_1));</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>publishers</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="moos__bridge_8cpp_1aa9e772c394beceea46d860acb5b46685" kindref="member">desired_depth_publisher_</ref><sp/>=</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;create_publisher&lt;frost_interfaces::msg::DesiredDepth&gt;(</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;desired_depth&quot;</highlight><highlight class="normal">,<sp/>10);</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="moos__bridge_8cpp_1af5160110926ed501bd2cb5e301603451" kindref="member">desired_heading_publisher_</ref><sp/>=</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;create_publisher&lt;frost_interfaces::msg::DesiredHeading&gt;(</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;desired_heading&quot;</highlight><highlight class="normal">,<sp/>10);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="moos__bridge_8cpp_1a2f756e1ea2f1603a5a45d320be92e955" kindref="member">desired_speed_publisher_</ref><sp/>=</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;create_publisher&lt;frost_interfaces::msg::DesiredSpeed&gt;(</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;desired_speed&quot;</highlight><highlight class="normal">,<sp/>10);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>needs<sp/>to<sp/>listen<sp/>to<sp/>(x,y),<sp/>depth,<sp/>speed,</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>heading<sp/>--&gt;<sp/><sp/>NAV_X,<sp/>NAV_Y,<sp/>NAV_SPEED,<sp/>NAV_HEADING,<sp/>NAV_DEPTH</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/>ros_vehicle_status_listener(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>frost_interfaces::msg::VehicleStatus<sp/>&amp;msg)<sp/>{</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>nav_x,<sp/>nav_y,<sp/>nav_depth,<sp/>nav_heading,<sp/>nav_speed;</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>nav_x<sp/>=<sp/>msg.coug_odom.pose.pose.position.x;</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>nav_y<sp/>=<sp/>msg.coug_odom.pose.pose.position.y;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/>nav_depth<sp/>=<sp/>-1.0<sp/>*<sp/>msg.coug_odom.pose.pose.position.z;</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>nav_speed<sp/>=<sp/>msg.coug_odom.twist.twist.linear.x;</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>yaw<sp/>comes<sp/>in<sp/>-180<sp/>to<sp/>180<sp/>(degrees)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(msg.attitude_yaw<sp/>&lt;<sp/>0.0)<sp/>{</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>nav_heading<sp/>=<sp/>360.0<sp/>+<sp/>(0.1<sp/>*<sp/>msg.attitude_yaw);</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>nav_heading<sp/>=<sp/>(0.1<sp/>*<sp/>msg.attitude_yaw);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>publish<sp/>to<sp/>MOOS-IvP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="moos__bridge_8cpp_1add0549dba280d84bc067ceab2d80e04d" kindref="member">Comms</ref>.Notify(</highlight><highlight class="stringliteral">&quot;NAV_X&quot;</highlight><highlight class="normal">,<sp/>nav_x);</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="moos__bridge_8cpp_1add0549dba280d84bc067ceab2d80e04d" kindref="member">Comms</ref>.Notify(</highlight><highlight class="stringliteral">&quot;NAV_Y&quot;</highlight><highlight class="normal">,<sp/>nav_y);</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="moos__bridge_8cpp_1add0549dba280d84bc067ceab2d80e04d" kindref="member">Comms</ref>.Notify(</highlight><highlight class="stringliteral">&quot;NAV_DEPTH&quot;</highlight><highlight class="normal">,<sp/>nav_depth);</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="moos__bridge_8cpp_1add0549dba280d84bc067ceab2d80e04d" kindref="member">Comms</ref>.Notify(</highlight><highlight class="stringliteral">&quot;NAV_SPEED&quot;</highlight><highlight class="normal">,<sp/>nav_speed);</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="moos__bridge_8cpp_1add0549dba280d84bc067ceab2d80e04d" kindref="member">Comms</ref>.Notify(</highlight><highlight class="stringliteral">&quot;NAV_HEADING&quot;</highlight><highlight class="normal">,<sp/>nav_heading);</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/>rclcpp::Subscription&lt;frost_interfaces::msg::VehicleStatus&gt;::SharedPtr</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>subscription_vehicle_status_;</highlight></codeline>
+<codeline lineno="97"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="moos__bridge_8cpp_1a6be152e8761701d01dfbe3ffaefcfc44" kindref="member">OnConnect</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*pParam)<sp/>{</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/>CMOOSCommClient<sp/>*pC<sp/>=<sp/></highlight><highlight class="keyword">reinterpret_cast&lt;</highlight><highlight class="normal">CMOOSCommClient<sp/>*</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(pParam);</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>from<sp/>MOOS-IVP<sp/>to<sp/>ros<sp/>base</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/>pC-&gt;Register(</highlight><highlight class="stringliteral">&quot;DESIRED_SPEED&quot;</highlight><highlight class="normal">,<sp/>0.0);</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/>pC-&gt;Register(</highlight><highlight class="stringliteral">&quot;DESIRED_HEADING&quot;</highlight><highlight class="normal">,<sp/>0.0);</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/>pC-&gt;Register(</highlight><highlight class="stringliteral">&quot;DESIRED_DEPTH&quot;</highlight><highlight class="normal">,<sp/>0.0);</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/>pC-&gt;Register(</highlight><highlight class="stringliteral">&quot;NAV_SPEED&quot;</highlight><highlight class="normal">,<sp/>0.0);</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/>pC-&gt;Register(</highlight><highlight class="stringliteral">&quot;NAV_HEADING&quot;</highlight><highlight class="normal">,<sp/>0.0);</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/>pC-&gt;Register(</highlight><highlight class="stringliteral">&quot;NAV_DEPTH&quot;</highlight><highlight class="normal">,<sp/>0.0);</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>std::string<sp/>command<sp/>=<sp/>&quot;uPokeDB<sp/>&quot;<sp/>+<sp/>MOOS_MISSION_DIR<sp/>+<sp/>&quot;coug.moos&quot;<sp/>+<sp/>&quot;<sp/>&quot;<sp/>+</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>variable<sp/>+<sp/>&quot;=&quot;<sp/>+<sp/>value<sp/>&quot;<sp/>,<sp/>MOOS_MANUAL_OVERIDE=false&quot;;<sp/>int<sp/>result<sp/>=</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>system(command.c_str());</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="113"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="moos__bridge_8cpp_1a515259521f650dcb62c11cf8641b030a" kindref="member">PublishDesiredValue</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>value,<sp/>std::string<sp/>key)<sp/>{</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(key<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;DESIRED_SPEED&quot;</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>message<sp/>=<sp/>frost_interfaces::msg::DesiredSpeed();</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/>message.desired_speed<sp/>=<sp/>value;</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="moos__bridge_8cpp_1a2f756e1ea2f1603a5a45d320be92e955" kindref="member">desired_speed_publisher_</ref>-&gt;publish(message);</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(key<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;DESIRED_HEADING&quot;</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>message<sp/>=<sp/>frost_interfaces::msg::DesiredHeading();</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(value<sp/>&gt;<sp/>180.0)<sp/>{</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>message.desired_heading<sp/>=<sp/>-1.0<sp/>*<sp/>(360.0<sp/>-<sp/>value);</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>message.desired_heading<sp/>=<sp/>value;</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="moos__bridge_8cpp_1af5160110926ed501bd2cb5e301603451" kindref="member">desired_heading_publisher_</ref>-&gt;publish(message);</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(key<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;DESIRED_DEPTH&quot;</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>message<sp/>=<sp/>frost_interfaces::msg::DesiredDepth();</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/>message.desired_depth<sp/>=<sp/>value;</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="moos__bridge_8cpp_1aa9e772c394beceea46d860acb5b46685" kindref="member">desired_depth_publisher_</ref>-&gt;publish(message);</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="134"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Receives<sp/>the<sp/>moos<sp/>stuff</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="moos__bridge_8cpp_1a3038a0d4da73e5a9eec4d9c74dc08318" kindref="member">OnMail</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*pParam)<sp/>{</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/>CMOOSCommClient<sp/>*pC<sp/>=<sp/></highlight><highlight class="keyword">reinterpret_cast&lt;</highlight><highlight class="normal">CMOOSCommClient<sp/>*</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(pParam);</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/>MOOSMSG_LIST<sp/>M;</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/>pC-&gt;Fetch(M);</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/>MOOSMSG_LIST::iterator<sp/>q;</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(q<sp/>=<sp/>M.begin();<sp/>q<sp/>!=<sp/>M.end();<sp/>q++)<sp/>{</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/>CMOOSMsg<sp/>&amp;msg<sp/>=<sp/>*q;</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>key<sp/>=<sp/>msg.GetKey();</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>value<sp/>=<sp/>msg.GetDouble();</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="moos__bridge_8cpp_1a515259521f650dcb62c11cf8641b030a" kindref="member">PublishDesiredValue</ref>(value,<sp/>key);</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;DESIRED_&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>key<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>value<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>if<sp/>you<sp/>want<sp/>to<sp/>print<sp/>all<sp/>the<sp/>values<sp/>registered<sp/>for,<sp/>then<sp/>uncomment<sp/>this</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>q-&gt;Trace();</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="153"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="moos__bridge_8cpp_1a0ddf1224851353fc92bfbff6f499fa97" kindref="member">main</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>argc,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*argv[])<sp/>{</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"></highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>MOOS<sp/>stuff</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><ref refid="moos__bridge_8cpp_1add0549dba280d84bc067ceab2d80e04d" kindref="member">Comms</ref>.SetOnMailCallBack(<ref refid="moos__bridge_8cpp_1a3038a0d4da73e5a9eec4d9c74dc08318" kindref="member">OnMail</ref>,<sp/>&amp;<ref refid="moos__bridge_8cpp_1add0549dba280d84bc067ceab2d80e04d" kindref="member">Comms</ref>);</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><ref refid="moos__bridge_8cpp_1add0549dba280d84bc067ceab2d80e04d" kindref="member">Comms</ref>.SetOnConnectCallBack(<ref refid="moos__bridge_8cpp_1a6be152e8761701d01dfbe3ffaefcfc44" kindref="member">OnConnect</ref>,<sp/>&amp;<ref refid="moos__bridge_8cpp_1add0549dba280d84bc067ceab2d80e04d" kindref="member">Comms</ref>);</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><ref refid="moos__bridge_8cpp_1add0549dba280d84bc067ceab2d80e04d" kindref="member">Comms</ref>.Run(</highlight><highlight class="stringliteral">&quot;localhost&quot;</highlight><highlight class="normal">,<sp/>9000,<sp/></highlight><highlight class="stringliteral">&quot;my_connection&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"></highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>ROS2<sp/>stuff</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/>rclcpp::init(argc,<sp/>argv);</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/>rclcpp::spin(std::make_shared&lt;MOOSBridge&gt;());</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/>rclcpp::shutdown();</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"></highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="168"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control/src/moos_bridge.cpp"/>
+  </compounddef>
+</doxygen>

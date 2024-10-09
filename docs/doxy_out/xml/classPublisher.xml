@@ -1,0 +1,144 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classPublisher" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>Publisher</compoundname>
+    <derivedcompoundref refid="classBatteryPub" prot="private" virt="non-virtual">BatteryPub</derivedcompoundref>
+    <derivedcompoundref refid="classLeakPub" prot="private" virt="non-virtual">LeakPub</derivedcompoundref>
+    <derivedcompoundref refid="classPressurePub" prot="private" virt="non-virtual">PressurePub</derivedcompoundref>
+    <includes refid="publisher_8h" local="no">publisher.h</includes>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classPublisher_1ad9c34822680c614d681b3f3ab052435c" prot="protected" static="no" mutable="no">
+        <type>rcl_publisher_t</type>
+        <definition>rcl_publisher_t Publisher::publisher</definition>
+        <argsstring></argsstring>
+        <name>publisher</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nelsondurrant/CougarsSetup/CougarsTeensy/cougars/include/publisher.h" line="61" column="19" bodyfile="/home/nelsondurrant/CougarsSetup/CougarsTeensy/cougars/include/publisher.h" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classPublisher_1a98d333e2b575251708ca89acb2512bc6" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Publisher::setup</definition>
+        <argsstring>(rcl_node_t node)=0</argsstring>
+        <name>setup</name>
+        <reimplementedby refid="classBatteryPub_1a1361e66ff663b7f5811e12e12b51c935">setup</reimplementedby>
+        <reimplementedby refid="classLeakPub_1a90140205a1308064a69becd1bf9b2d59">setup</reimplementedby>
+        <reimplementedby refid="classPressurePub_1a8a327163f2bf2caba602b3695786cc93">setup</reimplementedby>
+        <param>
+          <type>rcl_node_t</type>
+          <declname>node</declname>
+        </param>
+        <briefdescription>
+<para>Set up the publisher. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function sets up the publisher. It must be implemented by the derived class.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>node</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the micro-ROS node </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nelsondurrant/CougarsSetup/CougarsTeensy/cougars/include/publisher.h" line="47" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classPublisher_1a26ae34a9146d37d7a2a1885ae0a97bed" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Publisher::destroy</definition>
+        <argsstring>(rcl_node_t node)</argsstring>
+        <name>destroy</name>
+        <param>
+          <type>rcl_node_t</type>
+          <declname>node</declname>
+        </param>
+        <briefdescription>
+<para>Destroy the publisher. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function destroys the publisher.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>node</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the micro-ROS node </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nelsondurrant/CougarsSetup/CougarsTeensy/cougars/include/publisher.h" line="56" column="8" bodyfile="/home/nelsondurrant/CougarsSetup/CougarsTeensy/cougars/include/publisher.h" bodystart="56" bodyend="58"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classPublisher_1a81914f338676981cffeab3d1eff0d4aa" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Publisher::error_loop</definition>
+        <argsstring>()</argsstring>
+        <name>error_loop</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nelsondurrant/CougarsSetup/CougarsTeensy/cougars/include/publisher.h" line="63" column="8" bodyfile="/home/nelsondurrant/CougarsSetup/CougarsTeensy/cougars/include/publisher.h" bodystart="63" bodyend="67"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Base class for publishers. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Nelson Durrant </para>
+</simplesect>
+<simplesect kind="date"><para>September 2024</para>
+</simplesect>
+This class is a base class for publishers. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="3">
+        <label>LeakPub</label>
+        <link refid="classLeakPub"/>
+        <childnode refid="1" relation="private-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>PressurePub</label>
+        <link refid="classPressurePub"/>
+        <childnode refid="1" relation="private-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>BatteryPub</label>
+        <link refid="classBatteryPub"/>
+        <childnode refid="1" relation="private-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>Publisher</label>
+        <link refid="classPublisher"/>
+      </node>
+    </inheritancegraph>
+    <location file="/home/nelsondurrant/CougarsSetup/CougarsTeensy/cougars/include/publisher.h" line="36" column="1" bodyfile="/home/nelsondurrant/CougarsSetup/CougarsTeensy/cougars/include/publisher.h" bodystart="36" bodyend="68"/>
+    <listofallmembers>
+      <member refid="classPublisher_1a26ae34a9146d37d7a2a1885ae0a97bed" prot="public" virt="non-virtual"><scope>Publisher</scope><name>destroy</name></member>
+      <member refid="classPublisher_1a81914f338676981cffeab3d1eff0d4aa" prot="protected" virt="non-virtual"><scope>Publisher</scope><name>error_loop</name></member>
+      <member refid="classPublisher_1ad9c34822680c614d681b3f3ab052435c" prot="protected" virt="non-virtual"><scope>Publisher</scope><name>publisher</name></member>
+      <member refid="classPublisher_1a98d333e2b575251708ca89acb2512bc6" prot="public" virt="pure-virtual"><scope>Publisher</scope><name>setup</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

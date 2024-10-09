@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="dir_361b1e3634ff87d78695ed57d09b492c" kind="dir">
+    <compoundname>/home/nelsondurrant/CougarsSetup/CougarsRPi/src</compoundname>
+    <innerdir refid="dir_e801e2f56a9523410c7bf1e6c15139e8">/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_control</innerdir>
+    <innerdir refid="dir_18c4efe67291a03075fcf5864d48d4c4">/home/nelsondurrant/CougarsSetup/CougarsRPi/src/cougars_localization</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/nelsondurrant/CougarsSetup/CougarsRPi/src/"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,167 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classBatteryPub" kind="class" language="C++" prot="public">
+    <compoundname>BatteryPub</compoundname>
+    <basecompoundref refid="classPublisher" prot="private" virt="non-virtual">Publisher</basecompoundref>
+    <includes refid="battery__pub_8h" local="no">battery_pub.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classBatteryPub_1a798245566b6ee3a7eb0e0a1e197327e1" prot="private" static="no" mutable="no">
+        <type>frost_interfaces__msg__BatteryStatus</type>
+        <definition>frost_interfaces__msg__BatteryStatus BatteryPub::msg</definition>
+        <argsstring></argsstring>
+        <name>msg</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nelsondurrant/CougarsSetup/CougarsTeensy/cougars/include/battery_pub.h" line="40" column="40" bodyfile="/home/nelsondurrant/CougarsSetup/CougarsTeensy/cougars/include/battery_pub.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classBatteryPub_1a1361e66ff663b7f5811e12e12b51c935" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void BatteryPub::setup</definition>
+        <argsstring>(rcl_node_t node)</argsstring>
+        <name>setup</name>
+        <reimplements refid="classPublisher_1a98d333e2b575251708ca89acb2512bc6">setup</reimplements>
+        <param>
+          <type>rcl_node_t</type>
+          <declname>node</declname>
+        </param>
+        <briefdescription>
+<para>Set up the battery publisher. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function sets up the battery publisher.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>node</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the micro-ROS node </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nelsondurrant/CougarsSetup/CougarsTeensy/cougars/include/battery_pub.h" line="26" column="8" bodyfile="/home/nelsondurrant/CougarsSetup/CougarsTeensy/cougars/src/battery_pub.cpp" bodystart="3" bodyend="9"/>
+      </memberdef>
+      <memberdef kind="function" id="classBatteryPub_1ab6e03ac84debea08d656881e2ff9c984" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void BatteryPub::publish</definition>
+        <argsstring>(float voltage, float current)</argsstring>
+        <name>publish</name>
+        <param>
+          <type>float</type>
+          <declname>voltage</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>current</declname>
+        </param>
+        <briefdescription>
+<para>Publish the battery data. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function publishes the battery data to the micro-ROS agent.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>voltage</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the battery voltage (V) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>current</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the battery current (A) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nelsondurrant/CougarsSetup/CougarsTeensy/cougars/include/battery_pub.h" line="36" column="8" bodyfile="/home/nelsondurrant/CougarsSetup/CougarsTeensy/cougars/src/battery_pub.cpp" bodystart="11" bodyend="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classBatteryPub_1a26ae34a9146d37d7a2a1885ae0a97bed" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Publisher::destroy</definition>
+        <argsstring>(rcl_node_t node)</argsstring>
+        <name>destroy</name>
+        <param>
+          <type>rcl_node_t</type>
+          <declname>node</declname>
+        </param>
+        <briefdescription>
+<para>Destroy the publisher. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function destroys the publisher.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>node</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the micro-ROS node </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nelsondurrant/CougarsSetup/CougarsTeensy/cougars/include/battery_pub.h" line="37" column="3" bodyfile="/home/nelsondurrant/CougarsSetup/CougarsTeensy/cougars/include/publisher.h" bodystart="56" bodyend="58"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><ref refid="classPublisher" kindref="compound">Publisher</ref> for battery sensor data. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Nelson Durrant </para>
+</simplesect>
+<simplesect kind="date"><para>September 2024</para>
+</simplesect>
+This class is a publisher for the battery sensor data. It publishes the battery data to the micro-ROS agent. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>BatteryPub</label>
+        <link refid="classBatteryPub"/>
+        <childnode refid="2" relation="private-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Publisher</label>
+        <link refid="classPublisher"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>BatteryPub</label>
+        <link refid="classBatteryPub"/>
+        <childnode refid="2" relation="private-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Publisher</label>
+        <link refid="classPublisher"/>
+      </node>
+    </collaborationgraph>
+    <location file="/home/nelsondurrant/CougarsSetup/CougarsTeensy/cougars/include/battery_pub.h" line="16" column="1" bodyfile="/home/nelsondurrant/CougarsSetup/CougarsTeensy/cougars/include/battery_pub.h" bodystart="16" bodyend="41"/>
+    <listofallmembers>
+      <member refid="classBatteryPub_1a26ae34a9146d37d7a2a1885ae0a97bed" prot="public" virt="non-virtual"><scope>BatteryPub</scope><name>destroy</name></member>
+      <member refid="classPublisher_1a26ae34a9146d37d7a2a1885ae0a97bed" prot="private" virt="non-virtual" ambiguityscope="Publisher::"><scope>BatteryPub</scope><name>destroy</name></member>
+      <member refid="classBatteryPub_1a798245566b6ee3a7eb0e0a1e197327e1" prot="private" virt="non-virtual"><scope>BatteryPub</scope><name>msg</name></member>
+      <member refid="classBatteryPub_1ab6e03ac84debea08d656881e2ff9c984" prot="public" virt="non-virtual"><scope>BatteryPub</scope><name>publish</name></member>
+      <member refid="classBatteryPub_1a1361e66ff663b7f5811e12e12b51c935" prot="public" virt="virtual"><scope>BatteryPub</scope><name>setup</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
