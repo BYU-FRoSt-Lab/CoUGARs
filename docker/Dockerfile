@@ -115,7 +115,7 @@ WORKDIR /home/frostlab
 
 RUN echo "export PATH=$PATH:/home/frostlab/moos-ivp/bin" >> /home/frostlab/.bashrc
 
-# Install development dependencies (rqt, plotjuggler, rosdoc2, etc.)
+# Install development dependencies (rqt, plotjuggler, documentation, etc.)
 USER root
 RUN if [ "$TARGETARCH" = "amd64" ]; then \
     apt update && apt install -y \
