@@ -7,6 +7,9 @@
 services:
   cougars:
     image: frostlab/cougars:amd64
+    build:
+      context: .
+      dockerfile: Dockerfile
     container_name: cougars
     user: frostlab
     network_mode: host
