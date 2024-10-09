@@ -39,17 +39,17 @@ sudo apt upgrade -y
 sudo apt install -y vim tmux chrony git rsync mosh
 
 # Set up volumes
-mkdir /home/frostlab/bag
-cp -r /home/frostlab/CougarsSetup/config home/frostlab
+mkdir ~/bag
+cp -r ~/CougarsSetup/config home/frostlab
 
 # Set up udev rules
-sudo ln -s /home/frostlab/config/local/00-teensy.rules /etc/udev/rules.d/00-teensy.rules
+sudo ln -s ~/config/local/00-teensy.rules /etc/udev/rules.d/00-teensy.rules
 sudo udevadm control --reload-rules
 sudo udevadm trigger
 
 # Set up config files
-sudo ln -s /home/frostlab/config/local/chrony.conf /etc/chrony/chrony.conf
-sudo ln -s /home/frostlab/config/local/.tmux.conf /home/frostlab/.tmux.conf
+sudo ln -s ~/config/local/chrony.conf /etc/chrony/chrony.conf
+sudo ln -s ~/config/local/.tmux.conf ~/.tmux.conf
 
 # Copy repos from GitHub
 cd ~
