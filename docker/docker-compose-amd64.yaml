@@ -15,10 +15,10 @@ services:
       MPLBACKEND: Qt5Agg # Required for GUI applications
     privileged: true
     volumes:
-      # - ~/bag:/home/frostlab/ros2_ws/bag:rw
-      - ~/CougarsSetup/config:/home/frostlab/config:rw
-      - ~/CougarsRPi:/home/frostlab/ros2_ws
-      - ~/CougarsTeensy:/home/frostlab/teensy_ws
+      # - ~/bag:~/ros2_ws/bag:rw
+      - ~/CougarsSetup/config:~/config:rw
+      - ~/CougarsRPi:~/ros2_ws:rw
+      - ~/CougarsTeensy:~/teensy_ws:rw
       - /etc/localtime:/etc/localtime:ro # Syncs the container's time with the host
       - /run/udev:/run/udev:ro
       - /dev:/dev:rw
