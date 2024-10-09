@@ -15,8 +15,8 @@ services:
     volumes:
       - ~/bag:/home/frostlab/ros2_ws/bag:rw
       - ~/config:/home/frostlab/config:rw
-      - ../CougarsRPi:/home/frostlab/ros2_ws:rw
-      - ../CougarsTeensy:/home/frostlab/teensy_ws:rw
+      - ../CougarsRPi:/home/frostlab/ros2_ws
+      - ../CougarsTeensy:/home/frostlab/teensy_ws
       - /etc/localtime:/etc/localtime:ro # Syncs the container's time with the host
       - /dev:/dev:rw
       - /run/udev:/run/udev:ro
