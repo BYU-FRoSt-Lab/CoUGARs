@@ -3,11 +3,13 @@
 #
 # Simply pulls all avaliable git updates
 
-cd ~/CougarsSetup
 git pull
 
-cd ~/CougarsRPi
+cd ./cougars-ros2
 git pull
 
-cd ~/CougarsTeensy
+cd ../cougars-teensy
+git pull
+
+cd ../cougars-gpio
 git pull

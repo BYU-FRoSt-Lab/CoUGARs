@@ -48,7 +48,7 @@ if [ "$(uname -m)" == "aarch64" ]; then
 
   # Set up volumes
   mkdir ~/bag
-  cp -r ~/CougarsSetup/config ~
+  cp -r ~/CoUGARs/config ~
 
   # Set up udev rules
   sudo ln -s ~/config/local/00-teensy.rules /etc/udev/rules.d/00-teensy.rules
@@ -60,8 +60,9 @@ if [ "$(uname -m)" == "aarch64" ]; then
   sudo ln -s ~/config/local/.tmux.conf ~/.tmux.conf
 
   # Copy repos from GitHub
-  git clone https://github.com/BYU-FRoSt-Lab/CougarsRPi.git
-  git clone https://github.com/BYU-FRoSt-Lab/CougarsTeensy.git
+  git clone https://github.com/BYU-FRoSt-Lab/cougars-ros2.git
+  git clone https://github.com/BYU-FRoSt-Lab/cougars-teensy.git
+  git clone https://github.com/BYU-FRoSt-Lab/cougars-gpio.git
 
   echo ""
   printInfo "Make sure to set the vehicle-specific params in "network_id.sh" and "vehicle_config.yaml" in "~/config" now"
@@ -74,7 +75,8 @@ else
   echo ""
 
   # Copy repos from GitHub
-  git clone https://github.com/BYU-FRoSt-Lab/CougarsRPi.git
-  git clone https://github.com/BYU-FRoSt-Lab/CougarsTeensy.git
+  git clone https://github.com/BYU-FRoSt-Lab/cougars-ros2.git
+  git clone https://github.com/BYU-FRoSt-Lab/cougars-teensy.git
+  git clone https://github.com/BYU-FRoSt-Lab/cougars-gpio.git
 
 fi
