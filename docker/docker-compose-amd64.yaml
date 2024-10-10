@@ -14,14 +14,15 @@ services:
     user: frostlab
     network_mode: host
     environment:
-      DISPLAY: :0 # Required for GUI applications
+      DISPLAY: $DISPLAY # Required for GUI applications
       MPLBACKEND: Qt5Agg # Required for GUI applications
     privileged: true
     volumes:
       # - ~/bag:/home/frostlab/ros2_ws/bag:rw
-      - ../config:/home/frostlab/config:rw
-      - ../CougarsRPi:/home/frostlab/ros2_ws
-      - ../CougarsTeensy:/home/frostlab/teensy_ws
+      - ~/config:/home/frostlab/config:rw
+      - ../cougars-rpi:/home/frostlab/ros2_ws
+      - ../cougars-teensy:/home/frostlab/teensy_ws
+      - ../cougars-gpio:/home/frostlab/gpio
       - /etc/localtime:/etc/localtime:ro # Syncs the container's time with the host
       - /run/udev:/run/udev:ro
       - /dev:/dev:rw

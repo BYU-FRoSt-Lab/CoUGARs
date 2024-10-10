@@ -74,6 +74,10 @@ else
   printInfo "Setting up CoUGARs on a development machine"
   echo ""
 
+  # Set up volumes
+  mkdir ~/bag
+  cp -r ~/CoUGARs/config ~
+
   # Copy repos from GitHub
   git clone https://github.com/BYU-FRoSt-Lab/cougars-ros2.git
   git clone https://github.com/BYU-FRoSt-Lab/cougars-teensy.git
