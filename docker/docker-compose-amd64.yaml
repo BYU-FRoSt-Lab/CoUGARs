@@ -18,14 +18,12 @@ services:
       MPLBACKEND: Qt5Agg # Required for GUI applications
     privileged: true
     volumes:
-      # - ~/bag:/home/frostlab/ros2_ws/bag:rw
+      - ~/bag:/home/frostlab/ros2_ws/bag:rw
       - ~/config:/home/frostlab/config:rw
-      - ../cougars-rpi:/home/frostlab/ros2_ws
+      - ../cougars-ros2:/home/frostlab/ros2_ws
       - ../cougars-teensy:/home/frostlab/teensy_ws
       - ../cougars-gpio:/home/frostlab/gpio
       - /etc/localtime:/etc/localtime:ro # Syncs the container's time with the host
-      - /run/udev:/run/udev:ro
-      - /dev:/dev:rw
       - /tmp/.X11-unix:/tmp/.X11-unix # Required for GUI applications
     command: /bin/bash
     stdin_open: true  # Equivalent to -it in docker run
