@@ -21,15 +21,6 @@ function printError {
   echo -e "\033[0m\033[31m[ERROR] $1\033[0m"
 }
 
-# Check if the script is being run from the root of the CoUGARs repo
-if [ ! -d "CoUGARs" ]; then
-
-  echo ""
-  printError "This script must be run from the root of the CoUGARs repo"
-  echo ""
-  exit 1
-fi
-
 if [ "$(uname -m)" == "aarch64" ]; then
 
   echo ""
