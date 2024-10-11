@@ -28,7 +28,7 @@ RUN apt update && apt install -y tytools
 RUN useradd -ms /bin/bash $UNAME
 RUN usermod -aG sudo $UNAME
 RUN usermod -aG dialout $UNAME
-RUN echo '$UNAME:$UNAME' | chpasswd
+RUN echo "$UNAME:$UNAME" | chpasswd
 USER $UNAME
 WORKDIR /home/$UNAME
 
