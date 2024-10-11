@@ -7,6 +7,7 @@
 #   the most current image
 # - This script can also be used to set up a new development
 #   environment on a personal machine
+# - Make sure you run this from the root of the CoUGARs repo
 
 function printInfo {
   echo -e "\033[0m\033[36m[INFO] $1\033[0m"
@@ -20,8 +21,14 @@ function printError {
   echo -e "\033[0m\033[31m[ERROR] $1\033[0m"
 }
 
-echo ""
-printWarning "Make sure you run this from the the root of the CoUGARs repo"
+# Check if the script is being run from the root of the CoUGARs repo
+if [ ! -d "CoUGARs" ]; then
+
+  echo ""
+  printError "This script must be run from the root of the CoUGARs repo"
+  echo ""
+  exit 1
+fi
 
 if [ "$(uname -m)" == "aarch64" ]; then
 
