@@ -11,7 +11,10 @@
 /**:
   ros__parameters:
     vehicle_id: 0
+    
     water_salinity_ppt: 0 # 0 for fresh water, 35 for salt water
+    # https://www.ngdc.noaa.gov/geomag/calculators/magcalc.shtml?
+    magnetic_declination: 10.7 # E is positive, W is negative, 10.70° E for Utah Lake
 
 /coug_kinematics:
   ros__parameters:
@@ -64,11 +67,6 @@
     check_fix_by_variance: false
     frame_id: gps
     publish_rate: 10
-
-/seatrac_ahrs_convertor:
-  ros__parameters:
-    # https://www.ngdc.noaa.gov/geomag/calculators/magcalc.shtml?
-    magnetic_declination: 10.7 # E is positive, W is negative, 10.70° E for Utah Lake
 
 /depth_convertor:
   ros__parameters:
