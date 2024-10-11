@@ -116,7 +116,6 @@ RUN ./build-moos.sh
 RUN ./build-ivp.sh
 WORKDIR /home/$UNAME
 
-RUN echo "export PATH=$PATH:/home/$UNAME/moos-ivp/bin" >> /home/$UNAME/.bashrc
 
 # Install development dependencies (rqt, plotjuggler, documentation, etc.)
 USER root
@@ -163,7 +162,7 @@ RUN pip3 install numpy==1.26.0 \
     scipy \
     matplotlib \
     pyproj
-RUN echo "export PATH=$PATH:/home/$UNAME/.local/bin" >> /home/$UNAME/.bashrc
+RUN echo "export PATH=$PATH:/home/$UNAME/.local/bin:/home/$UNAME/moos-ivp/bin" >> /home/$UNAME/.bashrc
 
 # Update and upgrade
 USER root
