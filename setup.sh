@@ -20,6 +20,9 @@ function printError {
   echo -e "\033[0m\033[31m[ERROR] $1\033[0m"
 }
 
+echo ""
+printWarning "Make sure you run this from the the root of the CoUGARs repo"
+
 if [ "$(uname -m)" == "aarch64" ]; then
 
   echo ""
@@ -47,17 +50,18 @@ if [ "$(uname -m)" == "aarch64" ]; then
   sudo apt install -y vim tmux chrony git mosh
 
   # Set up volumes
-  mkdir ~/bag
-  cp -r ~/CoUGARs/config ~
+  mkdir bag
+  mkdir config
+  cp -r templates/* config/
 
   # Set up udev rules
-  sudo ln -s ~/config/local/00-teensy.rules /etc/udev/rules.d/00-teensy.rules
+  sudo ln -s config/local/00-teensy.rules /etc/udev/rules.d/00-teensy.rules
   sudo udevadm control --reload-rules
   sudo udevadm trigger
 
   # Set up config files
-  sudo ln -s ~/config/local/chrony.conf /etc/chrony/chrony.conf
-  sudo ln -s ~/config/local/.tmux.conf ~/.tmux.conf
+  sudo ln -s config/local/chrony.conf /etc/chrony/chrony.conf
+  sudo ln -s config/local/.tmux.conf ~/.tmux.conf
 
   # Copy repos from GitHub
   git clone https://github.com/BYU-FRoSt-Lab/cougars-ros2.git
@@ -65,7 +69,7 @@ if [ "$(uname -m)" == "aarch64" ]; then
   git clone https://github.com/BYU-FRoSt-Lab/cougars-gpio.git
 
   echo ""
-  printInfo "Make sure to set the vehicle-specific params in "network_id.sh" and "vehicle_config.yaml" in "~/config" now"
+  printInfo "Make sure to set the vehicle-specific params in "network_id.sh" and "vehicle_config.yaml" in "config" now"
   echo ""
 
 else
@@ -75,8 +79,9 @@ else
   echo ""
 
   # Set up volumes
-  mkdir ~/bag
-  cp -r ~/CoUGARs/config ~
+  mkdir bag
+  mkdir config
+  cp -r templates/* config/
 
   # Copy repos from GitHub
   git clone https://github.com/BYU-FRoSt-Lab/cougars-ros2.git

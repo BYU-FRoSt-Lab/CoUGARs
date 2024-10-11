@@ -1,4 +1,8 @@
 **/.vscode
+bag
+config
 cougars-ros2
 cougars-teensy
 cougars-gpio
+cougars-sim
+cougars-docs
