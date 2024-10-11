@@ -18,7 +18,7 @@
     right_fin_offset: 0.0 # offset in degrees for the right fin (from front of vehicle)
     left_fin_offset: 0.0 # offset in degrees for the left fin (from front of vehicle)
 
-/pid_control:
+/coug_controls:
   ros__parameters:
     pid_timer_period: 80 # in ms, 80 from experimentation with the depth sensor
     depth_kp: 0.0
@@ -34,7 +34,7 @@
     heading_max_output: 25 # maximum fin angle from center (25 from advice from NSWC PCD)
     heading_bias: 0
 
-/manual_control:
+/manual_mission:
   ros__parameters:
     command_timer_period: 0.5 # in seconds
     state_1_count: 20 # time spent in state 1 (in intervals based on command_timer_period)
@@ -76,10 +76,3 @@
 #   ros__parameters:
 #     critical_voltage: 14.0 # shutdown voltage in volts (safety check)
 
-# /modem_pinger:
-#   ros__parameters:
-#     ping_delay_seconds: 0
-#     number_of_vehicles: 0
-#     vehicle_order: 0 # current vehicles place in the round robin order.
-#     target_id: 0 # 0 for all vehicles, 1-15 for specific beacon
-#     request_response: False
