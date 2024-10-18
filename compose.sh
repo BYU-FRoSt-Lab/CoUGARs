@@ -25,39 +25,25 @@ function printError {
 }
 
 case $1 in
-    "down")
-
-        # check the system architecture
-        if [ "$(uname -m)" == "aarch64" ]; then
-            echo ""
-            printInfo "Stopping the vehicle image..."
-            echo ""
-
-            docker compose -f docker/docker-compose-rt.yaml down
-        else
-            echo ""
-            printInfo "Stopping the development image..."
-            echo ""
-
-            docker compose -f docker/docker-compose-dev.yaml down
-        fi
-        ;;
-    *)
-        
-        # check the system architecture
-        if [ "$(uname -m)" == "aarch64" ]; then
-            echo ""
-            printInfo "Loading the vehicle image..."
-            echo ""
-
-            docker compose -f docker/docker-compose-rt.yaml up -d
-        else
-            echo ""
-            printInfo "Loading the development image..."
-            echo ""
-
-            docker compose -f docker/docker-compose-dev.yaml up -d
-        fi
-        docker exec -it cougars bash
-        ;;
+  "down")
+    # Check the system architecture
+    if [ "$(uname -m)" == "aarch64" ]; then
+      printInfo "Stopping the vehicle image..."
+      docker compose -f docker/docker-compose-rt.yaml down
+    else
+      printInfo "Stopping the development image..."
+      docker compose -f docker/docker-compose-dev.yaml down
+    fi
+    ;;
+  *)
+    # Check the system architecture
+    if [ "$(uname -m)" == "aarch64" ]; then
+      printInfo "Loading the vehicle image..."
+      docker compose -f docker/docker-compose-rt.yaml up -d
+    else
+      printInfo "Loading the development image..."
+      docker compose -f docker/docker-compose-dev.yaml up -d
+    fi
+    docker exec -it cougars bash
+  ;;
 esac
