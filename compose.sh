@@ -7,7 +7,10 @@
 #   most recent image and run it
 # - This can also be used to open a new bash terminal in
 #   an already running container
-# - Make sure you run this from the root of the CoUGARs repo
+# - Make sure you run this from the root of the top-level repo
+
+# Match with the username defined in the Dockerfile
+export UNAME=frostlab
 
 function printInfo {
   echo -e "\033[0m\033[36m[INFO] $1\033[0m"

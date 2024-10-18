@@ -1,13 +1,13 @@
 #!/bin/bash
 # Created by Nelson Durrant, Sep 2024
 #
-# Sets up CoUGARs requirements on a new RPi 5
+# Sets up environment requirements on a new RPi 5
 # - Run this script on a newly flashed Raspberry Pi 5.
 #   After running it, run 'compose.sh' to load in and run
 #   the most current image
 # - This script can also be used to set up a new development
 #   environment on a personal machine
-# - Make sure you run this from the root of the CoUGARs repo
+# - Make sure you run this from the root of the top-level repo
 
 function printInfo {
   echo -e "\033[0m\033[36m[INFO] $1\033[0m"
