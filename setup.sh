@@ -67,7 +67,6 @@ else
 
   # Install dependencies
   sudo apt update
-  sudo apt upgrade -y
   sudo apt install -y vim tmux git
 
   # Set up volumes
