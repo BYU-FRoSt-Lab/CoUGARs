@@ -31,7 +31,7 @@ case $1 in
       printInfo "Stopping the vehicle image..."
       docker compose -f docker/docker-compose-rt.yaml down
     else
-      printInfo "Stopping the development image..."
+      printWarning "Stopping the development image..."
       docker compose -f docker/docker-compose-dev.yaml down
     fi
     ;;
@@ -41,7 +41,7 @@ case $1 in
       printInfo "Loading the vehicle image..."
       docker compose -f docker/docker-compose-rt.yaml up -d
     else
-      printInfo "Loading the development image..."
+      printWarning "Loading the development image..."
       docker compose -f docker/docker-compose-dev.yaml up -d
     fi
     docker exec -it cougars bash

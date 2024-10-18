@@ -18,7 +18,7 @@ function printError {
 
 case $1 in
   "kill")
-    printInfo "Killing the tmux session..."
+    printWarning "Killing the tmux session..."
     tmux kill-session -t cougars
     ;;
   *)
@@ -46,7 +46,7 @@ case $1 in
       tmux send-keys -t cougars:0.2 "vim vehicle_config.yaml" # Don't start just yet
       tmux send-keys -t cougars:0.0 "bash start.sh" # Don't start just yet
       tmux send-keys -t cougars:0.1 "bash record.sh" # Don't start just yet
-      
+
     else
       printInfo "Attaching to the tmux session..."
     fi
