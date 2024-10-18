@@ -41,11 +41,11 @@ case $1 in
       tmux send-keys -t cougars:0.2 "bash compose.sh" ENTER
       tmux send-keys -t cougars:0.2 "clear" ENTER
 
+      tmux send-keys -t cougars:0.0 "bash start.sh" # Don't start just yet
+      tmux send-keys -t cougars:0.1 "bash record.sh" # Don't start just yet
       tmux send-keys -t cougars:0.2 "cd ~/config" ENTER
       tmux send-keys -t cougars:0.2 "cat vehicle_config.yaml" ENTER
       tmux send-keys -t cougars:0.2 "vim vehicle_config.yaml" # Don't start just yet
-      tmux send-keys -t cougars:0.0 "bash start.sh" # Don't start just yet
-      tmux send-keys -t cougars:0.1 "bash record.sh" # Don't start just yet
 
     else
       printInfo "Attaching to the tmux session..."
