@@ -24,6 +24,11 @@ coug0: # Change this to match the vehicle name
       depth_kd: 0.0
       depth_min_output: -25.0 # minimum fin angle from center (-25.0 from advice from NSWC PCD)
       depth_max_output: 25.0 # maximum fin angle from center (25.0 from advice from NSWC PCD)
+      pitch_kp: 0.0
+      pitch_ki: 0.0
+      pitch_kd: 0.0
+      pitch_min_output: -25.0 # minimum fin angle from center (-25.0 from advice from NSWC PCD)
+      pitch_max_output: 25.0 # maximum fin angle from center (25.0 from advice from NSWC PCD)
       heading_kp: 0.0
       heading_ki: 0.0
       heading_kd: 0.0
