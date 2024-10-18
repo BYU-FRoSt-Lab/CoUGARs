@@ -25,27 +25,27 @@ RUN echo "deb [signed-by=/etc/apt/keyrings/koromix-archive-keyring.gpg] https://
 RUN apt update && apt install -y tytools
 
 # Set up a new user
-RUN useradd -ms /bin/bash $UNAME
-RUN usermod -aG sudo $UNAME
-RUN usermod -aG dialout $UNAME
-RUN echo "$UNAME:$UNAME" | chpasswd
-USER $UNAME
-WORKDIR /home/$UNAME
+RUN useradd -ms /bin/bash ${UNAME}
+RUN usermod -aG sudo ${UNAME}
+RUN usermod -aG dialout ${UNAME}
+RUN echo "${UNAME}:${UNAME}" | chpasswd
+USER ${UNAME}
+WORKDIR /home/${UNAME}
 
 # Build and install gtsam (from source)
 USER root
 RUN apt update && apt install -y \
     libboost-all-dev \
     python3-pip
-USER $UNAME
+USER ${UNAME}
 
 RUN git clone --depth 1 --branch 4.2 https://github.com/borglab/gtsam.git
-RUN mkdir /home/$UNAME/gtsam/build
+RUN mkdir /home/${UNAME}/gtsam/build
 
-WORKDIR /home/$UNAME/gtsam/build
+WORKDIR /home/${UNAME}/gtsam/build
 RUN cmake .. -DGTSAM_BUILD_PYTHON=ON -DGTSAM_PYTHON_VERSION=3.10.12
 RUN make python-install
-WORKDIR /home/$UNAME
+WORKDIR /home/${UNAME}
 
 RUN rm -r gtsam
 
@@ -56,14 +56,14 @@ RUN unzip Eigen.zip
 USER root
 RUN cp -r eigen-3.4.0/Eigen /usr/local/include
 RUN rm -r eigen-3.4.0
-USER $UNAME
+USER ${UNAME}
 
 RUN rm Eigen.zip
 
 # Install PlatformIO
 USER root
 RUN apt install -y python3-venv
-USER $UNAME
+USER ${UNAME}
 
 RUN curl -fsSL -o get-platformio.py https://raw.githubusercontent.com/platformio/platformio-core-installer/master/get-platformio.py
 RUN python3 get-platformio.py
@@ -73,24 +73,24 @@ RUN rm get-platformio.py
 RUN mkdir -p /usr/local/bin
 
 USER root
-RUN ln -s /home/$UNAME/.platformio/penv/bin/platformio /usr/local/bin/platformio
-RUN ln -s /home/$UNAME/.platformio/penv/bin/pio /usr/local/bin/pio
-RUN ln -s /home/$UNAME/.platformio/penv/bin/piodebuggdb /usr/local/bin/piodebuggdb
-USER $UNAME
+RUN ln -s /home/${UNAME}/.platformio/penv/bin/platformio /usr/local/bin/platformio
+RUN ln -s /home/${UNAME}/.platformio/penv/bin/pio /usr/local/bin/pio
+RUN ln -s /home/${UNAME}/.platformio/penv/bin/piodebuggdb /usr/local/bin/piodebuggdb
+USER ${UNAME}
 
 # Set up ROS sourcing
-RUN echo "source /opt/ros/humble/setup.bash" >> /home/$UNAME/.bashrc
+RUN echo "source /opt/ros/humble/setup.bash" >> /home/${UNAME}/.bashrc
 
 # Install the micro-ROS agent
 RUN mkdir microros_ws
 
-WORKDIR /home/$UNAME/microros_ws
+WORKDIR /home/${UNAME}/microros_ws
 RUN git clone -b humble https://github.com/micro-ROS/micro_ros_setup.git src/micro_ros_setup
 RUN rosdep update
 
 USER root
 RUN rosdep install --from-paths src --ignore-src -y
-USER $UNAME
+USER ${UNAME}
 
 SHELL ["/bin/bash", "-c"] 
 RUN source /opt/ros/humble/setup.bash && colcon build
@@ -98,7 +98,7 @@ RUN source /opt/ros/humble/setup.bash && source install/setup.bash && ros2 run m
 RUN source /opt/ros/humble/setup.bash && source install/setup.bash && ros2 run micro_ros_setup build_agent.sh
 SHELL ["/bin/sh", "-c"]
 
-WORKDIR /home/$UNAME
+WORKDIR /home/${UNAME}
 
 # Install MOOS-IvP
 USER root
@@ -107,14 +107,14 @@ RUN apt install -y cmake \
     subversion \
     libfltk1.3-dev \
     libtiff5-dev
-USER $UNAME
+USER ${UNAME}
 
 RUN svn co https://oceanai.mit.edu/svn/moos-ivp-aro/trunk moos-ivp
 
-WORKDIR /home/$UNAME/moos-ivp
+WORKDIR /home/${UNAME}/moos-ivp
 RUN ./build-moos.sh
 RUN ./build-ivp.sh
-WORKDIR /home/$UNAME
+WORKDIR /home/${UNAME}
 
 
 # Install development dependencies (rqt, plotjuggler, documentation, etc.)
@@ -136,7 +136,7 @@ RUN if [ "$TARGETARCH" = "amd64" ]; then \
     && apt clean \
     && rm -rf /var/lib/apt/lists/*; \
     fi
-USER $UNAME
+USER ${UNAME}
 
 # Install development Python dependencies
 RUN if [ "$TARGETARCH" = "amd64" ]; then \
@@ -155,16 +155,16 @@ RUN apt update && apt install -y \
     ros-humble-rosbag2-storage-mcap \
     netcat-openbsd \
     rsync
-USER $UNAME
+USER ${UNAME}
 
 # Install Python dependencies
 RUN pip3 install numpy==1.26.0 \
     scipy \
     matplotlib \
     pyproj
-RUN echo "export PATH=$PATH:/home/$UNAME/.local/bin:/home/$UNAME/moos-ivp/bin" >> /home/$UNAME/.bashrc
+RUN echo "export PATH=$PATH:/home/${UNAME}/.local/bin:/home/${UNAME}/moos-ivp/bin" >> /home/${UNAME}/.bashrc
 
 # Update and upgrade
 USER root
 RUN apt update && apt upgrade -y
-USER $UNAME
+USER ${UNAME}
