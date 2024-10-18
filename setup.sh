@@ -85,5 +85,6 @@ else
   git clone https://github.com/BYU-FRoSt-Lab/cougars-ros2.git
   git clone https://github.com/BYU-FRoSt-Lab/cougars-teensy.git
   git clone https://github.com/BYU-FRoSt-Lab/cougars-gpio.git
+  git clone https://github.com/BYU-FRoSt-Lab/cougars-docs.git
 
 fi

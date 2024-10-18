@@ -30,13 +30,13 @@ case $1 in
             printInfo "Stopping the vehicle image..."
             echo ""
 
-            docker compose -f docker/docker-compose-arm64.yaml down
+            docker compose -f docker/docker-compose-rt.yaml down
         else
             echo ""
             printInfo "Stopping the development image..."
             echo ""
 
-            docker compose -f docker/docker-compose-amd64.yaml down
+            docker compose -f docker/docker-compose-dev.yaml down
         fi
         ;;
     *)
@@ -44,16 +44,16 @@ case $1 in
         # check the system architecture
         if [ "$(uname -m)" == "aarch64" ]; then
             echo ""
-            printInfo "Loading the vehicle image (arm64)..."
+            printInfo "Loading the vehicle image..."
             echo ""
 
-            docker compose -f docker/docker-compose-arm64.yaml up -d
+            docker compose -f docker/docker-compose-rt.yaml up -d
         else
             echo ""
-            printInfo "Loading the development image (amd64)..."
+            printInfo "Loading the development image..."
             echo ""
 
-            docker compose -f docker/docker-compose-amd64.yaml up -d
+            docker compose -f docker/docker-compose-dev.yaml up -d
         fi
         docker exec -it cougars bash
         ;;

@@ -4,7 +4,8 @@
 
 services:
   cougars:
-    image: frostlab/cougars:arm64
+    image: frostlab/cougars:latest
+    platform: linux/arm64
     build:
       context: .
       dockerfile: Dockerfile

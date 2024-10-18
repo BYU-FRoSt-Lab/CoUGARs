@@ -6,7 +6,8 @@
 
 services:
   cougars:
-    image: frostlab/cougars:amd64
+    image: frostlab/cougars:latest
+    platform: linux/amd64
     build:
       context: .
       dockerfile: Dockerfile
