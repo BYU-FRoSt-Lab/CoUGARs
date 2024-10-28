@@ -28,7 +28,7 @@ case $1 in
   "down")
     # Check the system architecture
     if [ "$(uname -m)" == "aarch64" ]; then
-      printInfo "Stopping the vehicle image..."
+      printWarning "Stopping the vehicle image..."
       docker compose -f docker/docker-compose-rt.yaml down
     else
       printWarning "Stopping the development image..."
@@ -41,7 +41,7 @@ case $1 in
       printInfo "Loading the vehicle image..."
       docker compose -f docker/docker-compose-rt.yaml up -d
     else
-      printWarning "Loading the development image..."
+      printInfo "Loading the development image..."
       docker compose -f docker/docker-compose-dev.yaml up -d
     fi
     docker exec -it cougars bash
