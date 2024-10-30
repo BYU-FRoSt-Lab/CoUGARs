@@ -4,7 +4,9 @@
 # - This Dockerfile will automatically check the architecture of the 
 #   target device and build the appropriate image
 
-FROM ros:humble-ros-base
+FROM ubuntu:22.04
+
+ARG DEBIAN_FRONTEND=noninteractive
 
 # Check architecture
 ARG TARGETARCH
@@ -17,9 +19,11 @@ RUN apt update && apt upgrade -y
 
 # Add tytools (as root)
 RUN mkdir -p -m0755 /etc/apt/keyrings
-RUN apt update && apt install -y curl \
+RUN apt update && apt install -y \
+    curl \
     wget \
-    unzip
+    unzip \
+    python3-pip
 RUN curl https://download.koromix.dev/debian/koromix-archive-keyring.gpg -o /etc/apt/keyrings/koromix-archive-keyring.gpg
 RUN echo "deb [signed-by=/etc/apt/keyrings/koromix-archive-keyring.gpg] https://download.koromix.dev/debian stable main" > /etc/apt/sources.list.d/koromix.dev-stable.list
 RUN apt update && apt install -y tytools
@@ -32,7 +36,29 @@ RUN echo "${UNAME}:${UNAME}" | chpasswd
 USER ${UNAME}
 WORKDIR /home/${UNAME}
 
-# Build and install gtsam (from source)
+# Install ROS 2
+USER root
+RUN apt update && apt install -y \
+    build-essential \
+    git \
+    locales \
+    software-properties-common
+RUN locale-gen en_US en_US.UTF-8
+RUN update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
+USER ${UNAME}
+
+RUN export LANG=en_US.UTF-8
+
+USER root
+RUN add-apt-repository universe
+RUN apt update
+RUN curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o /usr/share/keyrings/ros-archive-keyring.gpg
+RUN echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(. /etc/os-release && echo $UBUNTU_CODENAME) main" | tee /etc/apt/sources.list.d/ros2.list > /dev/null
+RUN apt update && apt upgrade -y
+RUN apt install -y ros-humble-ros-base
+USER ${UNAME}
+
+# # Build and install gtsam (from source)
 USER root
 RUN apt update && apt install -y \
     libboost-all-dev \
@@ -84,15 +110,23 @@ RUN echo "source /opt/ros/humble/setup.bash" >> /home/${UNAME}/.bashrc
 # Install the micro-ROS agent
 RUN mkdir microros_ws
 
+USER root
+RUN apt-get install -y python3-rosdep
+RUN rosdep init
+RUN rosdep fix-permissions
+USER ${UNAME}
+
 WORKDIR /home/${UNAME}/microros_ws
 RUN git clone -b humble https://github.com/micro-ROS/micro_ros_setup.git src/micro_ros_setup
-RUN rosdep update
 
 USER root
-RUN rosdep install --from-paths src --ignore-src -y
+RUN rosdep update
+RUN rosdep install --from-paths src --ignore-src --rosdistro humble -y
+RUN apt install -y python3-colcon-common-extensions
 USER ${UNAME}
 
 SHELL ["/bin/bash", "-c"] 
+RUN rosdep update
 RUN source /opt/ros/humble/setup.bash && colcon build
 RUN source /opt/ros/humble/setup.bash && source install/setup.bash && ros2 run micro_ros_setup create_agent_ws.sh
 RUN source /opt/ros/humble/setup.bash && source install/setup.bash && ros2 run micro_ros_setup build_agent.sh
@@ -109,13 +143,18 @@ RUN apt install -y cmake \
     libtiff5-dev
 USER ${UNAME}
 
+# Build Arguments
+ARG SVN_REV=HEAD
+
+# UTF-8 Encoding
+ENV LC_CTYPE="C.UTF-8"
+
 RUN svn co https://oceanai.mit.edu/svn/moos-ivp-aro/trunk moos-ivp
 
 WORKDIR /home/${UNAME}/moos-ivp
 RUN ./build-moos.sh
 RUN ./build-ivp.sh
 WORKDIR /home/${UNAME}
-
 
 # Install development dependencies (rqt, plotjuggler, documentation, etc.)
 USER root
