@@ -81,5 +81,6 @@ else
   git clone https://github.com/BYU-FRoSt-Lab/cougars-ros2.git
   git clone https://github.com/BYU-FRoSt-Lab/cougars-teensy.git
   git clone https://github.com/BYU-FRoSt-Lab/cougars-gpio.git
+  # TODO: ADD OTHER REPOS HERE
 
 fi
