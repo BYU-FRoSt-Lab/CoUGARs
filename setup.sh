@@ -59,7 +59,7 @@ if [ "$(uname -m)" == "aarch64" ]; then
   git clone https://github.com/BYU-FRoSt-Lab/cougars-teensy.git
   git clone https://github.com/BYU-FRoSt-Lab/cougars-gpio.git
 
-  printInfo "Make sure to set the vehicle-specific params in "network_id.sh" and "vehicle_config.yaml" in "config" now"
+  printInfo "Make sure to set the vehicle-specific params in "constants.sh" and "vehicle_config.yaml" in "config" now"
 
 else
 
