@@ -9,12 +9,12 @@
 #   copied file in 'config' is updated as well
 
 # Match with the username defined in the Dockerfile
-UNAME="frostlab"
+export LABNAME="frostlab"
 
 # Match with the namespace string in 'teensy_ws/cougars/include/namespace.h'
 # as well as the namespace string in 'vehicle_config.yaml'
-NAMESPACE="coug1"
+export NAMESPACE="coug1"
 
 # To find the STATIC_IP, run "ifconfig eth0 | grep 'inet ' | awk '{print $2}'"
 # from OUTSIDE THE DOCKER CONTAINER and copy that number (ex. "192.168.194.59")
-STATIC_IP="ADD HERE"
+export STATIC_IP="ADD HERE"

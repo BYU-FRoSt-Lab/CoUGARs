@@ -7,15 +7,15 @@ services:
     image: frostlab/cougars:latest
     platform: linux/arm64
     container_name: cougars
-    user: ${UNAME}
+    user: ${LABNAME}
     network_mode: host
     privileged: true
     volumes:
-      - ../bag:/home/${UNAME}/bag:rw
-      - ../config:/home/${UNAME}/config:rw
-      - ../cougars-ros2:/home/${UNAME}/ros2_ws
-      - ../cougars-teensy:/home/${UNAME}/teensy_ws
-      - ../cougars-gpio:/home/${UNAME}/gpio
+      - ../bag:/home/${LABNAME}/bag:rw
+      - ../config:/home/${LABNAME}/config:rw
+      - ../cougars-ros2:/home/${LABNAME}/ros2_ws
+      - ../cougars-teensy:/home/${LABNAME}/teensy_ws
+      - ../cougars-gpio:/home/${LABNAME}/gpio
       - /etc/localtime:/etc/localtime:ro # Syncs the container's time with the host
       - /dev:/dev:rw
       - /run/udev:/run/udev:ro
