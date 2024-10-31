@@ -11,7 +11,7 @@
 # IMPORTANT!: Match with the lab name defined in the Dockerfile
 export LABNAME=frostlab
 
-# IMPORTANT!: Match with the namespace string in 'teensy_ws/cougars/include/namespace.h'
+# IMPORTANT!: Match with the namespace defined in 'teensy_ws/cougars/include/namespace.h'
 export NAMESPACE=coug1
 
 # To find the STATIC_IP, run "ifconfig eth0 | grep 'inet ' | awk '{print $2}'"

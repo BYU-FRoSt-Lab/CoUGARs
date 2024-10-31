@@ -15,12 +15,9 @@
     # https://www.ngdc.noaa.gov/geomag/calculators/magcalc.shtml?
     magnetic_declination: 10.7 # E is positive, W is negative, 10.70° E for Utah Lake
 
-/coug_kinematics:
+/battery_sub:
   ros__parameters:
-    trim_ratio: 0.0 # multiplied by the velocity
-    top_fin_offset: 0.0 # offset in degrees for the top fin (from front of vehicle)
-    right_fin_offset: 0.0 # offset in degrees for the right fin (from front of vehicle)
-    left_fin_offset: 0.0 # offset in degrees for the left fin (from front of vehicle)
+    critical_voltage: 14.0 # shutdown voltage in volts (safety check)
 
 /coug_controls:
   ros__parameters:
@@ -38,6 +35,30 @@
     heading_max_output: 25 # maximum fin angle from center (25 from advice from NSWC PCD)
     heading_bias: 0
 
+/coug_kinematics:
+  ros__parameters:
+    trim_ratio: 0.0 # multiplied by the velocity
+    top_fin_offset: 0.0 # offset in degrees for the top fin (from front of vehicle)
+    right_fin_offset: 0.0 # offset in degrees for the right fin (from front of vehicle)
+    left_fin_offset: 0.0 # offset in degrees for the left fin (from front of vehicle)
+
+/depth_convertor:
+  ros__parameters:
+    fluid_pressure_atm: 87250.0 # 87250.0 from testing, TODO: add units
+
+/gpsd_client:
+  ros__parameters:
+    use_gps_time: false
+    check_fix_by_variance: false
+    frame_id: gps
+    publish_rate: 10
+
+/gps_odom:
+  ros__parameters:
+    origin.latitude: 40.238833 # 40.2735 for Utah Lake
+    origin.longitude: -111.742249 # -111.7126 for Utah Lake
+    origin.altitude: 1367.00 # from testing
+
 /manual_mission:
   ros__parameters:
     command_timer_period: 0.5 # in seconds
@@ -53,25 +74,3 @@
     state_3_depth: 0.0 # in meters (positive is deeper)
     state_3_heading: 0.0 # in degrees
     state_3_speed: 0.0 # TODO: add here
-
-/gps_odom:
-  ros__parameters:
-    origin.latitude: 40.238833 # 40.2735 for Utah Lake
-    origin.longitude: -111.742249 # -111.7126 for Utah Lake
-    origin.altitude: 1367.00 # from testing
-
-/gpsd_client:
-  ros__parameters:
-    use_gps_time: false
-    check_fix_by_variance: false
-    frame_id: gps
-    publish_rate: 10
-
-/depth_convertor:
-  ros__parameters:
-    fluid_pressure_atm: 87250.0 # 87250.0 from testing, TODO: add units
-
-/battery_sub:
-  ros__parameters:
-    critical_voltage: 14.0 # shutdown voltage in volts (safety check)
-
