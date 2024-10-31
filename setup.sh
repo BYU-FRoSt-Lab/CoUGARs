@@ -50,6 +50,9 @@ if [ "$(uname -m)" == "aarch64" ]; then
   sudo udevadm control --reload-rules
   sudo udevadm trigger
 
+  # Quick GPIO permission fix
+  sudo chmod 777 /dev/gpiochip4
+
   # Set up config files
   sudo ln -s config/local/chrony.conf /etc/chrony/chrony.conf
   sudo ln -s config/local/.tmux.conf ~/.tmux.conf
