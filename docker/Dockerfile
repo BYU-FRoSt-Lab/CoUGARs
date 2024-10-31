@@ -207,10 +207,3 @@ RUN echo "export PATH=$PATH:/home/${LABNAME}/.local/bin:/home/${LABNAME}/moos-iv
 USER root
 RUN apt update && apt upgrade -y
 USER ${LABNAME}
-
-# Quick GPIO permission fix
-USER root
-RUN groupadd gpiofix
-RUN chown :gpiofix /dev/gpiochip4
-RUN usermod -aG gpiofix ${LABNAME}
-USER ${LABNAME}
