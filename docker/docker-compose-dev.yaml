@@ -6,23 +6,21 @@
 
 services:
   cougars:
-    image: frostlab/cougars:amd64
-    build:
-      context: .
-      dockerfile: Dockerfile
+    image: frostlab/cougars:latest
+    platform: linux/amd64
     container_name: cougars
-    user: frostlab
+    user: ${LABNAME}
     network_mode: host
     environment:
       DISPLAY: $DISPLAY # Required for GUI applications
       MPLBACKEND: Qt5Agg # Required for GUI applications
     privileged: true
     volumes:
-      - ../bag:/home/frostlab/bag:rw
-      - ../config:/home/frostlab/config:rw
-      - ../cougars-ros2:/home/frostlab/ros2_ws
-      - ../cougars-teensy:/home/frostlab/teensy_ws
-      - ../cougars-gpio:/home/frostlab/gpio
+      - ../bag:/home/${LABNAME}/bag:rw
+      - ../config:/home/${LABNAME}/config:rw
+      - ../cougars-ros2:/home/${LABNAME}/ros2_ws
+      - ../cougars-teensy:/home/${LABNAME}/teensy_ws
+      - ../cougars-gpio:/home/${LABNAME}/gpio
       - /etc/localtime:/etc/localtime:ro # Syncs the container's time with the host
       - /tmp/.X11-unix:/tmp/.X11-unix # Required for GUI applications
     command: /bin/bash

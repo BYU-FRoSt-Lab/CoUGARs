@@ -1,13 +1,13 @@
 #!/bin/bash
 # Created by Nelson Durrant, Sep 2024
 #
-# Sets up CoUGARs requirements on a new RPi 5
+# Sets up environment requirements on a new RPi 5
 # - Run this script on a newly flashed Raspberry Pi 5.
 #   After running it, run 'compose.sh' to load in and run
 #   the most current image
 # - This script can also be used to set up a new development
 #   environment on a personal machine
-# - Make sure you run this from the root of the CoUGARs repo
+# - Make sure you run this from the root of the top-level repo
 
 function printInfo {
   echo -e "\033[0m\033[36m[INFO] $1\033[0m"
@@ -23,23 +23,16 @@ function printError {
 
 if [ "$(uname -m)" == "aarch64" ]; then
 
-  echo ""
   printInfo "Setting up CoUGARs on a Raspberry Pi 5"
-  echo ""
             
   # Install Docker if not already installed
   if ! [ -x "$(command -v docker)" ]; then
-      
       curl -fsSL https://get.docker.com -o get-docker.sh
       sudo sh get-docker.sh
       rm get-docker.sh
-
       sudo usermod -aG docker $USERNAME
   else
-
-      echo ""
       printWarning "Docker is already installed"
-      echo ""
   fi
 
   # Install dependencies
@@ -57,6 +50,9 @@ if [ "$(uname -m)" == "aarch64" ]; then
   sudo udevadm control --reload-rules
   sudo udevadm trigger
 
+  # Quick GPIO permission fix
+  sudo chmod 777 /dev/gpiochip4
+
   # Set up config files
   sudo ln -s config/local/chrony.conf /etc/chrony/chrony.conf
   sudo ln -s config/local/.tmux.conf ~/.tmux.conf
@@ -66,24 +62,28 @@ if [ "$(uname -m)" == "aarch64" ]; then
   git clone https://github.com/BYU-FRoSt-Lab/cougars-teensy.git
   git clone https://github.com/BYU-FRoSt-Lab/cougars-gpio.git
 
-  echo ""
-  printInfo "Make sure to set the vehicle-specific params in "network_id.sh" and "vehicle_config.yaml" in "config" now"
-  echo ""
+  printInfo "Make sure to set the vehicle-specific params in "constants.sh" and "vehicle_config.yaml" in "config" now"
 
 else
 
-  echo ""
   printInfo "Setting up CoUGARs on a development machine"
-  echo ""
+
+  # Install dependencies
+  sudo apt update
+  sudo apt install -y vim tmux git
 
   # Set up volumes
   mkdir bag
   mkdir config
   cp -r templates/* config/
 
+  # Set up config files
+  sudo ln -s config/local/.tmux.conf ~/.tmux.conf
+
   # Copy repos from GitHub
   git clone https://github.com/BYU-FRoSt-Lab/cougars-ros2.git
   git clone https://github.com/BYU-FRoSt-Lab/cougars-teensy.git
   git clone https://github.com/BYU-FRoSt-Lab/cougars-gpio.git
+  # TODO: ADD OTHER REPOS HERE
 
 fi
