@@ -75,7 +75,7 @@ USER ${LABNAME}
 
 # RUN rm -r gtsam
 
-RUN pip install gtsam
+RUN pip3 install gtsam
 
 # Install Eigen
 RUN wget -O Eigen.zip https://gitlab.com/libeigen/eigen/-/archive/3.4.0/eigen-3.4.0.zip
