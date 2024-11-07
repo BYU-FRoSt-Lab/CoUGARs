@@ -199,7 +199,7 @@ RUN apt update && apt install -y \
 USER ${LABNAME}
 
 # Install Python dependencies
-RUN pip3 install numpy==1.26.0 \
+RUN pip3 install numpy==1.24.0 \
     scipy \
     matplotlib \
     pyproj
