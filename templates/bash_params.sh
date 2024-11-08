@@ -9,12 +9,12 @@
 #   copied file in 'config' is updated as well
 
 # IMPORTANT!: Match with the lab name defined in the Dockerfile
-export LABNAME=frostlab
+export LABNAME=frostlab # ex. frostlab
 
 # IMPORTANT!: Match with the namespace defined in 'teensy_ws/cougars/include/namespace.h'
 # You need to update that namespace in the Teensy code as well
-export NAMESPACE=coug0
-export CONFIG_FILE=/home/$LABNAME/config/vehicle_params.yaml
+export NAMESPACE=coug0 # ex. coug0
+export CONFIG_FILE=/home/$LABNAME/config/vehicle_params.yaml # ex. /home/$LABNAME/config/vehicle_params.yaml
 
 # To find the STATIC_IP, run "ifconfig eth0 | grep 'inet ' | awk '{print $2}'"
 # from OUTSIDE THE DOCKER CONTAINER and copy that number (ex. "192.168.194.59")
