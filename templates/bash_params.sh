@@ -13,7 +13,7 @@ export LABNAME=frostlab
 
 # IMPORTANT!: Match with the namespace defined in 'teensy_ws/cougars/include/namespace.h'
 # You need to update that namespace in the Teensy code as well
-export NAMESPACE=coug1
+export NAMESPACE=coug0
 export CONFIG_FILE=/home/$LABNAME/config/vehicle_params.yaml
 
 # To find the STATIC_IP, run "ifconfig eth0 | grep 'inet ' | awk '{print $2}'"
