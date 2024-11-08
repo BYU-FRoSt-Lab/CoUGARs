@@ -86,4 +86,4 @@ else
 
 fi
 
-printInfo "Make sure to set the vehicle-specific params in "constants.sh" and "vehicle_config.yaml" in "config" now"
+printInfo "Make sure to set the vehicle-specific params in "env_config.sh" and "vehicle_config.yaml" in "config" now"

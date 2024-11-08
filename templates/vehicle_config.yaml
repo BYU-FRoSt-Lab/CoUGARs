@@ -35,6 +35,8 @@
       heading_min_output: -25 # minimum fin angle from center (-25 from advice from NSWC PCD)
       heading_max_output: 25 # maximum fin angle from center (25 from advice from NSWC PCD)
       heading_bias: 0
+      theta_max: 25.0 # maximum dive angle in degrees
+      look_ahead: 5.0 # distance in meters to look ahead (for depth control)
 
   /coug_kinematics:
     ros__parameters:
