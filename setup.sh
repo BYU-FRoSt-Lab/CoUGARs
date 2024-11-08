@@ -62,8 +62,6 @@ if [ "$(uname -m)" == "aarch64" ]; then
   git clone https://github.com/BYU-FRoSt-Lab/cougars-teensy.git
   git clone https://github.com/BYU-FRoSt-Lab/cougars-gpio.git
 
-  printInfo "Make sure to set the vehicle-specific params in "constants.sh" and "vehicle_config.yaml" in "config" now"
-
 else
 
   printInfo "Setting up CoUGARs on a development machine"
@@ -84,6 +82,8 @@ else
   git clone https://github.com/BYU-FRoSt-Lab/cougars-ros2.git
   git clone https://github.com/BYU-FRoSt-Lab/cougars-teensy.git
   git clone https://github.com/BYU-FRoSt-Lab/cougars-gpio.git
-  # TODO: ADD OTHER REPOS HERE
+  git clone https://github.com/BYU-FRoSt-Lab/cougars-docs.git
 
 fi
+
+printInfo "Make sure to set the vehicle-specific params in "constants.sh" and "vehicle_config.yaml" in "config" now"
