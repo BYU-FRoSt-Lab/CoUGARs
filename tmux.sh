@@ -46,8 +46,8 @@ case $1 in
       tmux send-keys -t cougars:0.1 "cd ~/ros2_ws" ENTER
       tmux send-keys -t cougars:0.1 "bash record.sh" # Don't start just yet
       tmux send-keys -t cougars:0.2 "cd ~/config" ENTER
-      tmux send-keys -t cougars:0.2 "cat vehicle_config.yaml" ENTER
-      tmux send-keys -t cougars:0.2 "vim vehicle_config.yaml" # Don't start just yet
+      tmux send-keys -t cougars:0.2 "cat vehicle_params.yaml" ENTER
+      tmux send-keys -t cougars:0.2 "vim vehicle_params.yaml" # Don't start just yet
 
     else
       printInfo "Attaching to the tmux session..."
