@@ -58,24 +58,22 @@ RUN apt update && apt upgrade -y
 RUN apt install -y ros-humble-ros-base
 USER ${LABNAME}
 
-# # Build and install gtsam (from source)
-# USER root
-# RUN apt update && apt install -y \
-#     libboost-all-dev \
-#     python3-pip
-# USER ${LABNAME}
+# Build and install gtsam (from source)
+USER root
+RUN apt update && apt install -y \
+    libboost-all-dev \
+    python3-pip
+USER ${LABNAME}
 
-# RUN git clone --depth 1 --branch 4.2 https://github.com/borglab/gtsam.git
-# RUN mkdir /home/${LABNAME}/gtsam/build
+RUN git clone --depth 1 --branch 4.2 https://github.com/borglab/gtsam.git
+RUN mkdir /home/${LABNAME}/gtsam/build
 
-# WORKDIR /home/${LABNAME}/gtsam/build
-# RUN cmake .. -DGTSAM_BUILD_PYTHON=ON -DGTSAM_PYTHON_VERSION=3.10.12
-# RUN make python-install
-# WORKDIR /home/${LABNAME}
+WORKDIR /home/${LABNAME}/gtsam/build
+RUN cmake .. -DGTSAM_BUILD_PYTHON=ON -DGTSAM_PYTHON_VERSION=3.10.12
+RUN make python-install
+WORKDIR /home/${LABNAME}
 
-# RUN rm -r gtsam
-
-RUN pip3 install gtsam
+RUN rm -r gtsam
 
 # Install Eigen
 RUN wget -O Eigen.zip https://gitlab.com/libeigen/eigen/-/archive/3.4.0/eigen-3.4.0.zip
