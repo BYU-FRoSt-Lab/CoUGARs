@@ -6,13 +6,9 @@
 
 FROM ubuntu:22.04
 
-ARG DEBIAN_FRONTEND=noninteractive
-
-# Check architecture
-ARG TARGETARCH
-
-# Set desired username/password
 ARG LABNAME=frostlab
+ARG DEBIAN_FRONTEND=noninteractive
+ARG TARGETARCH
 
 # Update and upgrade
 RUN apt update && apt upgrade -y
@@ -22,8 +18,7 @@ RUN mkdir -p -m0755 /etc/apt/keyrings
 RUN apt update && apt install -y \
     curl \
     wget \
-    unzip \
-    python3-pip
+    unzip
 RUN curl https://download.koromix.dev/debian/koromix-archive-keyring.gpg -o /etc/apt/keyrings/koromix-archive-keyring.gpg
 RUN echo "deb [signed-by=/etc/apt/keyrings/koromix-archive-keyring.gpg] https://download.koromix.dev/debian stable main" > /etc/apt/sources.list.d/koromix.dev-stable.list
 RUN apt update && apt install -y tytools
@@ -72,8 +67,6 @@ WORKDIR /home/${LABNAME}/gtsam/build
 RUN cmake .. -DGTSAM_BUILD_PYTHON=ON -DGTSAM_PYTHON_VERSION=3.10.12
 RUN make python-install
 WORKDIR /home/${LABNAME}
-
-RUN rm -r gtsam
 
 # Install Eigen
 RUN wget -O Eigen.zip https://gitlab.com/libeigen/eigen/-/archive/3.4.0/eigen-3.4.0.zip
@@ -143,12 +136,8 @@ RUN apt install -y cmake \
     libtiff5-dev
 USER ${LABNAME}
 
-# Build Arguments
 ARG SVN_REV=HEAD
-
-# UTF-8 Encoding
 ENV LC_CTYPE="C.UTF-8"
-
 RUN svn co https://oceanai.mit.edu/svn/moos-ivp-aro/trunk moos-ivp
 
 WORKDIR /home/${LABNAME}/moos-ivp
