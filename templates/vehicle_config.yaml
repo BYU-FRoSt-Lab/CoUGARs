@@ -42,6 +42,7 @@
       top_fin_offset: 0.0 # offset in degrees for the top fin (from front of vehicle)
       right_fin_offset: 0.0 # offset in degrees for the right fin (from front of vehicle)
       left_fin_offset: 0.0 # offset in degrees for the left fin (from front of vehicle)
+      demo_mode: false # if true, disables the thruster
 
   /depth_convertor:
     ros__parameters:
