@@ -7,20 +7,19 @@
 # - If you edit this file, you'll need to make sure the 
 #   copied file in 'config' is updated as well
 
-/coug0: # Change this to match the vehicle name
+/**:
+  ros__parameters:
+    water_salinity_ppt: 0 # 0 for fresh water, 35 for salt water
+    magnetic_declination: 10.7 # E is positive, W is negative, 10.70° E for Utah Lake
+    # https://www.ngdc.noaa.gov/geomag/calculators/magcalc.shtml?
 
-  /**:
-    ros__parameters:
-      vehicle_id: 0
-      water_salinity_ppt: 0 # 0 for fresh water, 35 for salt water
-      magnetic_declination: 10.7 # E is positive, W is negative, 10.70° E for Utah Lake
-      # https://www.ngdc.noaa.gov/geomag/calculators/magcalc.shtml?
+coug0: # Change this to match the vehicle name
 
-  /battery_sub:
+  battery_sub:
     ros__parameters:
       critical_voltage: 14.0 # shutdown voltage in volts (safety check)
 
-  /coug_controls:
+  coug_controls:
     ros__parameters:
       pid_timer_period: 80 # in ms, 80 from experimentation with the depth sensor
       depth_kp: 0.0
@@ -38,7 +37,7 @@
       theta_max: 25.0 # maximum dive angle in degrees
       look_ahead: 5.0 # distance in meters to look ahead (for depth control)
 
-  /coug_kinematics:
+  coug_kinematics:
     ros__parameters:
       trim_ratio: 0.0 # multiplied by the velocity
       top_fin_offset: 0.0 # offset in degrees for the top fin (from front of vehicle)
@@ -46,24 +45,24 @@
       left_fin_offset: 0.0 # offset in degrees for the left fin (from front of vehicle)
       demo_mode: false # if true, disables the thruster
 
-  /depth_convertor:
+  depth_convertor:
     ros__parameters:
       fluid_pressure_atm: 87250.0 # 87250.0 from testing, TODO: add units
 
-  /gpsd_client:
+  gpsd_client:
     ros__parameters:
       use_gps_time: false
       check_fix_by_variance: false
       frame_id: gps
       publish_rate: 10
 
-  /gps_odom:
+  gps_odom:
     ros__parameters:
       origin.latitude: 40.238833 # 40.2735 for Utah Lake
       origin.longitude: -111.742249 # -111.7126 for Utah Lake
       origin.altitude: 1367.00 # from testing
 
-  /manual_mission:
+  manual_mission:
     ros__parameters:
       command_timer_period: 0.5 # in seconds
       state_1_count: 0 # time spent in state 1 (in intervals based on command_timer_period)
