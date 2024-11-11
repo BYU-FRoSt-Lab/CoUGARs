@@ -86,4 +86,4 @@ else
 
 fi
 
-printInfo "Make sure to update "bash_vars.sh" and "vehicle_params.yaml" in "config" now"
+printWarning "Make sure to update "bash_vars.sh" and "vehicle_params.yaml" in "config" now"
