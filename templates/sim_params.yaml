@@ -7,10 +7,10 @@
 #   copied file in 'config' is updated as well
 
 /**:
-    ros__parameters:
-      water_salinity_ppt: 0 # 0 for fresh water, 35 for salt water
-      magnetic_declination: 10.7 # E is positive, W is negative, 10.70° E for Utah Lake
-      # https://www.ngdc.noaa.gov/geomag/calculators/magcalc.shtml?
+  ros__parameters:
+    water_salinity_ppt: 0 # 0 for fresh water, 35 for salt water
+    magnetic_declination: 10.7 # E is positive, W is negative, 10.70° E for Utah Lake
+    # https://www.ngdc.noaa.gov/geomag/calculators/magcalc.shtml?
 
 coug0: # Change this to match the vehicle name
 
