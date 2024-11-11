@@ -182,7 +182,8 @@ RUN apt update && apt install -y \
     python3-libgpiod \
     ros-humble-rosbag2-storage-mcap \
     netcat-openbsd \
-    rsync
+    rsync \
+    bc
 USER ${LABNAME}
 
 # Install Python dependencies
