@@ -86,4 +86,4 @@ else
 
 fi
 
-printInfo "Make sure to spdate "bash_params.sh" and "vehicle_params.yaml" in "config" now"
+printInfo "Make sure to spdate "bash_vars.sh" and "vehicle_params.yaml" in "config" now"
