@@ -32,6 +32,8 @@ case $1 in
       tmux split-window -h -t cougars
       tmux split-window -v -t cougars
       tmux select-pane -t cougars:0.0
+      tmux split-window -v -t cougars
+      tmux select-pane -t cougars:0.0
 
       # Send commands to the tmux session
       tmux send-keys -t cougars:0.0 "bash compose.sh" ENTER
@@ -40,14 +42,18 @@ case $1 in
       tmux send-keys -t cougars:0.1 "clear" ENTER
       tmux send-keys -t cougars:0.2 "bash compose.sh" ENTER
       tmux send-keys -t cougars:0.2 "clear" ENTER
+      tmux send-keys -t cougars:0.3 "bash compose.sh" ENTER
+      tmux send-keys -t cougars:0.3 "clear" ENTER
 
       tmux send-keys -t cougars:0.0 "cd ~/ros2_ws" ENTER
-      tmux send-keys -t cougars:0.0 "bash start.sh" # Don't start just yet
+      tmux send-keys -t cougars:0.0 "ls" ENTER
+      tmux send-keys -t cougars:0.0 "bash launch.sh" # Don't start just yet
       tmux send-keys -t cougars:0.1 "cd ~/ros2_ws" ENTER
-      tmux send-keys -t cougars:0.1 "bash record.sh" # Don't start just yet
-      tmux send-keys -t cougars:0.2 "cd ~/config" ENTER
-      tmux send-keys -t cougars:0.2 "cat vehicle_params.yaml" ENTER
-      tmux send-keys -t cougars:0.2 "vim vehicle_params.yaml" # Don't start just yet
+      tmux send-keys -t cougars:0.1 "bash test.sh" # Don't start just yet
+      tmux send-keys -t cougars:0.2 "cd ~/ros2_ws" ENTER
+      tmux send-keys -t cougars:0.2 "bash record.sh" # Don't start just yet
+      tmux send-keys -t cougars:0.3 "cd ~/config" ENTER
+      tmux send-keys -t cougars:0.3 "cat vehicle_params.yaml" ENTER
 
     else
       printInfo "Attaching to the tmux session..."
