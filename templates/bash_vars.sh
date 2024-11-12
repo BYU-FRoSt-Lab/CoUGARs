@@ -8,7 +8,7 @@
 export NAMESPACE=coug0 # ex. coug0
 export VEHICLE_PARAMS_FILE=/home/frostlab/config/vehicle_params.yaml # ex. /home/frostlab/config/vehicle_params.yaml
 
-export GPIO_CHIP=/dev/gpiochip4 # ex. /dev/gpiochip4
+export GPIO_CHIP=/dev/gpiochip0 # ex. /dev/gpiochip0
 
 # Run "ifconfig eth0 | grep 'inet ' | awk '{print $2}'" from OUTSIDE THE DOCKER CONTAINER and copy that number (ex. "192.168.194.59") here
 export STATIC_IP=0
