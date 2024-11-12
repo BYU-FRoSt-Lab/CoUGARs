@@ -10,7 +10,7 @@
 
 # IMPORTANT!: Match with the namespace defined in 'teensy_ws/cougars/include/namespace.h'
 export NAMESPACE=coug0 # ex. coug0
-export VEHICLE_PARAMS_FILE=/home/frostlab/config/vehicle_params.yaml # ex. /home/$LABNAME/config/vehicle_params.yaml
+export VEHICLE_PARAMS_FILE=/home/frostlab/config/vehicle_params.yaml # ex. /home/frostlab/config/vehicle_params.yaml
 
 # IMPORTANT!: Match with the path defined in 'gpio/gpio_tools/gpio_def.py'
 export GPIO_CHIP=/dev/gpiochip4 # ex. /dev/gpiochip4
