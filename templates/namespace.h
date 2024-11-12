@@ -9,4 +9,4 @@
  *   is updated as well
  */
 
-#define NAMESPACE "coug0"
+#define NAMESPACE "coug0" // ex. "coug0"
