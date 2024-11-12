@@ -50,8 +50,9 @@ if [ "$(uname -m)" == "aarch64" ]; then
   sudo udevadm control --reload-rules
   sudo udevadm trigger
 
-  # Quick GPIO permission fix
+  # Quick GPIO permission fix (one of the two should work)
   sudo chmod 777 /dev/gpiochip4
+  sudo chmod 777 /dev/gpiochip0
 
   # Set up config files
   sudo ln -s config/local/chrony.conf /etc/chrony/chrony.conf
