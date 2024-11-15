@@ -1,8 +1,8 @@
 # Created by Nelson Durrant, Sep 2024
 #
 # DOCKER FILE FOR BOTH VEHICLE AND DEVELOPMENT IMAGES
-# - This Dockerfile will automatically check the architecture of the 
-#   target device and build the appropriate image
+# - The cloud-hosted images will rebuild each time you push changes to this file
+# - This Dockerfile will check the architecture of the target device and build the appropriate image
 
 FROM ubuntu:22.04
 
@@ -196,3 +196,6 @@ RUN echo "export PATH=$PATH:/home/${LABNAME}/.local/bin:/home/${LABNAME}/moos-iv
 USER root
 RUN apt update && apt upgrade -y
 USER ${LABNAME}
+
+# Set up bash variable sourcing (Make sure this exists as a volume when you run the container!)
+RUN echo "source /home/${LABNAME}/config/bash_vars.sh" >> ~/.bashrc
