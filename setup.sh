@@ -2,11 +2,8 @@
 # Created by Nelson Durrant, Sep 2024
 #
 # Sets up environment requirements on a new RPi 5
-# - Run this script on a newly flashed Raspberry Pi 5.
-#   After running it, run 'compose.sh' to load in and run
-#   the most current image
-# - This script can also be used to set up a new development
-#   environment on a personal machine
+# - Run this script on a newly flashed Raspberry Pi 5. After running it, run 'compose.sh' to load in and run the most current image
+# - This script can also be used to set up a new development environment on a personal machine
 # - Make sure you run this from the root of the top-level repo
 
 function printInfo {
@@ -50,8 +47,9 @@ if [ "$(uname -m)" == "aarch64" ]; then
   sudo udevadm control --reload-rules
   sudo udevadm trigger
 
-  # Quick GPIO permission fix
+  # Quick GPIO permission fix (one of the two should work)
   sudo chmod 777 /dev/gpiochip4
+  sudo chmod 777 /dev/gpiochip0
 
   # Set up config files
   sudo ln -s config/local/chrony.conf /etc/chrony/chrony.conf
@@ -61,8 +59,6 @@ if [ "$(uname -m)" == "aarch64" ]; then
   git clone https://github.com/BYU-FRoSt-Lab/cougars-ros2.git
   git clone https://github.com/BYU-FRoSt-Lab/cougars-teensy.git
   git clone https://github.com/BYU-FRoSt-Lab/cougars-gpio.git
-
-  printInfo "Make sure to set the vehicle-specific params in "constants.sh" and "vehicle_config.yaml" in "config" now"
 
 else
 
@@ -84,6 +80,8 @@ else
   git clone https://github.com/BYU-FRoSt-Lab/cougars-ros2.git
   git clone https://github.com/BYU-FRoSt-Lab/cougars-teensy.git
   git clone https://github.com/BYU-FRoSt-Lab/cougars-gpio.git
-  # TODO: ADD OTHER REPOS HERE
+  git clone https://github.com/BYU-FRoSt-Lab/cougars-docs.git
 
 fi
+
+printWarning "Make sure to update the vehicle-specific configuration files in "config" now"

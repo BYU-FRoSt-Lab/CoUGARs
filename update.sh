@@ -18,3 +18,6 @@ git pull
 
 cd ../cougars-gpio
 git pull
+
+cd ../cougars-docs
+git pull

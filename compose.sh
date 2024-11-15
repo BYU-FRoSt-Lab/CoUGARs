@@ -3,13 +3,9 @@
 #
 # Pulls and runs the most recent Docker image
 # - Use 'bash compose.sh down' to stop the image
-# - Run this script after running 'setup.sh' to pull the
-#   most recent image and run it
-# - This can also be used to open a new bash terminal in
-#   an already running container
+# - Run this script after running 'setup.sh' to pull the most recent image and run it
+# - This can also be used to open a new bash terminal in an already running container
 # - Make sure you run this from the root of the top-level repo
-
-source config/constants.sh
 
 function printInfo {
   echo -e "\033[0m\033[36m[INFO] $1\033[0m"
@@ -27,7 +23,7 @@ case $1 in
   "down")
     # Check the system architecture
     if [ "$(uname -m)" == "aarch64" ]; then
-      printWarning "Stopping the vehicle image..."
+      printWarning "Stopping the runtime image..."
       docker compose -f docker/docker-compose-rt.yaml down
     else
       printWarning "Stopping the development image..."
@@ -37,7 +33,7 @@ case $1 in
   *)
     # Check the system architecture
     if [ "$(uname -m)" == "aarch64" ]; then
-      printInfo "Loading the vehicle image..."
+      printInfo "Loading the runtime image..."
       docker compose -f docker/docker-compose-rt.yaml up -d
     else
       printInfo "Loading the development image..."
