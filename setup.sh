@@ -69,6 +69,7 @@ else
   sudo apt install -y vim tmux git
 
   # Set up volumes
+  # TODO is there anyway we can setup to not override the current configuration?
   mkdir bag
   mkdir config
   cp -r templates/* config/
