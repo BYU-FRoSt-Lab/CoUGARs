@@ -7,6 +7,7 @@
 services:
   cougars:
     image: frostlab/cougars:latest
+    build: .
     platform: linux/amd64
     container_name: cougars
     user: ${LABNAME}
@@ -23,7 +24,7 @@ services:
       - ../cougars-gpio:/home/${LABNAME}/gpio
       - /etc/localtime:/etc/localtime:ro # Syncs the container's time with the host
       - /tmp/.X11-unix:/tmp/.X11-unix # Required for GUI applications
-    command: /bin/bash
+          command: /bin/bash
     stdin_open: true  # Equivalent to -it in docker run
     tty: true  # Equivalent to -it in docker run
     restart: always  # Optional: Keeps the container running after exit unless you want it to be removed like with --rm

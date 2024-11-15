@@ -6,6 +6,7 @@ services:
   cougars:
     image: frostlab/cougars:latest
     platform: linux/arm64
+    build: .
     container_name: cougars
     user: ${LABNAME}
     network_mode: host
