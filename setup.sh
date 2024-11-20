@@ -17,17 +17,8 @@ function printWarning {
 function printError {
   echo -e "\033[0m\033[31m[ERROR] $1\033[0m"
 }
-function printSuccess {
-  echo -e "\033[0m\033[32m[SUCCESS] $1\033[0m"
-}
 
-function printFailure {
-  echo -e "\033[0m\033[31m[FAIL] $1\033[0m"
-}
-
-printWarning "This script should be run in the CoUGARS directory"
-
-#TODO make this script so that it can have a case that just runs the setup of the config 
+printWarning "This script should be run from the root of the CoUGARS directory"
 
 if [ "$(uname -m)" == "aarch64" ]; then
 
@@ -92,29 +83,29 @@ else
   git clone https://github.com/BYU-FRoSt-Lab/cougars-teensy.git
   git clone https://github.com/BYU-FRoSt-Lab/cougars-gpio.git
   git clone https://github.com/BYU-FRoSt-Lab/cougars-docs.git
-  git clone https://github.com/BYU-FRoSt-Lab/cougars_base_station.git
+  git clone https://github.com/BYU-FRoSt-Lab/cougars-base-station.git
 
 fi
+
+### Record the directory location and set up bash variable sourcing ###
 
 current_dir=$(pwd)
 source_file="$current_dir/config/bash_vars.sh"
 
-# Ensure the config directory exists
-mkdir -p "$current_dir/config"
-
+# Attempt to add the current workspace directory to the source file
 if ! grep -q "export COUG_WORKSPACE_DIR=" "$source_file"; then
     echo "export COUG_WORKSPACE_DIR=\"$current_dir\"" >> "$source_file"
-    printSuccess "Added export statement to $source_file"
+    printInfo "Saved the CoUGARs workspace path to $source_file"
 else
-    printInfo "Bash variable statement already exists in $source_file"
+    printWarning "The CoUGARs workspace path already exists in $source_file"
 fi
 
-# Append the source command to .bashrc
+# Attempt to add the source file to the local user's .bashrc
 if ! grep -q "source $source_file" ~/.bashrc; then
     echo "source $source_file" >> ~/.bashrc
-    printSuccess "Added CoUGARS workspace bash variables to .bashrc"
+    printInfo "Added automatic sourcing of bash variables to .bashrc"
 else
-    printInfo "CoUGARS workspace bash variables already exists in .bashrc"
+    printWarning "Automatic sourcing of bash variables is already set up in .bashrc"
 fi
 
 printWarning "Make sure to update the vehicle-specific configuration files in "config" now"
