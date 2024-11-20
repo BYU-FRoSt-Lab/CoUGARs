@@ -55,23 +55,21 @@ case $1 in
       # 
       tmux send-keys -t cougars:0.0 "cd ~/gpio" ENTER
       tmux send-keys -t cougars:0.0 "bash permission_fix.sh" ENTER
-      tmux send-keys -t cougars:0.0 "cd ~/ros2_ws/dvl_tools" ENTER
-      tmux send-keys -t cougars:0.0 "bash calibrate_gyro.sh" ENTER
-      tmux send-keys -t cougars:0.0 "cd ~/ros2_ws" ENTER
-      tmux send-keys -t cougars:0.0 "colcon build" ENTER
+      # tmux send-keys -t cougars:0.0 "cd ~/ros2_ws/dvl_tools" ENTER
+      # tmux send-keys -t cougars:0.0 "bash calibrate_gyro.sh" ENTER
+      # tmux send-keys -t cougars:0.0 "cd ~/ros2_ws" ENTER
+      # tmux send-keys -t cougars:0.0 "colcon build" ENTER
       tmux send-keys -t cougars:0.0 "sudo systemctl restart chrony" ENTER #correct spot to put this?
       tmux send-keys -t cougars:0.0 "date" ENTER
       tmux send-keys -t cougars:0.0 "ls" ENTER
       tmux send-keys -t cougars:0.0 "bash launch.sh <put param here>" # Don't start just yet
 
       tmux send-keys -t cougars:0.1 "cd ~/ros2_ws" ENTER
-      tmux send-keys -t cougars:0.1 "colcon build" ENTER
-      tmux send-keys -t cougars:0.1 "cd ~/ros2_ws/moos_tools" ENTER
-      tmux send-keys -t cougars:0.1 "bash mission_deploy.sh" # is this the best place for mission_deploy?
+      # tmux send-keys -t cougars:0.1 "colcon build" ENTER
       tmux send-keys -t cougars:0.1 "bash test.sh <put param here>" # Don't start just yet
 
       tmux send-keys -t cougars:0.2 "cd ~/ros2_ws" ENTER
-      tmux send-keys -t cougars:0.2 "colcon build" ENTER
+      # tmux send-keys -t cougars:0.2 "colcon build" ENTER
       tmux send-keys -t cougars:0.2 "bash record.sh" # Don't start just yet
 
       tmux send-keys -t cougars:0.3 "cd ~/config" ENTER
@@ -79,7 +77,12 @@ case $1 in
 
       # tmux send-keys -t cougars:0.4 "cd ~/ros2_ws/moos_tools" ENTER
       # tmux send-keys -t cougars:0.4 "bash mission_start.sh" # Don't start just yet
-      tmux new-window -t cougars -n moos_mission_start 'bash ~/ros2_ws/moos_tools/mission_start.sh' # New window or split terminal again?
+      tmux new-window -t cougars -n moos 'bash ~/ros2_ws/moos_tools/mission_start.sh' # New window or split terminal again?
+      tmux split-window -v -t moos
+      tmux select-pane -t moos:0.1
+      tmux send-keys -t moos:0.1 "bash ~/ros2_ws/moos_tools/mission_deploy.sh" ENTER
+      tmux send-keys -t moos:0.1 "cat ~/ros2_ws/moos_tools/coug.bhv" ENTER
+
 
     else
       printInfo "Attaching to the tmux session..."
