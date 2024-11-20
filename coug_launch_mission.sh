@@ -60,7 +60,7 @@ DEVICE_IP="${DEVICES[$choice]}"
 
 # Define the command to execute
 COMMAND="cd ~/CoUGARs
-         bash -i"
+         bash tmux.sh -i"
 
 
 # Connect to the selected device
