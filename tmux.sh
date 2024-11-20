@@ -52,7 +52,7 @@ case $1 in
       tmux send-keys -t cougars:0.0 "bash calibrate_gyro.sh" ENTER
       tmux send-keys -t cougars:0.0 "cd ~/ros2_ws" ENTER
       tmux send-keys -t cougars:0.0 "colcon build" ENTER
-      tmux send-keys -t cougars:0.0 "sudo systemctl restart chrony" ENTER
+      tmux send-keys -t cougars:0.0 "sudo systemctl restart chrony" ENTER #correct spot to put this?
       tmux send-keys -t cougars:0.0 "date" ENTER
       tmux send-keys -t cougars:0.0 "ls" ENTER
       tmux send-keys -t cougars:0.0 "bash launch.sh <put param here>" # Don't start just yet
@@ -79,7 +79,7 @@ esac
 
 
 #TODO: - figure out how to edit vehicle_params and moos.bhv for the mission
-#      - talk with matthew about what moos stuff needs to be included before the pAntler timeout command
+#      - add in the mission_deploy.sh the pAntler timeout command
 #      - check with Braden, and Nelson to see if everything else is good to go
 #      - how to implement plot juggler
 #      - see if any other commands need to be added to the tmux script from new map waypoint stuff

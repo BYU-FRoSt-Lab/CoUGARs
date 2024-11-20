@@ -59,7 +59,9 @@ IFS=':' read -r USERNAME PASSWORD <<< "${CREDENTIALS[$choice]}"
 DEVICE_IP="${DEVICES[$choice]}"
 
 # Define the command to execute
-COMMAND="bash -i"
+COMMAND="cd ~/CoUGARs
+         bash -i"
+
 
 # Connect to the selected device
 echo "Connecting to ${DEVICE_IP}..."
