@@ -33,6 +33,8 @@ case $1 in
       tmux split-window -v -t cougars
       tmux select-pane -t cougars:0.0
       tmux split-window -v -t cougars
+      tmux select-pane -t cougars:0.2
+      tmux split-window -h -t cougars
       tmux select-pane -t cougars:0.0
 
       # Send commands to the tmux session
@@ -44,6 +46,11 @@ case $1 in
       tmux send-keys -t cougars:0.2 "clear" ENTER
       tmux send-keys -t cougars:0.3 "bash compose.sh" ENTER
       tmux send-keys -t cougars:0.3 "clear" ENTER
+      # tmux send-keys -t cougars:0.4 "bash compose.sh" ENTER
+      # tmux send-keys -t cougars:0.4 "clear" ENTER
+      
+
+      
 
       # 
       tmux send-keys -t cougars:0.0 "cd ~/gpio" ENTER
@@ -59,6 +66,8 @@ case $1 in
 
       tmux send-keys -t cougars:0.1 "cd ~/ros2_ws" ENTER
       tmux send-keys -t cougars:0.1 "colcon build" ENTER
+      tmux send-keys -t cougars:0.1 "cd ~/ros2_ws/moos_tools" ENTER
+      tmux send-keys -t cougars:0.1 "bash mission_deploy.sh" # is this the best place for mission_deploy?
       tmux send-keys -t cougars:0.1 "bash test.sh <put param here>" # Don't start just yet
 
       tmux send-keys -t cougars:0.2 "cd ~/ros2_ws" ENTER
@@ -67,6 +76,10 @@ case $1 in
 
       tmux send-keys -t cougars:0.3 "cd ~/config" ENTER
       tmux send-keys -t cougars:0.3 "cat vehicle_params.yaml" ENTER
+
+      # tmux send-keys -t cougars:0.4 "cd ~/ros2_ws/moos_tools" ENTER
+      # tmux send-keys -t cougars:0.4 "bash mission_start.sh" # Don't start just yet
+      tmux new-window -t cougars -n moos_mission_start 'bash ~/ros2_ws/moos_tools/mission_start.sh' # New window or split terminal again?
 
     else
       printInfo "Attaching to the tmux session..."
