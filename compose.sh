@@ -7,6 +7,8 @@
 # - This can also be used to open a new bash terminal in an already running container
 # - Make sure you run this from the root of the top-level repo
 
+source config/bash_vars.sh
+
 function printInfo {
   echo -e "\033[0m\033[36m[INFO] $1\033[0m"
 }
@@ -18,8 +20,6 @@ function printWarning {
 function printError {
   echo -e "\033[0m\033[31m[ERROR] $1\033[0m"
 }
-
-source config/bash_vars.sh
 
 printWarning "This script should be run from the root of the CoUGARS directory"
 
@@ -46,7 +46,7 @@ case $1 in
 
     # Quick permission fix for GPIO access in the container
     docker exec --user root cougars bash -c "bash /home/frostlab/gpio/permission_fix.sh $GPIO_CHIP"
-    
+
     docker exec -it cougars bash
   ;;
 esac
