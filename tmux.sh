@@ -38,7 +38,7 @@ case $1 in
       tmux select-pane -t cougars:0.0
 
       # Send commands to the tmux session
-      tmux send-keys -t cougars:0.0 "echo -e "frostlab\n" | sudo systemctl restart chrony" ENTER
+      tmux send-keys -t cougars:0.0 "echo -e "frostlab" | sudo systemctl restart chrony" ENTER
       tmux send-keys -t cougars:0.0 "date" ENTER 
       tmux send-keys -t cougars:0.0 "bash compose.sh" ENTER
       tmux send-keys -t cougars:0.0 "clear" ENTER
