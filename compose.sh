@@ -19,6 +19,8 @@ function printError {
   echo -e "\033[0m\033[31m[ERROR] $1\033[0m"
 }
 
+source config/bash_vars.sh
+
 printWarning "This script should be run from the root of the CoUGARS directory"
 
 case $1 in
@@ -41,6 +43,7 @@ case $1 in
       printInfo "Loading the development image..."
       docker compose -f docker/docker-compose-dev.yaml up -d
     fi
+    docker exec --user root cougars bash -c "bash /home/frostlab/gpio/permission_fix.sh $GPIO_CHIP"
     docker exec -it cougars bash
   ;;
 esac
