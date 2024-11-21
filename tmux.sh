@@ -30,7 +30,7 @@ case $1 in
       ### FIRST WINDOW - ROS SCRIPTS ###
 
       # Start the tmux session
-      tmux new-session -d -s cougars
+      tmux new-session -d -s cougars -n "moos"
       tmux split-window -h -t cougars
       tmux split-window -v -t cougars
       tmux select-pane -t cougars:0.0
@@ -64,22 +64,23 @@ case $1 in
 
       ### SECOND WINDOW - MOOS SCRIPTS ###
 
-      tmux new-window -n "moos" # New window or split terminal again?
-      tmux split-window -v -t moos
-      tmux select-pane -t moos:0.1
-      tmux split-window -h -t moos
-      tmux send-keys -t moos:0.0 "bash compose.sh" ENTER
-      tmux send-keys -t moos:0.0 "clear" ENTER
-      tmux send-keys -t moos:0.1 "bash compose.sh" ENTER
-      tmux send-keys -t moos:0.1 "clear" ENTER
-      tmux send-keys -t moos:0.2 "bash compose.sh" ENTER
-      tmux send-keys -t moos:0.2 "clear" ENTER
-      tmux send-keys -t moos:0.1 "cat ~/ros2_ws/moos_tools/coug.bhv" ENTER
-      tmux send-keys -t moos:0.1 "bash ~/ros2_ws/moos_tools/mission_deploy.sh" # Don't start just yet
+      # tmux new-window -n "moos" # New window or split terminal again?
+      # tmux split-window -h -t moos
+      # tmux select-pane -t moos:0.1
+      # tmux split-window -v -t moos
+
+      # tmux send-keys -t moos:0.0 "bash compose.sh" ENTER
+      # tmux send-keys -t moos:0.0 "clear" ENTER
+      # tmux send-keys -t moos:0.1 "bash compose.sh" ENTER
+      # tmux send-keys -t moos:0.1 "clear" ENTER
+      # tmux send-keys -t moos:0.2 "bash compose.sh" ENTER
+      # tmux send-keys -t moos:0.2 "clear" ENTER
+      # tmux send-keys -t moos:0.1 "cat ~/ros2_ws/moos_tools/coug.bhv" ENTER
+      # tmux send-keys -t moos:0.1 "bash ~/ros2_ws/moos_tools/mission_deploy.sh" # Don't start just yet
       
 
-      tmux send-keys -t moos:0.2 "cd ~/ros2_ws/moos_tools" ENTER
-      tmux send-keys -t moos:0.2 "timeout 5s pAntler coug.moos" # Don't start just yet
+      # tmux send-keys -t moos:0.2 "cd ~/ros2_ws/moos_tools" ENTER
+      # tmux send-keys -t moos:0.2 "timeout 5s pAntler coug.moos" # Don't start just yet
 
       # TODO: Add more terminals, etc
       # I bet Matthew has some good ideas
