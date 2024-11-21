@@ -13,4 +13,4 @@ PROGRAM_PIN = 24 # 24
 STROBE_PIN = 15 # 15
 STROBE_RATE = 1 # seconds
 
-GPIO_CHIP = '/dev/gpiochip4' # ex. '/dev/gpiochip4'
+GPIO_CHIP = '/dev/gpiochip0' # ex. '/dev/gpiochip0'
