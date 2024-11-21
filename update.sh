@@ -33,8 +33,12 @@ git pull
 cd ../cougars-gpio
 git pull
 
-cd ../cougars-docs
-git pull
+if [ ! "$(uname -m)" == "aarch64" ]; then
 
-cd ../cougars-base-station
-git pull
+  cd ../cougars-docs
+  git pull
+
+  cd ../cougars-base-station
+  git pull
+
+fi
