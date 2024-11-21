@@ -38,6 +38,8 @@ case $1 in
       tmux select-pane -t cougars:0.0
 
       # Send commands to the tmux session
+      tmux send-keys -t cougars:0.0 "sudo systemctl restart chrony" ENTER
+      tmux send-keys -t cougars:0.0 "date" ENTER 
       tmux send-keys -t cougars:0.0 "bash compose.sh" ENTER
       tmux send-keys -t cougars:0.0 "clear" ENTER
       tmux send-keys -t cougars:0.1 "bash compose.sh" ENTER
@@ -47,8 +49,8 @@ case $1 in
       tmux send-keys -t cougars:0.3 "bash compose.sh" ENTER
       tmux send-keys -t cougars:0.3 "clear" ENTER
 
-      tmux send-keys -t cougars:0.0 "sudo systemctl restart chrony" ENTER 
-      tmux send-keys -t cougars:0.0 "date" ENTER
+     
+      
       tmux send-keys -t cougars:0.0 "bash launch.sh <mission_type>" # Don't start just yet
 
       tmux send-keys -t cougars:0.1 "cd ~/ros2_ws" ENTER
