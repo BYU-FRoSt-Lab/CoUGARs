@@ -74,7 +74,6 @@ case $1 in
 
       # TODO: Add more terminals, etc
       # I bet Matthew has some good ideas
-tmux new-window -n "My New Window"
 
     else
       printInfo "Attaching to the tmux session..."
