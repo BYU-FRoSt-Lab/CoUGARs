@@ -36,7 +36,7 @@ if [ "$(uname -m)" == "aarch64" ]; then
       printWarning "Docker is already installed"
   fi
 
-  # Install dependencies
+  # Update and install dependencies
   sudo apt update
   sudo apt upgrade -y
   sudo apt install -y vim tmux chrony git mosh
@@ -50,17 +50,11 @@ else
   printInfo "Setting up CoUGARs on a development machine"
 
   # Install dependencies
-  sudo apt update
   sudo apt install -y vim tmux git mosh
 
   ### END DEV-SPECIFIC SETUP ###
 
 fi
-
-# Install dependencies
-sudo apt update
-sudo apt upgrade -y
-sudo apt install -y vim tmux chrony git mosh
 
 # Set up bag directory
 if [ -d "bag" ]; then
