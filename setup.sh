@@ -106,6 +106,7 @@ else
 
   ### START DEV-SPECIFIC SETUP ###
 
+  # TODO: Maybe not needed if we do all the work in the Docker image?
   # Get the CoUGARs workspace location on the development machine
   current_dir=$(pwd)
   source_file=$current_dir/config/bash_vars.sh
