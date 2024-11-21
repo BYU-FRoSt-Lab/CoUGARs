@@ -25,6 +25,10 @@ if [ "$(uname -m)" == "aarch64" ]; then
   ### START RT-SPECIFIC SETUP ###
 
   printInfo "Setting up CoUGARs on a Raspberry Pi 5"
+
+  # Update and upgrade the system
+  sudo apt update
+  sudo apt upgrade -y
             
   # Install Docker if not already installed
   if ! [ -x "$(command -v docker)" ]; then
@@ -36,9 +40,7 @@ if [ "$(uname -m)" == "aarch64" ]; then
       printWarning "Docker is already installed"
   fi
 
-  # Update and install dependencies
-  sudo apt update
-  sudo apt upgrade -y
+  # Install dependencies
   sudo apt install -y vim tmux chrony git mosh
 
   ### END RT-SPECIFIC SETUP ###
