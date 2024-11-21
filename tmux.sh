@@ -62,13 +62,15 @@ case $1 in
 
       ### SECOND WINDOW - MOOS SCRIPTS ###
 
-      tmux new-window -t cougars -n moos 'bash ~/ros2_ws/moos_tools/mission_start.sh' # New window or split terminal again?
+      tmux new-window -t cougars -n moos 'cd ~/ros2_ws/moos_tools' # New window or split terminal again?
       tmux split-window -v -t moos
       tmux select-pane -t moos:0.1
       tmux split-window -h -t moos
-      tmux send-keys -t moos:0.1 "bash ~/ros2_ws/moos_tools/mission_deploy.sh" ENTER
       tmux send-keys -t moos:0.1 "cat ~/ros2_ws/moos_tools/coug.bhv" ENTER
-      tmux send-keys -t moos:0.2 "pAntler timeout 5 <command>" # Don't start just yet
+      tmux send-keys -t moos:0.1 "bash ~/ros2_ws/moos_tools/mission_deploy.sh" # Don't start just yet
+      tmux send-keys -t moos:0.2 "timeout 5s pAntler coug.moos" # Don't start just yet
+
+
 
       # TODO: Add more terminals, etc
       # I bet Matthew has some good ideas
