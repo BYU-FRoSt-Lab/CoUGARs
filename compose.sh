@@ -48,5 +48,5 @@ case $1 in
     docker exec --user root cougars bash -c "bash /home/frostlab/gpio/permission_fix.sh $GPIO_CHIP"
 
     docker exec -it cougars bash
-  ;;
+    ;;
 esac
