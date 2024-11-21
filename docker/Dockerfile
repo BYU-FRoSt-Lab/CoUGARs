@@ -196,3 +196,5 @@ RUN echo "export PATH=$PATH:/home/${LABNAME}/.local/bin:/home/${LABNAME}/moos-iv
 USER root
 RUN apt update && apt upgrade -y
 USER ${LABNAME}
+
+RUN echo "source /home/${LABNAME}/config/bash_vars.sh" >> ~/.bashrc

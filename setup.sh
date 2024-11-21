@@ -22,6 +22,8 @@ printWarning "This script should be run from the root of the CoUGARS directory"
 
 if [ "$(uname -m)" == "aarch64" ]; then
 
+  ### START RT-SPECIFIC SETUP ###
+
   printInfo "Setting up CoUGARs on a Raspberry Pi 5"
             
   # Install Docker if not already installed
@@ -39,73 +41,106 @@ if [ "$(uname -m)" == "aarch64" ]; then
   sudo apt upgrade -y
   sudo apt install -y vim tmux chrony git mosh
 
-  # Set up volumes
-  mkdir bag
-  mkdir config
-  cp -r templates/* config/
-
-  # Set up udev rules
-  sudo ln -s config/local/00-teensy.rules /etc/udev/rules.d/00-teensy.rules
-  sudo udevadm control --reload-rules
-  sudo udevadm trigger
-
-  # Quick GPIO permission fix (one of the two should work)
-  sudo chmod 777 /dev/gpiochip4
-  sudo chmod 777 /dev/gpiochip0
-
-  # Set up config files
-  sudo ln -s config/local/chrony.conf /etc/chrony/chrony.conf
-  sudo ln -s config/local/.tmux.conf ~/.tmux.conf
-
-  # Copy repos from GitHub
-  git clone https://github.com/BYU-FRoSt-Lab/cougars-ros2.git
-  git clone https://github.com/BYU-FRoSt-Lab/cougars-teensy.git
-  git clone https://github.com/BYU-FRoSt-Lab/cougars-gpio.git
+  ### END RT-SPECIFIC SETUP ###
 
 else
+
+  ### START DEV-SPECIFIC SETUP ###
 
   printInfo "Setting up CoUGARs on a development machine"
 
   # Install dependencies
   sudo apt update
-  sudo apt install -y vim tmux git
+  sudo apt install -y vim tmux git mosh
 
-  # Set up volumes
-  mkdir bag
-  mkdir config
-  cp -r templates/* config/
+  ### END DEV-SPECIFIC SETUP ###
 
-  # Set up config files
+fi
+
+# Install dependencies
+sudo apt update
+sudo apt upgrade -y
+sudo apt install -y vim tmux chrony git mosh
+
+# Set up bag directory
+if [ -d "bag" ]; then
+    printWarning "The bag directory already exists"
+else
+    mkdir bag
+fi
+
+# Set up config directory
+if [ -d "config" ]; then
+    printWarning "The config directory already exists -- skipping copying templates"
+else
+    mkdir config
+    cp -r templates/* config/
+fi
+
+# Set up tmux config file
+if [ -f ~/.tmux.conf ]; then
+    printWarning "The tmux config symlink already exists"
+else
   sudo ln -s config/local/.tmux.conf ~/.tmux.conf
+fi
+
+if [ "$(uname -m)" == "aarch64" ]; then
+
+  ### START RT-SPECIFIC SETUP ###
+
+  # Set up chrony config file
+  if [ -f /etc/chrony/chrony.conf ]; then
+      printWarning "The chrony config symlink already exists"
+  else
+      sudo ln -s config/local/chrony.conf /etc/chrony/chrony.conf
+  fi
+
+  # Set up udev rules
+  if [ -f /etc/udev/rules.d/00-teensy.rules ]; then
+      printWarning "The udev rules symlink already exists"
+  else
+      sudo ln -s config/local/00-teensy.rules /etc/udev/rules.d/00-teensy.rules
+      sudo udevadm control --reload-rules
+      sudo udevadm trigger
+  fi
+
+  ### END RT-SPECIFIC SETUP ###
+
+else 
+
+  ### START DEV-SPECIFIC SETUP ###
+
+  # Get the CoUGARs workspace location on the development machine
+  current_dir=$(pwd)
+  source_file=$current_dir/config/bash_vars.sh
+
+  # Attempt to add the current workspace directory to the source file
+  if ! grep -q "COUG_WORKSPACE_DIR" $source_file; then
+    echo "export COUG_WORKSPACE_DIR=$current_dir" >> $source_file
+    printInfo "Saved the CoUGARs workspace path to $source_file"
+  else
+    printWarning "The CoUGARs workspace path already exists in $source_file"
+  fi
+
+  # Attempt to add the source file to the local user's .bashrc
+  if ! grep -q "source $source_file" ~/.bashrc; then
+    echo "source $source_file" >> ~/.bashrc
+    printInfo "Added automatic sourcing of bash variables to .bashrc"
+  else
+    printWarning "Automatic sourcing of bash variables is already set up in .bashrc"
+  fi
 
   # Copy repos from GitHub
-  git clone https://github.com/BYU-FRoSt-Lab/cougars-ros2.git
-  git clone https://github.com/BYU-FRoSt-Lab/cougars-teensy.git
-  git clone https://github.com/BYU-FRoSt-Lab/cougars-gpio.git
   git clone https://github.com/BYU-FRoSt-Lab/cougars-docs.git
   git clone https://github.com/BYU-FRoSt-Lab/cougars-base-station.git
 
+  ### END DEV-SPECIFIC SETUP ###
+
 fi
 
-### Record the directory location and set up bash variable sourcing ###
+# Copy repos from GitHub
+git clone https://github.com/BYU-FRoSt-Lab/cougars-ros2.git
+git clone https://github.com/BYU-FRoSt-Lab/cougars-teensy.git
+git clone https://github.com/BYU-FRoSt-Lab/cougars-gpio.git
 
-current_dir=$(pwd)
-source_file="$current_dir/config/bash_vars.sh"
-
-# Attempt to add the current workspace directory to the source file
-if ! grep -q "export COUG_WORKSPACE_DIR=" "$source_file"; then
-    echo "export COUG_WORKSPACE_DIR=\"$current_dir\"" >> "$source_file"
-    printInfo "Saved the CoUGARs workspace path to $source_file"
-else
-    printWarning "The CoUGARs workspace path already exists in $source_file"
-fi
-
-# Attempt to add the source file to the local user's .bashrc
-if ! grep -q "source $source_file" ~/.bashrc; then
-    echo "source $source_file" >> ~/.bashrc
-    printInfo "Added automatic sourcing of bash variables to .bashrc"
-else
-    printWarning "Automatic sourcing of bash variables is already set up in .bashrc"
-fi
-
-printWarning "Make sure to update the vehicle-specific configuration files in "config" now"
+printInfo "Make sure to update the vehicle-specific configuration files in "config" now"
