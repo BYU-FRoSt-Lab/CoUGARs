@@ -62,7 +62,7 @@ case $1 in
 
       ### SECOND WINDOW - MOOS SCRIPTS ###
 
-      tmux new-window -t cougars -n moos 'cd ~/ros2_ws/moos_tools' # New window or split terminal again?
+      tmux new-window -n "moos" # New window or split terminal again?
       tmux split-window -v -t moos
       tmux select-pane -t moos:0.1
       tmux split-window -h -t moos
@@ -72,7 +72,7 @@ case $1 in
 
       # TODO: Add more terminals, etc
       # I bet Matthew has some good ideas
-
+tmux new-window -n "My New Window"
 
     else
       printInfo "Attaching to the tmux session..."
