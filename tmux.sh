@@ -62,7 +62,7 @@ case $1 in
 
       ### SECOND WINDOW - MOOS SCRIPTS ###
 
-      tmux new-window -t cougars -n moos 'bash ~/ros2_ws/moos_tools/mission_start.sh' # New window or split terminal again?
+      tmux new-window -t cougars -n moos 'cd ~/ros2_ws/moos_tools' # New window or split terminal again?
       tmux split-window -v -t moos
       tmux select-pane -t moos:0.1
       tmux split-window -h -t moos
