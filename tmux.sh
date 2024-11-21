@@ -50,10 +50,10 @@ case $1 in
       tmux send-keys -t cougars:coug.3 "clear" ENTER
 
       tmux send-keys -t cougars:coug.0 "cd ~/ros2_ws" ENTER
-      tmux send-keys -t cougars:coug.0 "date" C-m 
       tmux send-keys -t cougars:coug.0 "bash launch.sh <mission_type>" # Don't start just yet
 
       tmux send-keys -t cougars:coug.1 "cd ~/ros2_ws" ENTER
+      tmux send-keys -t cougars:coug.1 "date" ENTER
       tmux send-keys -t cougars:coug.1 "bash test.sh <acoustics>" # Don't start just yet
 
       tmux send-keys -t cougars:coug.2 "cd ~/ros2_ws" ENTER
@@ -80,7 +80,7 @@ case $1 in
       
 
       tmux send-keys -t cougars:moos.2 "cd ~/ros2_ws/moos_tools" ENTER
-      tmux send-keys -t cougars:moos.2 "timeout 5s pAntler coug.moos" # Don't start just yet
+      tmux send-keys -t cougars:moos.2 "timeout 120s pAntler coug.moos" # Don't start just yet
 
       # TODO: Add more terminals, etc
       # I bet Matthew has some good ideas
