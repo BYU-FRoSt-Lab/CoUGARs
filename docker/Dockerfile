@@ -196,3 +196,6 @@ RUN echo "export PATH=$PATH:/home/${LABNAME}/.local/bin:/home/${LABNAME}/moos-iv
 USER root
 RUN apt update && apt upgrade -y
 USER ${LABNAME}
+
+# Colorized ROS 2 logging output
+RUN echo "export RCUTILS_COLORIZED_OUTPUT=1" >> /home/${LABNAME}/.bashrc
