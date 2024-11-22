@@ -197,5 +197,8 @@ USER root
 RUN apt update && apt upgrade -y
 USER ${LABNAME}
 
+# Set up bash variable sourcing (Make sure this exists as a volume when you run the container!)
+RUN echo "source /home/${LABNAME}/config/bash_vars.sh" >> ~/.bashrc
+
 # Colorized ROS 2 logging output
 RUN echo "export RCUTILS_COLORIZED_OUTPUT=1" >> /home/${LABNAME}/.bashrc
