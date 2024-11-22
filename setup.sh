@@ -41,7 +41,7 @@ if [ "$(uname -m)" == "aarch64" ]; then
   fi
 
   # Install dependencies
-  sudo apt install -y vim tmux chrony git mosh
+  sudo apt install -y vim tmux chrony git mosh gpsd-tools
 
   ### END RT-SPECIFIC SETUP ###
 
