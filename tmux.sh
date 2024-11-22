@@ -63,7 +63,7 @@ case $1 in
 
       ### SECOND WINDOW - MOOS SCRIPTS ###
 
-      tmux new-window -t cougars -n "moos" # New window or split terminal again?
+      tmux new-window -t cougars -n "moos"
       tmux split-window -h -t cougars:moos
       tmux select-pane -t cougars:moos.0
       tmux split-window -v -t cougars:moos.0
@@ -84,8 +84,6 @@ case $1 in
       tmux send-keys -t cougars:moos.2 "cd ~/ros2_ws/moos_tools" ENTER
       tmux send-keys -t cougars:moos.2 "timeout 120s pAntler coug.moos" # Don't start just yet
 
-      # TODO: Add more terminals, etc
-      # I bet Matthew has some good ideas
 
     else
       printInfo "Attaching to the tmux session..."
@@ -96,10 +94,5 @@ case $1 in
     ;;
 esac
 
-# I added some comments -Nelson
-
-#TODO: - figure out how to edit vehicle_params and moos.bhv for the mission (I think just cat the file so we can see it in the terminal, and we can change it using vim if needed)
-#      - add in the mission_deploy.sh the pAntler timeout command ('timeout 5 <command>' should work -- number is in seconds)
-#      - check with Braden, and Nelson to see if everything else is good to go
-#      - how to implement plot juggler
-#      - see if any other commands need to be added to the tmux script from new map waypoint stuff
+#TODO: - do we need to add init scripts at all?
+#      - can we implement plot juggler?
