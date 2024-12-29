@@ -25,6 +25,7 @@ services:
       - ../cougars-docs:/home/frostlab/docs
       - /etc/localtime:/etc/localtime:ro # Syncs the container's time with the host
       - /tmp/.X11-unix:/tmp/.X11-unix # Required for GUI applications
+      - /dev/shm:/dev/shm
     command: /bin/bash
     stdin_open: true  # Equivalent to -it in docker run
     tty: true  # Equivalent to -it in docker run
