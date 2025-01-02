@@ -77,7 +77,8 @@ fi
 if [ -f ~/.tmux.conf ]; then
     printWarning "The tmux config symlink already exists"
 else
-  sudo ln -s config/local/.tmux.conf ~/.tmux.conf
+  sudo ln -s /home/frostlab/CoUGARs/config/local/.tmux.conf ~/.tmux.conf
+  tmux source-file ~/.tmux.conf
 fi
 
 if [ "$(uname -m)" == "aarch64" ]; then
