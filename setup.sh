@@ -36,6 +36,7 @@ if [ "$(uname -m)" == "aarch64" ]; then
       sudo sh get-docker.sh
       rm get-docker.sh
       sudo usermod -aG docker $USERNAME
+      newgrp docker
   else
       printWarning "Docker is already installed"
   fi
