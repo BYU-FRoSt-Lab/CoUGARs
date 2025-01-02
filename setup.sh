@@ -136,6 +136,9 @@ else
 
 fi
 
+# Get rid of utf8 error
+unset LC_ALL
+
 # Copy repos from GitHub
 git clone https://github.com/BYU-FRoSt-Lab/cougars-ros2.git
 git clone https://github.com/BYU-FRoSt-Lab/cougars-teensy.git
