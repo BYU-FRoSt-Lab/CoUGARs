@@ -36,6 +36,7 @@ if [ "$(uname -m)" == "aarch64" ]; then
       sudo sh get-docker.sh
       rm get-docker.sh
       sudo usermod -aG docker $USERNAME
+      newgrp docker
   else
       printWarning "Docker is already installed"
   fi
@@ -77,7 +78,8 @@ fi
 if [ -f ~/.tmux.conf ]; then
     printWarning "The tmux config symlink already exists"
 else
-  sudo ln -s config/local/.tmux.conf ~/.tmux.conf
+  sudo ln -s /home/frostlab/CoUGARs/config/local/.tmux.conf ~/.tmux.conf
+  tmux source-file ~/.tmux.conf
 fi
 
 if [ "$(uname -m)" == "aarch64" ]; then
@@ -134,6 +136,9 @@ else
   ### END DEV-SPECIFIC SETUP ###
 
 fi
+
+# Get rid of utf8 error
+unset LC_ALL
 
 # Copy repos from GitHub
 git clone https://github.com/BYU-FRoSt-Lab/cougars-ros2.git
