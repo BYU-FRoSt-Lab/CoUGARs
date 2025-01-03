@@ -90,14 +90,14 @@ if [ "$(uname -m)" == "aarch64" ]; then
   if [ -f /etc/chrony/chrony.conf ]; then
       printWarning "The chrony config symlink already exists"
   else
-      sudo ln -s config/local/chrony.conf /etc/chrony/chrony.conf
+      sudo ln -s $HOME/CoUGARs/config/local/chrony.conf /etc/chrony/chrony.conf
   fi
 
   # Set up udev rules
   if [ -f /etc/udev/rules.d/00-teensy.rules ]; then
       printWarning "The udev rules symlink already exists"
   else
-      sudo ln -s config/local/00-teensy.rules /etc/udev/rules.d/00-teensy.rules
+      sudo ln -s $HOME/CoUGARs/config/local/00-teensy.rules /etc/udev/rules.d/00-teensy.rules
       sudo udevadm control --reload-rules
       sudo udevadm trigger
   fi
