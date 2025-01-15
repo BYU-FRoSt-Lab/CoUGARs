@@ -1,0 +1,4 @@
+
+# Udev rule for the FTDI rs232 usb to serial connector, which connects the seatrac USBL beacon tp the raspberry pi on the cougars UV
+SUBSYSTEM=="tty", ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6001", manufacturerSYMLINK+="frost/rs232_connector_seatrac"
+

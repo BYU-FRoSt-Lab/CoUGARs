@@ -98,6 +98,8 @@ if [ "$(uname -m)" == "aarch64" ]; then
       printWarning "The udev rules symlink already exists"
   else
       sudo ln -s $HOME/CoUGARs/config/local/00-teensy.rules /etc/udev/rules.d/00-teensy.rules
+      sudo ln -s $HOME/CoUGARs/config/local/99-teensy.rules /etc/udev/rules.d/99-teensy.rules
+      sudo ln -s $HOME/CoUGARs/config/local/99-seatrac.rules /etc/udev/rules.d/99-seatrac.rules
       sudo udevadm control --reload-rules
       sudo udevadm trigger
   fi
