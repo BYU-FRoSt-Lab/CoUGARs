@@ -14,11 +14,11 @@
 #define SERVO_OUT_US_MAX 2000 // check servo ratings for pwm microsecond values
 #define SERVO_OUT_US_MIN 1000 // change per servo type COUG1 is 500-2500 COUG2 is 1000-2000
 
-#define ENABLE_SERVOS
-#define ENABLE_THRUSTER
-#define ENABLE_BATTERY
-#define ENABLE_LEAK
-#define ENABLE_PRESSURE
+#define ENABLE_SERVOS true
+#define ENABLE_THRUSTER true
+#define ENABLE_BATTERY true
+#define ENABLE_LEAK true
+#define ENABLE_PRESSURE true
 
 #define VOLT_PIN 27   //pins on the teensy for the battery monitor
 #define CURRENT_PIN 22   //pins on the teensy for the battery monitor

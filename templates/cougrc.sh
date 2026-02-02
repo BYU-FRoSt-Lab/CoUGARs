@@ -12,3 +12,9 @@ export GPIO_CHIP=/dev/gpiochip0 # ex. /dev/gpiochip0
 export STATIC_IP=0
 export UCONTROLLER="STM" # options: STM, TEENSY
 export DVL_IP_ADDRESS=192.168.194.95
+
+export POWER_PIN = 27 # 27
+export PROGRAM_PIN = 24 # 24
+
+export STM_RST_GPIO=2 #mainboard default: 2
+export STM_BOOT0_GPIO=3 #mainboard default: 3

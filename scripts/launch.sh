@@ -61,9 +61,8 @@ if [ "$(uname -m)" == "aarch64" ]; then
   ros2 daemon stop
   ros2 daemon start
   sleep 3
-  # Start the strobe light and Teensy board
-
-  bash ~/mcu_ws/scripts/strobe.sh on
+  
+  # Start microcontroller
   bash ~/mcu_ws/scripts/power.sh on
 
   # Test for Teensy board connection
