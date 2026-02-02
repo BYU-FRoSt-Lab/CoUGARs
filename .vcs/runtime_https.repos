@@ -1,7 +1,7 @@
 repositories:
-  teensy_ws:
+  mcu_ws:
     type: git
-    url: https://github.com/BYU-FRoSt-Lab/cougars-teensy.git
+    url: https://github.com/BYU-FRoSt-Lab/cougars-mcu.git
     version: main
 
   

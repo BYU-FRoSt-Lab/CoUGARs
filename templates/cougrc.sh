@@ -10,5 +10,5 @@ export GPIO_CHIP=/dev/gpiochip0 # ex. /dev/gpiochip0
 
 # Run "ifconfig eth0 | grep 'inet ' | awk '{print $2}'" from OUTSIDE THE DOCKER CONTAINER and copy that number (ex. "192.168.194.59") here
 export STATIC_IP=0
-
+export UCONTROLLER="STM" # options: STM, TEENSY
 export DVL_IP_ADDRESS=192.168.194.95

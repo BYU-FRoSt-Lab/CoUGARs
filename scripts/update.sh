@@ -22,7 +22,7 @@ if [ $FORCE -eq 1 ]; then
 
     echo "Cleaning ros2_ws and other directories"
     rm -rf ros2_ws/src
-    rm -rf teensy_ws base_station
+    rm -rf mcu_ws base_station
 
     vcs import < .vcs/runtime$VCS_FILE_SUFFIX.repos
 
@@ -34,7 +34,7 @@ if [ $FORCE -eq 1 ]; then
 
     # TODO ask if they want to do this
     # TODO add the prompt to ask if the user wants to do this
-    sudo chmod a+w -R ros2_ws teensy_ws
+    sudo chmod a+w -R ros2_ws mcu_ws
 
     if [ "$(uname -m)" != "aarch64" ]; then
         printInfo "Including base station repository for non-ARM architecture"
@@ -43,7 +43,7 @@ if [ $FORCE -eq 1 ]; then
     fi
 else
 
-    vcs pull teensy_ws 
+    vcs pull mcu_ws 
     vcs pull ros2_ws/src
 
     # If device is not ARM, pull base station too

@@ -6,11 +6,20 @@
  *   is updated as well
  */
 
-#define NAMESPACE "coug0" // ex. "coug0"
-// #define PRESSURE_30M   // COUG1 has 30m depth pressure sensor (Comment out one you don't need)
-#define PRESSURE_10M      // COUG2 has 10m depth pressure sensor
-#define SERVO_OUT_HIGH 2000 // check servo ratings for pwm microsecond values
-#define SERVO_OUT_LOW 1000 // COUG1 is 500-2500 COUG2 is 1000-2000
+#define PRESSURE_30M   // COUG1 has 30m depth pressure sensor (Comment out one you don't need)
+// #define PRESSURE_10M      // COUG2 has 10m depth pressure sensor
+#define DEFAULT_SERVO_POSITION 90 //default servo position before any commands
+#define THRUSTER_DEFAULT_OUT 1500 //default value written to the thruster
+//note: servo timings are currently not implemented and do nothing
+#define SERVO_OUT_US_MAX 2000 // check servo ratings for pwm microsecond values
+#define SERVO_OUT_US_MIN 1000 // change per servo type COUG1 is 500-2500 COUG2 is 1000-2000
+
+#define ENABLE_SERVOS
+#define ENABLE_THRUSTER
+#define ENABLE_BATTERY
+#define ENABLE_LEAK
+#define ENABLE_PRESSURE
+
 #define VOLT_PIN 27   //pins on the teensy for the battery monitor
 #define CURRENT_PIN 22   //pins on the teensy for the battery monitor
 #define LEAK_PIN 26       //pins on the teensy for the leak sensor

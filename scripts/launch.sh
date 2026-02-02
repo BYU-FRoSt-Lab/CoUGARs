@@ -12,7 +12,7 @@ source ~/config/cougarsrc.sh
 #   echo ""
   
 #   if [ "$(uname -m)" == "aarch64" ]; then
-#     bash ~/teensy_ws/gpio_tools/strobe.sh off
+#     bash ~/mcu_ws/gpio_tools/strobe.sh off
 #     bash ~/ros2_ws/dvl_tools/acoustics_on.sh false
 #   fi
   
@@ -62,14 +62,22 @@ if [ "$(uname -m)" == "aarch64" ]; then
   ros2 daemon start
   sleep 3
   # Start the strobe light and Teensy board
-  bash ~/teensy_ws/gpio_tools/strobe.sh on
-  bash ~/teensy_ws/gpio_tools/power.sh on
+
+  bash ~/mcu_ws/scripts/strobe.sh on
+  bash ~/mcu_ws/scripts/power.sh on
 
   # Test for Teensy board connection
-  if [ -z "$(tycmd list | grep Teensy)" ]; then
+  if [[ $UCONTROLLER = "STM" ]];
+    
+
+  else
+    if [ -z "$(tycmd list | grep Teensy)" ]; then
       printError "No Teensy boards avaliable to connect to"
       exit 1
+    fi
   fi
+
+
 
   echo ""
 fi

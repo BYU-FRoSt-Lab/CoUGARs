@@ -40,7 +40,7 @@ services:
       - ../bag:/home/frostlab/bag:rw
       - ../config:/home/frostlab/config:rw
       - ../ros2_ws:/home/frostlab/ros2_ws
-      - ../teensy_ws:/home/frostlab/teensy_ws
+      - ../mcu_ws:/home/frostlab/mcu_ws
       - ../scripts:/home/frostlab/scripts
       - ./vehicle/entrypoint.sh:/home/frostlab/entrypoint.sh
       - /etc/localtime:/etc/localtime:ro # Syncs the container's time with the host
@@ -64,7 +64,7 @@ services:
       - ../base_station/base_station_ros2:/home/frostlab/ros2_ws/src/base_station_ros2
       - ../bag:/home/frostlab/bag:rw
       - ../config:/home/frostlab/config:rw
-      - ../teensy_ws:/home/frostlab/teensy_ws
+      - ../mcu_ws:/home/frostlab/mcu_ws
       - ../scripts:/home/frostlab/scripts
       - ../.ssh_keys:/home/frostlab/.ssh     # Syncs ssh keys for the vehicles to save and speed up the process
       - ./base_station/entrypoint.sh:/home/frostlab/entrypoint.sh
