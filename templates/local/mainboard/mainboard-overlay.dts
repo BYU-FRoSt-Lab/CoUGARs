@@ -1,0 +1,61 @@
+/dts-v1/;
+/plugin/;
+
+// not using overrides bc we can just recompile, only 1 hardware version
+// brcm functions are docced by table 1 in this: https://pip-assets.raspberrypi.com/categories/944-raspberry-pi-compute-module-5/documents/RP-008180-DS-6-cm5-datasheet.pdf?disposition=inline
+/ {
+    compatible = "brcm,bcm2712"; // CM5 uses BCM2712
+
+    fragment@0 {
+        target = <&uart0>;
+        __overlay__ {
+            pinctrl-names = "default";
+            pinctrl-0 = <&uart0_pins>;
+            status = "okay";
+        };
+    };
+    fragment@1 {
+        target = <&uart4>;
+        __overlay__ {
+            pinctrl-names = "default";
+            pinctrl-0 = <&uart4_pins>;
+            status = "okay";
+        };
+    };
+    fragment@2 {
+        target = <&uart3>;
+        __overlay__ {
+            pinctrl-names = "default";
+            pinctrl-0 = <&uart3_pins>;
+            status = "okay";
+        };
+    };
+    fragment@3 {
+        target = <&i2c3>;
+        __overlay__ {
+            pinctrl-names = "default";
+            pinctrl-0 = <&i2c3_pins>;
+            status = "okay";
+        };
+    };
+    fragment@4 {
+        target = <&gpio>;
+        __overlay__ {
+            uart0_pins: uart0_pins {
+                brcm,pins = <14 15>;
+                brcm,function = <4>; // a4 function for UART0
+                brcm,pull = <0>;     // No pull-up/pull-down
+            }; 
+            uart4_pins: uart4_pins {
+                brcm,pins = <13 12>;
+                brcm,function = <2>; // a2 function for UART0
+                brcm,pull = <0>;     // No pull-up/pull-down
+            }; 
+            i2c3_pins: i2c3_pins {//pins 6 and 7 for i2c, note that this is NOT the default wiring on version B of the mainboard
+                bcrm,pins = <6 7>;
+                bcrm,function = <3>;
+                bcrm,pull = <2>; //hw pull ups cuz why not
+            }
+        };
+    };
+};

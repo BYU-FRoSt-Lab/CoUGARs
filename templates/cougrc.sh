@@ -11,7 +11,7 @@ export GPIO_CHIP=/dev/gpiochip0 # ex. /dev/gpiochip0
 # Run "ifconfig eth0 | grep 'inet ' | awk '{print $2}'" from OUTSIDE THE DOCKER CONTAINER and copy that number (ex. "192.168.194.59") here
 export STATIC_IP=0
 export UCONTROLLER='STM' # options: STM, TEENSY
-export UCONTROLLER_SERIAL='/dev/serial0' # path to serial port, only used on STM because teensy uses usb
+export UCONTROLLER_SERIAL='/dev/serial0' # path to serial port, defaults: /dev/serial0 for STM, /dev/frost/teensy for teensy
 export DVL_IP_ADDRESS=192.168.194.95
 
 export POWER_PIN = 27 # 27
