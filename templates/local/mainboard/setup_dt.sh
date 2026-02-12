@@ -11,6 +11,7 @@ if cat /proc/device-tree/model | grep -qi compute; then #verifying this is a com
     else
         printf "\ndtoverlay=mainboard-overlay" >> /boot/firmware/config.txt
         printf "\nenable_uart=1" >> /boot/firmware/config.txt
+        printf "\ndtparam=i2c_arm=on" >> /boot/firmware/config.txt
         echo "config.txt has been configured, restart for changes to take effect"
     fi
 

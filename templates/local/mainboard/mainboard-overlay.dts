@@ -46,16 +46,21 @@
                 brcm,function = <4>; // a4 function for UART0
                 brcm,pull = <0>;     // No pull-up/pull-down
             }; 
+            uart3_pins: uart3_pins {
+                brcm,pins = <8 9>;
+                brcm,function = <2>; // a2 function for UART3
+                brcm,pull = <0>;     // No pull-up/pull-down
+            }; 
             uart4_pins: uart4_pins {
                 brcm,pins = <13 12>;
-                brcm,function = <2>; // a2 function for UART0
+                brcm,function = <2>; // a2 function for UART4
                 brcm,pull = <0>;     // No pull-up/pull-down
             }; 
             i2c3_pins: i2c3_pins {//pins 6 and 7 for i2c, note that this is NOT the default wiring on version B of the mainboard
-                bcrm,pins = <6 7>;
-                bcrm,function = <3>;
-                bcrm,pull = <2>; //hw pull ups cuz why not
-            }
+                brcm,pins = <6 7>;
+                brcm,function = <3>;
+                brcm,pull = <2>; //hw pull ups cuz why not
+            };
         };
     };
 };
